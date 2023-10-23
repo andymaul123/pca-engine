@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<script src="https://unpkg.com/htmx.org@1.9.6" integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni" crossorigin="anonymous"></script>
+<script type="module">
+    import { interactivity } from "/interactivity.js";
+    window.gameInteractivity = interactivity;
+  </script>
+  <script></script>
+
+<head>
+    <title>Gui Test</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/guiTest.css">
+</head>
+
+<body>
+    <audio id="background-music" autoplay loop src="/Kingdom-in-Despair.mp3"></audio>
+    <div class="center">
+        <div id="main" hx-get="/dungeon" hx-swap="outerHTML swap:1s" class="transition">
+            <h1>Future Title Menu</h1>
+        </div>
+    </div>
+</body>
+
+<script>
+    // htmx.logger = function(elt, event, data) {
+    //     if(console) {
+    //         console.log(event, elt, data);
+    //     }
+    // }
+
+
+    var audio = document.getElementById("background-music");
+    audio.volume = 0.2;
+</script>
+
+</html>

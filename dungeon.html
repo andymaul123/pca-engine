@@ -1,0 +1,15 @@
+<div  id="main" class="transition">
+  <div id="shrine-text-overlay"></div>
+    <div class="overlay">
+        <svg width="1280" height="720">
+            <defs>
+                <filter id="f1" x="0" y="0">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="7" />
+                </filter>
+              </defs>
+            <polygon width="1280" height="720" points="726, 510, 756, 531, 786, 537, 816, 537, 855, 519, 855, 480, 852, 423, 843, 369, 813, 324, 786, 351, 762, 372, 762, 405, 759, 453, 741, 486" filter="url(#f1)" hx-get="/message" hx-swap="outerHTML" hx-target="#shrine-text-overlay"/>
+        </svg>
+        
+    </div>
+    <img src="/shrine-final.gif" width="1280" height="720" class="base-image">
+</div>

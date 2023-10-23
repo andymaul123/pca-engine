@@ -1,0 +1,108 @@
+*,
+html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: black;
+    cursor: url('/cursor.png'), auto;
+
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+}
+
+#main {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+}
+.text-overlay {
+    z-index: 30;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    width: 1280px;
+    height: 720px;
+}
+.text-box {
+    background-color: hsla(0, 100%, 0%, 50%);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border: 1px solid white;
+}
+.text-message {
+    font-size: 24px;
+    color: white;
+    padding: 1em;
+}
+
+.text-message span {
+    opacity: 0;
+}
+
+.text-message span.revealed {
+    opacity: 1;
+}
+
+.overlay svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+}
+.overlay svg polygon {
+    fill: transparent;
+    opacity: 0;
+}
+.overlay svg polygon:hover {
+    transition: opacity 0.2s ease-out;
+    stroke: white;
+    stroke-width: 10px;
+    opacity: 0.7;
+
+}
+
+.base-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    image-rendering: pixelated;
+    z-index: 10;
+}
+
+.transition.htmx-swapping {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+h1 {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 144px;
+    font-weight: 700;
+    color: white;
+}
+
+p {
+    font-family: 'Pixelify Sans', sans-serif;
+    color: white;
+}

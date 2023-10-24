@@ -8,6 +8,10 @@ export const typeWriter = {
          * target: string (id name of target element to stream to)
          */
 
+        if(!messageObject || !messageObject.message) {
+            return;
+        }
+
         const target = document.querySelector(messageObject.target);
 
         let characters = [];

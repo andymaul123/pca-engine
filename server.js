@@ -34,6 +34,19 @@ const requestListener = async function (request, response) {
                 response.end(dungeonFragment);
                 break;
             }
+            case "/basemat-shrine-png": {
+                response.writeHead(200);
+                const imgFragment = await fsp.readFile(__dirname + "/basemat-shrine-png.html");
+                response.end(imgFragment);
+                break;
+            }
+            case "/shrine-no-candle.png": {
+                response.setHeader("Content-Type", "image/png");
+                response.writeHead(200);
+                const shrineImg = await fsp.readFile(__dirname + "/shrine-no-candle.png");
+                response.end(shrineImg);
+                break;
+            }
             case "/shrine-final.gif": {
                 response.setHeader("Content-Type", "image/gif");
                 response.writeHead(200);
@@ -45,6 +58,18 @@ const requestListener = async function (request, response) {
                 response.writeHead(200);
                 const shrineMessage = await fsp.readFile(__dirname + "/shrine-message.html");
                 response.end(shrineMessage);
+                break;
+            }
+            case "/window-message": {
+                response.writeHead(200);
+                const windowMessage = await fsp.readFile(__dirname + "/window-message.html");
+                response.end(windowMessage);
+                break;
+            }
+            case "/shrine-overlay-empty": {
+                response.writeHead(200);
+                const shrineOverlayEmpty = await fsp.readFile(__dirname + "/shrine-overlay-empty.html");
+                response.end(shrineOverlayEmpty);
                 break;
             }
             case "/cursor.png": {

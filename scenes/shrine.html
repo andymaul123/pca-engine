@@ -1,0 +1,83 @@
+<!-- Primary Scene -->
+<div id="main" class="transition">
+  <div id="shrine-text-overlay"></div>
+  <div class="overlay">
+    <svg width="1280" height="720">
+      <defs>
+        <filter id="f1" x="0" y="0">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="7" />
+        </filter>
+      </defs>
+      <polygon
+        width="1280"
+        height="720"
+        points="153, 357, 183, 354, 210, 354, 237, 348, 264, 345, 282, 336, 282, 300, 282, 258, 279, 225, 267, 192, 258, 159, 243, 114, 228, 84, 204, 108, 192, 132, 180, 159, 159, 180, 153, 207, 138, 234, 144, 258, 144, 285, 144, 312"
+        filter="url(#f1)"
+        hx-get="/scenes/shrine"
+        hx-swap="outerHTML"
+        hx-target="#shrine-text-overlay"
+        hx-select="#shrine-text-overlay.window"
+      />
+      <polygon
+        width="1280"
+        height="720"
+        points="726, 510, 756, 531, 786, 537, 816, 537, 855, 519, 855, 480, 852, 423, 843, 369, 813, 324, 786, 351, 762, 372, 762, 405, 759, 453, 741, 486"
+        filter="url(#f1)"
+        hx-get="/scenes/shrine"
+        hx-swap="outerHTML"
+        hx-target="#shrine-text-overlay"
+        hx-select="#shrine-text-overlay.shrine"
+        id="polygon-shrine"
+      />
+    </svg>
+  </div>
+  <div id="basemat-shrine">
+    <img
+      src="/shrine-final.gif"
+      width="1280"
+      height="720"
+      class="base-image"
+      id="basemat-shrine-image"
+    />
+  </div>
+</div>
+
+<!-- Empty Text Overlay -->
+<div id="shrine-text-overlay" class="empty"></div>
+
+<!-- Scene Objects -->
+
+<!-- Window -->
+<div
+  class="text-overlay window"
+  id="shrine-text-overlay"
+  width="1280"
+  height="720"
+  style="position: absolute; top: 0; left: 0"
+  hx-on="htmx:load: window.gameInteractivity.streamMessage({message: 'A window. Moonlight pours in, grainy and silver.', speed: 50, target: '#stream-message-container'})"
+  hx-get="/scenes/shrine"
+  hx-swap="outerHTML"
+  hx-target="#shrine-text-overlay"
+  hx-select="#shrine-text-overlay.empty"
+>
+  <div class="text-box">
+    <p class="text-message" id="stream-message-container"></p>
+  </div>
+</div>
+
+<!-- Shrine -->
+<div
+  class="text-overlay shrine"
+  id="shrine-text-overlay"
+  width="1280"
+  height="720"
+  style="position: absolute; top: 0; left: 0"
+  hx-on="htmx:load: window.gameInteractivity.streamMessage({message: 'A single candle flickers, struggling to keep the darkness at bay. You snuff it out.', speed: 50, target: '#stream-message-container'})"
+  hx-get="/scenes/replacements"
+  hx-swap="outerHTML"
+  hx-target="#shrine-text-overlay"
+>
+  <div class="text-box">
+    <p class="text-message" id="stream-message-container"></p>
+  </div>
+</div>

@@ -1,65 +1,36 @@
 <!DOCTYPE html>
 <script src="https://unpkg.com/htmx.org@1.9.6" integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni" crossorigin="anonymous"></script>
+<script type="module">
+    import { interactivity } from "/interactivity.js";
+    window.gameInteractivity = interactivity;
+  </script>
+  <script></script>
 
 <head>
-    <title>My Website</title>
-    <style>
-        *,
-        html {
-            margin: 0;
-            padding: 0;
-            border: 0;
-        }
-
-        html {
-            width: 100%;
-            height: 100%;
-        }
-
-        body {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            background-color: rgb(236, 152, 42);
-        }
-
-        .center {
-            width: 100%;
-            height: 50%;
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-family: "Trebuchet MS", Helvetica, sans-serif;
-            text-align: center;
-        }
-
-        .transition.htmx-swapping {
-            opacity: 0;
-            transition: opacity 1s ease-out;
-        }
-
-        h1 {
-            font-size: 144px;
-        }
-
-        p {
-            font-size: 64px;
-        }
-    </style>
+    <title>Gui Test</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/index.css">
 </head>
 
 <body>
+    <audio id="background-music" loop src="/Kingdom-in-Despair.mp3"></audio>
     <div class="center">
-        <div id="main" hx-get="/dungeon" hx-swap="outerHTML swap:1s" class="transition">
-            <h1>Hello Again!</h1>
-            <p>This is served from a file</p>
+        <div id="main" hx-get="/scenes/shrine" hx-swap="outerHTML swap:1s" hx-select="#main" class="transition">
+            <h1>Future Title Menu</h1>
         </div>
     </div>
-
-    <div hx-get="/example">Get Some HTML</div>
 </body>
+
+<script>
+    // htmx.logger = function(elt, event, data) {
+    //     if(console) {
+    //         console.log(event, elt, data);
+    //     }
+    // }
+
+
+    var audio = document.getElementById("background-music");
+    audio.volume = 0.1;
+</script>
 
 </html>

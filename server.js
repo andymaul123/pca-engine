@@ -17,84 +17,66 @@ const requestListener = async function (request, response) {
             case "/interactivity.js": {
                 response.setHeader("Content-Type", "application/javascript ");
                 response.writeHead(200);
-                const script = await fsp.readFile(__dirname + "/interactivity.js");
+                const script = await fsp.readFile(__dirname + "/js/interactivity.js");
                 response.end(script);
                 break;
             }
             case "/typewriter.js": {
                 response.setHeader("Content-Type", "application/javascript ");
                 response.writeHead(200);
-                const script = await fsp.readFile(__dirname + "/typewriter.js");
+                const script = await fsp.readFile(__dirname + "/js/typewriter.js");
                 response.end(script);
                 break;
             }
-            case "/dungeon": {
+            case "/scenes/shrine": {
                 response.writeHead(200);
-                const dungeonFragment = await fsp.readFile(__dirname + "/dungeon.html");
-                response.end(dungeonFragment);
+                const scene = await fsp.readFile(__dirname + "/scenes/shrine.html");
+                response.end(scene);
                 break;
             }
-            case "/basemat-shrine-png": {
+            case "/scenes/replacements": {
                 response.writeHead(200);
-                const imgFragment = await fsp.readFile(__dirname + "/basemat-shrine-png.html");
-                response.end(imgFragment);
+                const scene = await fsp.readFile(__dirname + "/scenes/replacements.html");
+                response.end(scene);
                 break;
             }
             case "/shrine-no-candle.png": {
                 response.setHeader("Content-Type", "image/png");
                 response.writeHead(200);
-                const shrineImg = await fsp.readFile(__dirname + "/shrine-no-candle.png");
+                const shrineImg = await fsp.readFile(__dirname + "/assets/image/shrine-no-candle.png");
                 response.end(shrineImg);
                 break;
             }
             case "/shrine-final.gif": {
                 response.setHeader("Content-Type", "image/gif");
                 response.writeHead(200);
-                const shrineImg = await fsp.readFile(__dirname + "/shrine-final.gif");
+                const shrineImg = await fsp.readFile(__dirname + "/assets/image/shrine-final.gif");
                 response.end(shrineImg);
-                break;
-            }
-            case "/message": {
-                response.writeHead(200);
-                const shrineMessage = await fsp.readFile(__dirname + "/shrine-message.html");
-                response.end(shrineMessage);
-                break;
-            }
-            case "/window-message": {
-                response.writeHead(200);
-                const windowMessage = await fsp.readFile(__dirname + "/window-message.html");
-                response.end(windowMessage);
-                break;
-            }
-            case "/shrine-overlay-empty": {
-                response.writeHead(200);
-                const shrineOverlayEmpty = await fsp.readFile(__dirname + "/shrine-overlay-empty.html");
-                response.end(shrineOverlayEmpty);
                 break;
             }
             case "/cursor.png": {
                 response.setHeader("Content-Type", "image/png");
                 response.writeHead(200);
-                const cursor = await fsp.readFile(__dirname + "/cursor.png");
+                const cursor = await fsp.readFile(__dirname + "/assets/image/cursor.png");
                 response.end(cursor);
                 break;
             }
-            case "/guiTest.css": {
+            case "/index.css": {
                 response.setHeader("Content-Type", "text/css");
                 response.writeHead(200);
-                const css = await fsp.readFile(__dirname + "/guiTest.css");
+                const css = await fsp.readFile(__dirname + "/css/index.css");
                 response.end(css);
                 break;
             }
             case "/Kingdom-in-Despair.mp3": {
                 response.setHeader("Content-Type", "audio/mpeg");
                 response.writeHead(200);
-                const mp3 = await fsp.readFile(__dirname + "/Kingdom-in-Despair.mp3");
+                const mp3 = await fsp.readFile(__dirname + "/assets/audio/Kingdom-in-Despair.mp3");
                 response.end(mp3);
                 break;
             }
             default: {
-                const staticHtml = await fsp.readFile(__dirname + "/guiTest.html");
+                const staticHtml = await fsp.readFile(__dirname + "/index.html");
                 response.writeHead(200);
                 response.end(staticHtml); 
             }

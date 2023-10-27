@@ -3,8 +3,7 @@
 <script type="module">
     import { interactivity } from "/interactivity.js";
     window.gameInteractivity = interactivity;
-  </script>
-  <script></script>
+</script>
 
 <head>
     <title>Gui Test</title>
@@ -13,10 +12,24 @@
 </head>
 
 <body>
-    <audio id="background-music" loop src="/Kingdom-in-Despair.mp3"></audio>
+    <audio id="background-music" autoplay loop src="/Kingdom-in-Despair.mp3"></audio>
     <div class="center">
-        <div id="main" hx-get="/scenes/shrine" hx-swap="outerHTML swap:1s" hx-select="#main" class="transition">
-            <h1>Future Title Menu</h1>
+        <div id="main">
+            <div id="menu1">
+                <div class="menu-bar">
+                    <button hx-on:click="window.gameInteractivity.toggleClass('open', '#menu1 .inner')">Menu</button>
+                </div>
+                <div class="inner">
+                    <button hx-on:click="window.gameInteractivity.toggleClass('open', '#menu1 .inner')">Close</button>
+                    <h1>Main Menu</h1>
+                    <hr/>
+                    <p>Volume</p>
+                    <input type="range" id="volume-control" value="0">
+                </div>
+            </div>
+            <div id="main-scene" hx-get="/scenes/shrine" hx-swap="outerHTML swap:1s" hx-select="#main-scene" class="transition">
+                <h1>Future Title Menu</h1>
+            </div>
         </div>
     </div>
 </body>
@@ -29,8 +42,12 @@
     // }
 
 
-    var audio = document.getElementById("background-music");
-    audio.volume = 0.1;
+    const audio = document.getElementById("background-music");
+    let volumeControls = document.getElementById("volume-control");
+    audio.volume = 0;
+    volumeControls.addEventListener("change", function(e) {
+        audio.volume = e.currentTarget.value / 100;
+    })
 </script>
 
 </html>

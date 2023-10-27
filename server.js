@@ -28,6 +28,12 @@ const requestListener = async function (request, response) {
                 response.end(script);
                 break;
             }
+            case "/menu1": {
+                response.writeHead(200);
+                const menu = await fsp.readFile(__dirname + "/menu1.html");
+                response.end(menu);
+                break;
+            }
             case "/scenes/shrine": {
                 response.writeHead(200);
                 const scene = await fsp.readFile(__dirname + "/scenes/shrine.html");

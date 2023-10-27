@@ -5,4 +5,8 @@ export const interactivity = {
         console.log(messageToLog);
     },
     streamMessage: typeWriter.streamMessage,
+    toggleClass: function(className, target) {
+        const targetElement = document.querySelector(target);
+        targetElement.classList.toggle(className);
+    }
 };

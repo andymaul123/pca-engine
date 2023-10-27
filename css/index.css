@@ -29,11 +29,52 @@ body {
 
 }
 
-#main {
+#main, #main-scene {
     position: relative;
     width: 1280px;
     height: 720px;
 }
+
+#menu1 .menu-bar {
+    width: 1280px;
+    height: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 30;
+}
+#menu1 .menu-bar button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 31;
+}
+
+#menu1 .inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 720px; 
+    background-color: beige;
+    z-index: 32;
+    display: none;
+}
+#menu1 .inner button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 33;
+}
+#menu1 * {
+    color: black;
+}
+#menu1 .inner.open {
+    display: block;
+}
+
+
+
 .text-overlay {
     z-index: 30;
     position: absolute;

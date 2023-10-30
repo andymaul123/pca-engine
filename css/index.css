@@ -87,6 +87,7 @@ body {
 .text-box {
     background-color: hsla(0, 100%, 0%, 50%);
     width: 100%;
+    max-height: 106px;
     position: absolute;
     bottom: 0;
     border: 1px solid white;
@@ -104,6 +105,36 @@ body {
 .text-message span.revealed {
     opacity: 1;
 }
+
+.blinking-arrow {
+    animation: blinky 1s infinite;
+    position: absolute;
+    top: 680px;
+    left: 1240px;
+    z-index: 31;
+    color: white;
+    font-size: 48px;
+    display: none;
+}
+.blinking-arrow.revealed {
+    display: block;
+}
+
+@keyframes blinky {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .trigger-terminator {
+    display: none;
+  }
 
 .overlay svg {
     position: absolute;

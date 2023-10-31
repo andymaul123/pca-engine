@@ -1,6 +1,6 @@
 <!-- Primary Scene -->
 <div id="main-scene" class="transition">
-  <div id="shrine-text-overlay">
+  <div id="text-overlay">
     <div class="blinking-arrow">&#129171;</div>
   </div>
   <div class="overlay">
@@ -16,9 +16,9 @@
         points="153, 357, 183, 354, 210, 354, 237, 348, 264, 345, 282, 336, 282, 300, 282, 258, 279, 225, 267, 192, 258, 159, 243, 114, 228, 84, 204, 108, 192, 132, 180, 159, 159, 180, 153, 207, 138, 234, 144, 258, 144, 285, 144, 312"
         filter="url(#f1)"
         hx-get="/scenes/shrine"
+        hx-target="#text-overlay"
+        hx-select="#text-overlay.window"
         hx-swap="outerHTML"
-        hx-target="#shrine-text-overlay"
-        hx-select="#shrine-text-overlay.window"
       />
       <polygon
         width="1280"
@@ -26,9 +26,9 @@
         points="726, 510, 756, 531, 786, 537, 816, 537, 855, 519, 855, 480, 852, 423, 843, 369, 813, 324, 786, 351, 762, 372, 762, 405, 759, 453, 741, 486"
         filter="url(#f1)"
         hx-get="/scenes/shrine"
-        hx-target="#shrine-text-overlay"
-        hx-select=".text-overlay.shrine"
-        hx-swap="beforeend"
+        hx-target="#text-overlay"
+        hx-select="#text-overlay.shrine"
+        hx-swap="outerHTML"
         id="polygon-shrine"
       />
     </svg>
@@ -44,41 +44,31 @@
   </div>
 </div>
 
-<!-- Empty Text Overlay -->
-<div id="shrine-text-overlay" class="empty"></div>
-
 <!-- Scene Objects -->
 
 <!-- Window -->
 <div
-  class="text-overlay window"
-  id="shrine-text-overlay"
-  width="1280"
-  height="720"
-  style="position: absolute; top: 0; left: 0"
-  hx-on="htmx:load: window.gameInteractivity.streamMessage({message: 'A window. Moonlight pours in, grainy and silver.', speed: 50, target: '#stream-message-container'})"
-  hx-get="/scenes/shrine"
-  hx-swap="outerHTML"
-  hx-target="#shrine-text-overlay"
-  hx-select="#shrine-text-overlay.empty"
+  id="text-overlay"
+  class="window"
+  hx-on="htmx:load: window.gameInteractivity.streamMessage({messages: ['A single message, and the typewriter will self-terminate without calling another script.'], speed: 50, target: '#text-overlay', triggerOnFinish: false})"
 >
+  <div class="blinking-arrow">&#129171;</div>
   <div class="text-box">
-    <p class="text-message" id="stream-message-container"></p>
+    <p class="text-message"></p>
   </div>
 </div>
 
 <!-- Shrine -->
 <div
-  class="text-overlay shrine"
-  width="1280"
-  height="720"
-  style="position: absolute; top: 0; left: 0"
-  hx-on="htmx:load: window.gameInteractivity.streamMessage({messages: ['A single candle flickers, struggling to keep the darkness at bay. You snuff it out.', 'This is a test 2nd message.'], speed: 50, target: '#shrine-text-overlay'})"
+  id="text-overlay"
+  class="shrine"
+  hx-on="htmx:load: window.gameInteractivity.streamMessage({messages: ['One of two messages, illustrating the multi-message system.', 'This will terminate into another script, snuffing out the shrine\'s candle.'], speed: 50, target: '#text-overlay', triggerOnFinish: true})"
   hx-get="/scenes/replacements"
   hx-swap="outerHTML"
-  hx-target="#shrine-text-overlay"
-  hx-trigger="terminate"
+  hx-target="#text-overlay"
+  hx-trigger="triggerOnFinish"
 >
+  <div class="blinking-arrow">&#129171;</div>
   <div class="text-box">
     <p class="text-message"></p>
   </div>

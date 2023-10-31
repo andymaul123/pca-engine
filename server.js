@@ -67,10 +67,17 @@ const requestListener = async function (request, response) {
                 response.end(cursor);
                 break;
             }
-            case "/index.css": {
+            case "/css/index.css": {
                 response.setHeader("Content-Type", "text/css");
                 response.writeHead(200);
                 const css = await fsp.readFile(__dirname + "/css/index.css");
+                response.end(css);
+                break;
+            }
+            case "/css/text-overlay.css": {
+                response.setHeader("Content-Type", "text/css");
+                response.writeHead(200);
+                const css = await fsp.readFile(__dirname + "/css/text-overlay.css");
                 response.end(css);
                 break;
             }

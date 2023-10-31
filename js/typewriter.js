@@ -6,6 +6,7 @@ export const typeWriter = {
          * messages: Array<String>,
          * speed: Integer (representing milliseconds),
          * target: String (id name of target element to stream to)
+         * triggerOnFinish: Boolean
          */
 
         if(!messageObject || !messageObject.messages) {
@@ -14,7 +15,6 @@ export const typeWriter = {
         }
         const target = document.querySelector(messageObject.target);
         const streamingTarget = target.querySelector('.text-message');
-        const listenerTarget = target.querySelector('.text-overlay');
         const blinkingArrow = target.querySelector('.blinking-arrow');
         let finishedStreaming = false;
         let messageEnded = false;
@@ -26,9 +26,13 @@ export const typeWriter = {
             revealAllCharacters = true;
             if(finishedStreaming) {
                 if(messageEnded) {
-                    listenerTarget.removeEventListener("click", textboxHandler);
-                    htmx.trigger(listenerTarget, "terminate")
-                    return;
+                    target.removeEventListener("click", textboxHandler);
+                    if(messageObject.triggerOnFinish) {
+                        htmx.trigger(target, "triggerOnFinish")
+                        return;
+                    }
+                    streamingTarget.innerHTML = "";
+                    target.classList.toggle('revealed');
                 }
                 blinkingArrow.classList.toggle('revealed');
                 streamingTarget.innerHTML = "";
@@ -79,11 +83,12 @@ export const typeWriter = {
             }
         }
 
-        listenerTarget.addEventListener(
+        target.addEventListener(
             "click",
             textboxHandler,
           );
 
+        target.classList.toggle('revealed');
         prepareCharacterArray();
         revealOneCharacter(characters);
 

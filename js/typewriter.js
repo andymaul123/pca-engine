@@ -25,6 +25,7 @@ export const typeWriter = {
         function textboxHandler() {
             revealAllCharacters = true;
             if(finishedStreaming) {
+                revealAllCharacters = false;
                 if(messageEnded) {
                     target.removeEventListener("click", textboxHandler);
                     if(messageObject.triggerOnFinish) {

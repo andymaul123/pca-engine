@@ -34,15 +34,27 @@ const requestListener = async function (request, response) {
                 response.end(menu);
                 break;
             }
-            case "/scenes/shrine": {
+            case "/scenes/shrine/shrine": {
                 response.writeHead(200);
-                const scene = await fsp.readFile(__dirname + "/scenes/shrine.html");
+                const scene = await fsp.readFile(__dirname + "/scenes/shrine/shrine.html");
                 response.end(scene);
                 break;
             }
-            case "/scenes/replacements": {
+            case "/scenes/shrine/replacements": {
                 response.writeHead(200);
-                const scene = await fsp.readFile(__dirname + "/scenes/replacements.html");
+                const scene = await fsp.readFile(__dirname + "/scenes/shrine/replacements.html");
+                response.end(scene);
+                break;
+            }
+            case "/scenes/shrine/decision-boxes": {
+                response.writeHead(200);
+                const scene = await fsp.readFile(__dirname + "/scenes/shrine/decision-boxes.html");
+                response.end(scene);
+                break;
+            }
+            case "/scenes/tunnel/tunnel": {
+                response.writeHead(200);
+                const scene = await fsp.readFile(__dirname + "/scenes/tunnel/tunnel.html");
                 response.end(scene);
                 break;
             }
@@ -58,6 +70,13 @@ const requestListener = async function (request, response) {
                 response.writeHead(200);
                 const shrineImg = await fsp.readFile(__dirname + "/assets/image/shrine-final.gif");
                 response.end(shrineImg);
+                break;
+            }
+            case "/tunnel-final.png": {
+                response.setHeader("Content-Type", "image/png");
+                response.writeHead(200);
+                const tunnelImg = await fsp.readFile(__dirname + "/assets/image/tunnel-final.png");
+                response.end(tunnelImg);
                 break;
             }
             case "/cursor.png": {
@@ -78,6 +97,13 @@ const requestListener = async function (request, response) {
                 response.setHeader("Content-Type", "text/css");
                 response.writeHead(200);
                 const css = await fsp.readFile(__dirname + "/css/text-overlay.css");
+                response.end(css);
+                break;
+            }
+            case "/css/decision-box.css": {
+                response.setHeader("Content-Type", "text/css");
+                response.writeHead(200);
+                const css = await fsp.readFile(__dirname + "/css/decision-box.css");
                 response.end(css);
                 break;
             }

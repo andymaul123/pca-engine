@@ -1,0 +1,14 @@
+<div id="decision-box" class="revealed">
+    <div class="wrapper" id="exit-tunnel">
+        <div class="container">
+            <p class="title">Do you wish to exit?</p>
+            <div class="choices">
+              <button class="decision-button">Yes</button>
+              <button 
+              class="decision-button"
+              hx-on="click: document.getElementById('#decision-box').classList.toggle('revealed')"
+              >No</button>
+            </div>
+        </div>
+    </div>
+</div>

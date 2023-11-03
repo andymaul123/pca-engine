@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/text-overlay.css">
+    <link rel="stylesheet" href="/css/decision-box.css">
 </head>
 
 <body>
@@ -28,7 +29,8 @@
                     <input type="range" id="volume-control" value="0">
                 </div>
             </div>
-            <div id="main-scene" hx-get="/scenes/shrine" hx-swap="outerHTML swap:1s" hx-select="#main-scene" class="transition">
+
+            <div id="main-scene" hx-get="/scenes/shrine/shrine" hx-swap="outerHTML swap:1s" hx-select="#main-scene" class="transition">
                 <h1>Future Title Menu</h1>
             </div>
         </div>

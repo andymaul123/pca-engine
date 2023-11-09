@@ -1,9 +1,27 @@
 <!-- Primary Scene -->
 <div id="main-scene" class="transition tunnel">
-    <div id="text-overlay">
-      <div class="blinking-arrow">&#129171;</div>
+  <div id="text-overlay">
+    <div class="blinking-arrow">&#129171;</div>
+    <div class="text-box">
+      <p class="text-message"></p>
     </div>
+  </div>
     <div class="overlay">
+      <svg width="1280" height="720">
+        <defs>
+          <filter id="f1" x="0" y="0">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="7" />
+          </filter>
+        </defs>
+        <polygon
+          width="1280"
+          height="720"
+          points="831, 498, 906, 498, 897, 396, 867, 381, 843, 396"
+          filter="url(#f1)"
+          hx-on="click: window.gameInteractivity.streamMessage2('message-window')"
+          id="polygon-window"
+        />
+      </svg>
     </div>
     <div id="basemat">
       <img
@@ -14,4 +32,18 @@
         id="basemat-tunnel-image"
       />
     </div>
+    <div id="scene-message-data">
+      <div id="message-window">
+        <div class="message" data-trigger="">
+          <p data-speed="50">This is a message with a</p>
+          <p class="red" data-speed="50"> special </p>
+          <p data-speed="50">word in it.</p>
+        </div>
+        <div class="message" data-trigger="#scriptTriggerTest">
+          <p data-speed="50">And this is the 2nd message!</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="scriptTriggerTest" hx-get="/trigger-script" hx-trigger="triggerOnFinish" hx-swap="innerHTML" style="position: relative; z-index: 999"></div>
 </div>

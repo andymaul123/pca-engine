@@ -16,7 +16,7 @@ body {
     position: relative;
     background-color: black;
     cursor: url('/cursor.png'), auto;
-
+    user-select: none;
 }
 
 .center {

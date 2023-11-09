@@ -33,6 +33,10 @@
     opacity: 1;
 }
 
+#text-overlay .text-message span.red {
+    color: red;
+}
+
 #text-overlay .blinking-arrow {
     animation: blinky 1s infinite;
     position: absolute;

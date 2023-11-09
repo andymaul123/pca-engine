@@ -28,6 +28,20 @@ const requestListener = async function (request, response) {
                 response.end(script);
                 break;
             }
+            case "/typewriter/index.js": {
+                response.setHeader("Content-Type", "application/javascript ");
+                response.writeHead(200);
+                const script = await fsp.readFile(__dirname + "/js/typewriter/index.js");
+                response.end(script);
+                break;
+            }
+            case "/typewriter/streamMessage": {
+                response.setHeader("Content-Type", "application/javascript ");
+                response.writeHead(200);
+                const script = await fsp.readFile(__dirname + "/js/typewriter/streamMessage.js");
+                response.end(script);
+                break;
+            }
             case "/menu1": {
                 response.writeHead(200);
                 const menu = await fsp.readFile(__dirname + "/menu1.html");
@@ -55,6 +69,13 @@ const requestListener = async function (request, response) {
             case "/scenes/tunnel/tunnel": {
                 response.writeHead(200);
                 const scene = await fsp.readFile(__dirname + "/scenes/tunnel/tunnel.html");
+                response.end(scene);
+                break;
+            }
+            case "/trigger-script": {
+                console.log("fetching example!");
+                response.writeHead(200);
+                const scene = await fsp.readFile(__dirname + "/templates/example-triggered-script.html");
                 response.end(scene);
                 break;
             }

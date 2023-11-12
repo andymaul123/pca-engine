@@ -44,6 +44,6 @@
 }
 
 #decision-box .wrapper .container .choices .decision-button:hover {
-    cursor: url('/cursor.png'), auto;
+    cursor: url('/image/cursor.png'), auto;
     background-color: hsla(0, 0%, 51%, 0.5);
 }

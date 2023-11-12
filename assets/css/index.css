@@ -15,7 +15,7 @@ body {
     height: 100%;
     position: relative;
     background-color: black;
-    cursor: url('/cursor.png'), auto;
+    cursor: url('/image/cursor.png'), auto;
     user-select: none;
 }
 

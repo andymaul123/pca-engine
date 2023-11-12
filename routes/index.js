@@ -10,7 +10,7 @@ allRoutes.use('/scenes', scenesRoutes);
 allRoutes.use(express.static('assets'));
 
 allRoutes.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../index.html'));
+  res.render('index', {mainTitle: 'Main Title'});
 });
 
 // Temporary

@@ -1,7 +1,7 @@
 {
-  "name": "htmxtest",
+  "name": "pca-engine",
   "version": "1.0.0",
-  "description": "Learning htmx and servers",
+  "description": "A framework for building Point-and-Click Adventure games in the web browser.",
   "main": "server.js",
   "type": "module",
   "dependencies": {
@@ -17,13 +17,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andymaul123/htmxTest.git"
+    "url": "git+https://github.com/andymaul123/pca-engine.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/andymaul123/htmxTest/issues"
+    "url": "https://github.com/andymaul123/pca-engine/issues"
   },
-  "homepage": "https://github.com/andymaul123/htmxTest#readme"
+  "homepage": "https://github.com/andymaul123/pca-engine#readme"
 }

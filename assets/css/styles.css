@@ -1,0 +1,250 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: black;
+  cursor: url("/image/cursor.png"), auto;
+  user-select: none;
+}
+
+.flex-centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.center-text {
+  text-align: center;
+}
+
+#main, #main-scene {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+}
+
+#menu1 .menu-bar {
+  width: 1280px;
+  height: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+}
+
+#menu1 .menu-bar button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 31;
+}
+
+#menu1 .inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1280px;
+  height: 720px;
+  background-color: beige;
+  z-index: 32;
+  display: none;
+}
+
+#menu1 .inner button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 33;
+}
+
+#menu1 * {
+  color: black;
+}
+
+#menu1 .inner.open {
+  display: block;
+}
+
+.overlay svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+
+.overlay svg polygon {
+  fill: transparent;
+  opacity: 0;
+}
+
+.overlay svg polygon:hover {
+  transition: opacity 0.2s ease-out;
+  stroke: white;
+  stroke-width: 10px;
+  opacity: 0.7;
+}
+
+.base-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  image-rendering: pixelated;
+  z-index: 10;
+}
+
+.transition.htmx-swapping {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+h1 {
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 144px;
+  font-weight: 700;
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
+p {
+  font-family: "Pixelify Sans", sans-serif;
+  color: white;
+}
+
+#decision-box {
+  width: 1280px;
+  height: 720px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  z-index: 30;
+}
+
+#decision-box .wrapper {
+  position: relative;
+  background-color: hsla(0, 100%, 0%, 0.5);
+  width: 640px;
+  border: 1px white solid;
+  padding: 1em;
+}
+
+#decision-box.revealed {
+  display: flex;
+}
+
+#decision-box .wrapper .container .choices {
+  display: flex;
+  flex-direction: column;
+}
+
+#decision-box .wrapper .container .title {
+  font-size: 48px;
+  color: white;
+  font-family: "Pixelify Sans", sans-serif;
+  margin-bottom: 1em;
+}
+
+#decision-box .wrapper .container .choices .decision-button {
+  font-size: 24px;
+  color: white;
+  font-family: "Pixelify Sans", sans-serif;
+  background-color: hsla(0, 100%, 0%, 0.5);
+  border: 1px white solid;
+  margin-bottom: 1em;
+}
+
+#decision-box .wrapper .container .choices .decision-button:hover {
+  cursor: url("/image/cursor.png"), auto;
+  background-color: hsla(0, 0%, 51%, 0.5);
+}
+
+#text-overlay {
+  z-index: 30;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  width: 1280px;
+  height: 720px;
+  display: none;
+}
+
+#text-overlay.revealed {
+  display: block;
+}
+
+#text-overlay .text-box {
+  background-color: hsla(0, 100%, 0%, 0.5);
+  width: 100%;
+  max-height: 106px;
+  position: absolute;
+  bottom: 0;
+  border: 1px solid white;
+}
+
+#text-overlay .text-message {
+  font-size: 24px;
+  color: white;
+  padding: 1em;
+}
+
+#text-overlay .text-message span {
+  opacity: 0;
+}
+
+#text-overlay .text-message span.revealed {
+  opacity: 1;
+}
+
+#text-overlay .text-message span.red {
+  color: red;
+}
+
+#text-overlay .blinking-arrow {
+  animation: blinky 1s infinite;
+  position: absolute;
+  top: 680px;
+  left: 1240px;
+  z-index: 31;
+  color: white;
+  font-size: 48px;
+  display: none;
+}
+
+#text-overlay .blinking-arrow.revealed {
+  display: block;
+}
+
+@keyframes blinky {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

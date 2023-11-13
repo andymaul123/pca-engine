@@ -6,12 +6,14 @@
   "type": "module",
   "dependencies": {
     "ejs": "^3.1.9",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "sass": "^1.69.5"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --experimental-modules app.js"
+    "start": "node --experimental-modules app.js",
+    "css": "sass assets/scss/index.scss assets/css/styles.css"
   },
   "repository": {
     "type": "git",

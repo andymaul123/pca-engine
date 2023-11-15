@@ -178,7 +178,11 @@ p {
   background-color: hsla(0, 0%, 51%, 0.5);
 }
 
-#text-overlay {
+#text-overlay .wrapper.revealed {
+  display: block;
+}
+
+#text-overlay .wrapper {
   z-index: 30;
   position: absolute;
   top: 0;
@@ -187,10 +191,6 @@ p {
   width: 1280px;
   height: 720px;
   display: none;
-}
-
-#text-overlay.revealed {
-  display: block;
 }
 
 #text-overlay .text-box {

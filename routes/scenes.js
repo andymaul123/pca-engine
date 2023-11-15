@@ -19,3 +19,7 @@ scenesRoutes.get('/shrine/decision-boxes', (req, res) => {
 scenesRoutes.get('/tunnel/tunnel', (req, res) => {
     res.sendFile(path.join(__dirname, '../scenes/tunnel/tunnel.html'));
 });
+
+scenesRoutes.get('/stairs/stairs', (req, res) => {
+    res.sendFile(path.join(__dirname, '../scenes/stairs/stairs.ejs'));
+});

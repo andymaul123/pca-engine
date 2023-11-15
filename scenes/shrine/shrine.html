@@ -36,11 +36,11 @@
         height="720"
         points="153, 357, 183, 354, 210, 354, 237, 348, 264, 345, 282, 336, 282, 300, 282, 258, 279, 225, 267, 192, 258, 159, 243, 114, 228, 84, 204, 108, 192, 132, 180, 159, 159, 180, 153, 207, 138, 234, 144, 258, 144, 285, 144, 312"
         filter="url(#f1)"
-        hx-get="/scenes/shrine/shrine"
-        hx-target="#text-overlay"
-        hx-select="#text-overlay.window"
-        hx-swap="outerHTML"
+        hx-get="/scenes/stairs/stairs"
+        hx-target="#main-scene"
+        hx-swap="outerHTML swap:1s"
       />
+      <!--
       <polygon
         width="1280"
         height="720"
@@ -60,6 +60,7 @@
         hx-on="click: document.getElementById('decision-box').classList.toggle('revealed')"
         id="polygon-exit"
       />
+      -->
     </svg>
   </div>
   <div id="basemat-shrine">

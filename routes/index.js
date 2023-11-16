@@ -6,10 +6,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 import { scenesRoutes } from './scenes.js';
 import { messageRoutes } from './messages.js';
+import { decisionRoutes } from './decisions.js';
 
 export const allRoutes = express.Router();
 allRoutes.use('/scenes', scenesRoutes);
 allRoutes.use('/messages', messageRoutes);
+allRoutes.use('/decisions', decisionRoutes);
 allRoutes.use(express.static('assets'));
 
 allRoutes.get('/', (req, res) => {

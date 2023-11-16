@@ -1,0 +1,26 @@
+<div class="wrapper">
+    <div class="container">
+        <p class="title"><%= decisionText %></p>
+        <div class="choices">
+
+          <% for (var i = 0; i < buttons.length; i++) {%>
+            <button class="decision-button" hx-get="/deleteme" hx-swap="delete" hx-target="#decision-box .wrapper"><%= buttons[i].buttonText %></button>
+          <% } %>
+
+<!-- 
+          <button 
+          class="decision-button"
+          hx-get="/scenes/tunnel/tunnel"
+          hx-swap="outerHTML swap:1s" 
+          hx-select="#main-scene"
+          hx-target="#main-scene" 
+          class="transition"
+          >Yes</button>
+          <button 
+          class="decision-button"
+          hx-on="click: document.getElementById('decision-box').classList.toggle('revealed')"
+          >No</button>
+-->
+        </div>
+    </div>
+</div>

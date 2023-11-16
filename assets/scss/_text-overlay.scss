@@ -2,8 +2,11 @@
 #text-overlay .wrapper.revealed {
     display: block;
 }
+#text-overlay .wrapper.no-click {
+    pointer-events: none;
+}
 #text-overlay .wrapper {
-    z-index: 30;
+    z-index: 31;
     position: absolute;
     top: 0;
     left: 0;
@@ -43,7 +46,7 @@
     position: absolute;
     top: 680px;
     left: 1240px;
-    z-index: 31;
+    z-index: 32;
     color: white;
     font-size: 48px;
     display: none;

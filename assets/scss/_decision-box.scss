@@ -1,4 +1,4 @@
-#decision-box {
+#decision-box .wrapper {
     width: 1280px;
     height: 720px;
     position: absolute;
@@ -6,19 +6,15 @@
     left: 0;
     justify-content:center;
     align-items:center;
-    display: none;
     z-index: 30;
+    display: flex;
 }
-#decision-box .wrapper {
+#decision-box .container {
     position: relative;
     background-color: hsla(0, 100%, 0%, 50%);
     width: 640px;
     border: 1px white solid;
     padding: 1em;
-}
-
-#decision-box.revealed {
-    display: flex;
 }
 
 #decision-box .wrapper .container .choices {

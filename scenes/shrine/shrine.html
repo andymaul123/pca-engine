@@ -1,29 +1,6 @@
 <!-- Primary Scene -->
 <div id="main-scene" class="transition">
-  <div id="decision-box" class="">
-    <div class="wrapper" id="exit-tunnel">
-        <div class="container">
-            <p class="title">Do you wish to exit?</p>
-            <div class="choices">
-              <button 
-              class="decision-button"
-              hx-get="/scenes/tunnel/tunnel"
-              hx-swap="outerHTML swap:1s" 
-              hx-select="#main-scene"
-              hx-target="#main-scene" 
-              class="transition"
-              >Yes</button>
-              <button 
-              class="decision-button"
-              hx-on="click: document.getElementById('decision-box').classList.toggle('revealed')"
-              >No</button>
-            </div>
-        </div>
-    </div>
-  </div>
-  <div id="text-overlay">
-    <div class="blinking-arrow">&#129171;</div>
-  </div>
+  <div id="text-overlay" hx-on="htmx:load: window.gameInteractivity.streamMessage3('text-overlay')"></div>
   <div class="overlay">
     <svg width="1280" height="720">
       <defs>
@@ -40,7 +17,6 @@
         hx-target="#main-scene"
         hx-swap="outerHTML swap:1s"
       />
-      <!--
       <polygon
         width="1280"
         height="720"
@@ -52,6 +28,7 @@
         hx-swap="outerHTML"
         id="polygon-shrine"
       />
+      <!--
       <polygon
         width="1280"
         height="720"

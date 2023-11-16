@@ -7,11 +7,11 @@ import { gameState } from '../data/state/state.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-scenesRoutes.get('/tunnel/tunnel', (req, res) => {
+scenesRoutes.get('/tunnel', (req, res) => {
     res.sendFile(path.join(__dirname, '../scenes/tunnel/tunnel.html'));
 });
 
-scenesRoutes.get('/stairs/stairs', (req, res) => {
+scenesRoutes.get('/stairs', (req, res) => {
     res.sendFile(path.join(__dirname, '../scenes/stairs/stairs.ejs'));
 });
 
@@ -26,6 +26,6 @@ scenesRoutes.get('/shrine/temporary', (req, res) => {
 });
 
 // TODO
-scenesRoutes.post('/shrine', (req, res) => {
-    res.render('partials/message-box', gameState.candleLit);
-});
+// scenesRoutes.post('/shrine', (req, res) => {
+//     res.render('partials/message-box', gameState.candleLit);
+// });

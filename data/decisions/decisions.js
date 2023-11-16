@@ -4,11 +4,13 @@ export const decisions = {
         buttons: [
             {
                 buttonText: "Yes",
-                triggerScript: null,
+                triggerScript: "scenes/tunnel",
+                triggerTarget: "#main-scene",
             },
             {
                 buttonText: "No",
                 triggerScript: null,
+                triggerTarget: null,
             }
         ]
     }

@@ -89,6 +89,10 @@ body {
 .overlay svg polygon {
     fill: transparent;
     opacity: 0;
+    display: none;
+}
+.overlay svg polygon.revealed {
+    display: inline;
 }
 .overlay svg polygon:hover {
     transition: opacity 0.2s ease-out;

@@ -1,9 +1,29 @@
 <% if (nextMessage != null) { %>
-  <div class="wrapper revealed" hx-get="/messages/<%= nextMessage %>" hx-target="#text-overlay" hx-trigger="messageClick">
+  <div class="wrapper revealed" hx-get="/<%= nextMessage %>" hx-target="#text-overlay" hx-trigger="messageClick">
     <div class="blinking-arrow revealed">&#129171;</div>
 <% } else if (triggerScript != null && targetId != null) { %>
-  <div class="wrapper revealed" hx-get="/<%= triggerScript %>" hx-target="<%= targetId %>" hx-trigger="messageClick">
-    <div class="blinking-arrow">&#129171;</div>
+
+
+  <% switch(triggerScriptType) {
+    case 'GET' : %>
+    <div class="wrapper revealed" hx-get="/<%= triggerScript %>" hx-target="<%= targetId %>" hx-trigger="messageClick">
+      <div class="blinking-arrow">&#129171;</div>
+    <% break;
+
+    case 'POST' : %>
+    <div class="wrapper revealed" hx-post="/<%= triggerScript %>" hx-target="<%= targetId %>" hx-trigger="messageClick">
+      <div class="blinking-arrow">&#129171;</div>
+    <% break;
+
+    case 'PUT' : %>
+    <div class="wrapper revealed" hx-put="/<%= triggerScript %>" hx-target="<%= targetId %>" hx-trigger="messageClick" hx-vals="<%= actionData %>" name="message-box">
+      <div class="blinking-arrow">&#129171;</div>
+    <% break;
+
+    }
+    %>
+
+
 <% } else { %>
   <div class="wrapper revealed" hx-get="/deleteme" hx-swap="delete" hx-trigger="messageClick">
     <div class="blinking-arrow">&#129171;</div>

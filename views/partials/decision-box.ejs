@@ -4,7 +4,7 @@
         <div class="choices">
           <% for (var i = 0; i < buttons.length; i++) {%>
             <% if (buttons[i].triggerScript != null && buttons[i].triggerTarget != null) { %>
-              <button class="decision-button" hx-get="/<%= buttons[i].triggerScript %>" hx-target="<%= buttons[i].triggerTarget %>">
+              <button class="decision-button" hx-get="/<%= buttons[i].triggerScript %>" hx-target="<%= buttons[i].triggerTarget %>" hx-swap="<%= buttons[i].swap ? buttons[i].swap : 'innerHtml' %>">
                 <%= buttons[i].buttonText %>
               </button>
             <% } else { %>

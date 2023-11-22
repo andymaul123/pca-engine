@@ -36,8 +36,8 @@ export class Stairs extends Scene {
                 },
                 {
                     speed: 50,
-                    text: " red ",
-                    classes: ['red'],
+                    text: " special ",
+                    classes: ['callout'],
                 },
                 {
                     speed: 50,

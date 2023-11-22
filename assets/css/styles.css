@@ -3,6 +3,8 @@ html {
   margin: 0;
   padding: 0;
   border: 0;
+  font-family: "Pixelify Sans", sans-serif;
+  color: #f6d6bd;
 }
 
 html {
@@ -14,7 +16,7 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
-  background-color: black;
+  background-color: #08141e;
   cursor: url("/image/cursor.png"), auto;
   user-select: none;
 }
@@ -38,72 +40,6 @@ body {
   height: 720px;
 }
 
-#menu1 .menu-bar {
-  width: 1280px;
-  height: 25px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 30;
-}
-
-#menu1 .menu-bar button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 31;
-}
-
-#menu1 .inner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1280px;
-  height: 720px;
-  background-color: beige;
-  z-index: 32;
-  display: none;
-}
-
-#menu1 .inner button {
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 33;
-}
-
-#menu1 * {
-  color: black;
-}
-
-#menu1 .inner.open {
-  display: block;
-}
-
-.overlay svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 20;
-}
-
-.overlay svg polygon {
-  fill: transparent;
-  opacity: 0;
-  display: none;
-}
-
-.overlay svg polygon.revealed {
-  display: inline;
-}
-
-.overlay svg polygon:hover {
-  transition: opacity 0.2s ease-out;
-  stroke: white;
-  stroke-width: 10px;
-  opacity: 0.7;
-}
-
 .base-image {
   position: absolute;
   top: 0;
@@ -118,19 +54,8 @@ body {
 }
 
 h1 {
-  font-family: "Pixelify Sans", sans-serif;
   font-size: 144px;
   font-weight: 700;
-  color: white;
-}
-
-h2 {
-  color: white;
-}
-
-p {
-  font-family: "Pixelify Sans", sans-serif;
-  color: white;
 }
 
 #decision-box .wrapper {
@@ -192,24 +117,25 @@ p {
   position: absolute;
   top: 0;
   left: 0;
-  color: white;
+  color: #f6d6bd;
   width: 1280px;
   height: 720px;
   display: none;
 }
 
 #text-overlay .text-box {
-  background-color: hsla(0, 100%, 0%, 0.5);
+  background-color: hsla(207, 58%, 7%, 0.7);
   width: 100%;
   max-height: 106px;
   position: absolute;
   bottom: 0;
-  border: 1px solid white;
+  border: 1px solid #f6d6bd;
+  box-sizing: border-box;
 }
 
 #text-overlay .text-message {
   font-size: 24px;
-  color: white;
+  color: #f6d6bd;
   padding: 1em;
 }
 
@@ -221,12 +147,8 @@ p {
   opacity: 1;
 }
 
-#text-overlay .text-message span.red {
-  color: palevioletred;
-}
-
-#text-overlay .text-message span.blue {
-  color: cornflowerblue;
+#text-overlay .text-message span.callout {
+  color: #c3a38a;
 }
 
 #text-overlay .blinking-arrow {
@@ -235,7 +157,7 @@ p {
   top: 680px;
   left: 1240px;
   z-index: 32;
-  color: white;
+  color: #f6d6bd;
   font-size: 48px;
   display: none;
 }
@@ -254,6 +176,70 @@ p {
   100% {
     opacity: 1;
   }
+}
+.overlay svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+
+.overlay svg polygon {
+  fill: transparent;
+  opacity: 0;
+  display: none;
+}
+
+.overlay svg polygon.revealed {
+  display: inline;
+}
+
+.overlay svg polygon:hover {
+  transition: opacity 0.2s ease-out;
+  fill: hsla(10, 100%, 100%, 0.2);
+  opacity: 1;
+}
+
+#main-menu .menu-bar {
+  width: 1280px;
+  height: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+}
+
+#main-menu .menu-bar button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 31;
+}
+
+#main-menu .inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1280px;
+  height: 720px;
+  background-color: #997577;
+  z-index: 32;
+  display: none;
+}
+
+#main-menu .inner button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 33;
+}
+
+#main-menu * {
+  color: #08141e;
+}
+
+#main-menu .inner.open {
+  display: block;
 }
 
 /*# sourceMappingURL=styles.css.map */

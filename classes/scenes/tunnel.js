@@ -36,8 +36,8 @@ export class Tunnel extends Scene {
                 },
                 {
                     speed: 50,
-                    text: " blue ",
-                    classes: ['blue'],
+                    text: " special ",
+                    classes: ['callout'],
                 },
                 {
                     speed: 50,

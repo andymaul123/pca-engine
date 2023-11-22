@@ -1,31 +1,27 @@
 <!-- Primary Scene -->
 <div id="main-scene" class="transition">
-
-
-
-    <div id="text-overlay" hx-on="htmx:load: window.gameInteractivity.typeWriter()"></div>
-    <div id="decision-box"></div>
-    <div class="overlay">
-      <svg width="1280" height="720">
-        <defs>
-          <filter id="f1" x="0" y="0">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="7" />
-          </filter>
-        </defs>
-        <% for (let key in overlayNodes) {%>
-            <%- include('./polygon', overlayNodes[key]); %>
-        <% } %>
-      </svg>
-    </div>
-    <div id="basemat">
-      <img
-        src="/<%= basemat() %>"
-        width="1280"
-        height="720"
-        class="base-image"
-        id="#basemat-<%= id %>"
-      />
-    </div>
-
+  <div id="text-overlay" hx-on="htmx:load: window.gameInteractivity.typeWriter()"></div>
+  <div id="decision-box"></div>
+  <div class="overlay">
+    <svg width="1280" height="720">
+      <defs>
+        <filter id="f1" x="0" y="0">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+        </filter>
+      </defs>
+      <% for (let key in overlayNodes) {%>
+          <%- include('./polygon', overlayNodes[key]); %>
+      <% } %>
+    </svg>
+  </div>
+  <div id="basemat">
+    <img
+      src="/<%= basemat() %>"
+      width="1280"
+      height="720"
+      class="base-image"
+      id="#basemat-<%= id %>"
+    />
+  </div>
 </div>
   

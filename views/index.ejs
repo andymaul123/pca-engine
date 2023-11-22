@@ -15,18 +15,7 @@
     <audio id="background-music" loop autoplay src="/audio/Kingdom-in-Despair.mp3"></audio>
     <div class="flex-centered">
         <div id="main">
-            <div id="menu1">
-                <div class="menu-bar">
-                    <button hx-on:click="window.gameInteractivity.toggleClass('open', '#menu1 .inner')">Menu</button>
-                </div>
-                <div class="inner">
-                    <button hx-on:click="window.gameInteractivity.toggleClass('open', '#menu1 .inner')">Close</button>
-                    <h1>Main Menu</h1>
-                    <hr/>
-                    <p>Volume</p>
-                    <input type="range" id="volume-control" value="0">
-                </div>
-            </div>
+            <%- include('./partials/main-menu'); %>
 
             <div id="main-scene" hx-get="/scenes/shrine" hx-swap="outerHTML swap:1s" hx-select="#main-scene" class="transition">
                 <h1 class="center-text"><%= mainTitle %></h1>

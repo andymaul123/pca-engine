@@ -1,0 +1,33 @@
+@import 'palette.scss'; 
+
+@font-face {
+    font-family: 'm5x7';
+    src: url('../fonts/m5x7.ttf');
+}
+
+@font-face {
+    font-family: 'slim-fit';
+    src: url('../fonts/Slim_Fit.ttf');
+}
+
+body {
+    //font-family: 'Pixelify Sans', sans-serif;
+    font-family: 'm5x7', sans-serif;
+    color: $lightOrange_hex;
+}
+
+h1 {
+    font-size: 144px;
+    font-weight: 700;
+}
+
+button {
+    font-size: 32px;
+    color: $black_hex;
+    font-family: 'm5x7';
+}
+
+p {
+    font-size: 32px;
+    color: $lightOrange_hex;
+}

@@ -8,7 +8,7 @@ export class Shrine extends Scene {
         candleLit: true,
       };
       this.basemat = function() {
-        return this.state.candleLit == true ? "image/shrine-final.gif" : "image/shrine-no-candle.png";
+        return this.state.candleLit == true ? "image/shrine-nyx.gif" : "image/shrine-no-candle-nyx.png";
       },
       this.overlayNodes = {
         window: {
@@ -66,6 +66,7 @@ export class Shrine extends Scene {
             triggerScriptType: "PUT",
             actionData: JSON.stringify({candleLit: false}),
             targetId: "#main-scene",
+            swap: "outerHTML",
             textArray: [
                 {
                     speed: 50,

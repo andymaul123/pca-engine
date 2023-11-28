@@ -1,0 +1,25 @@
+@import '../palette.scss'; 
+
+
+#inventory-menu .inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 720px; 
+    background-color: $brown_hex;
+    z-index: 32;
+    display: none;
+}
+#inventory-menu .inner button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 33;
+}
+#inventory-menu * {
+    color: $black_hex;
+}
+#inventory-menu .inner.open {
+    display: block;
+}

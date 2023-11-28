@@ -5,8 +5,6 @@ html {
     margin: 0;
     padding: 0;
     border: 0;
-    font-family: 'Pixelify Sans', sans-serif;
-    color: $lightOrange_hex;
 }
 
 html {
@@ -53,9 +51,4 @@ body {
 .transition.htmx-swapping {
     opacity: 0;
     transition: opacity 1s ease-out;
-}
-
-h1 {
-    font-size: 144px;
-    font-weight: 700;
 }

@@ -1,19 +1,7 @@
-@import 'palette.scss'; 
+@import '../palette.scss'; 
 
-#main-menu .menu-bar {
-    width: 1280px;
-    height: 25px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 30;
-}
-#main-menu .menu-bar button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 31;
-}
+
+
 
 #main-menu .inner {
     position: absolute;

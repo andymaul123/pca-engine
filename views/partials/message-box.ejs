@@ -6,17 +6,17 @@
 
   <% switch(triggerScriptType) {
     case 'GET' : %>
-    <div class="wrapper revealed" hx-get="/<%= triggerScript %>" hx-target="<%= targetId %>" hx-trigger="messageClick">
+    <div class="wrapper revealed" hx-get="/<%= triggerScript %>" hx-target="<%= targetId %>" hx-trigger="messageClick" hx-swap="<%= swap ? swap : 'innerHtml' %>">
       <div class="blinking-arrow">&#129171;</div>
     <% break;
 
     case 'POST' : %>
-    <div class="wrapper revealed" hx-post="/<%= triggerScript %>" hx-target="<%= targetId %>" hx-trigger="messageClick">
+    <div class="wrapper revealed" hx-post="/<%= triggerScript %>" hx-target="<%= targetId %>" hx-trigger="messageClick" hx-swap="<%= swap ? swap : 'innerHtml' %>">
       <div class="blinking-arrow">&#129171;</div>
     <% break;
 
     case 'PUT' : %>
-    <div class="wrapper revealed" hx-put="/<%= triggerScript %>" hx-target="<%= targetId %>" hx-trigger="messageClick" hx-vals="<%= actionData %>" name="message-box">
+    <div class="wrapper revealed" hx-put="/<%= triggerScript %>" hx-target="<%= targetId %>" hx-trigger="messageClick" hx-vals="<%= actionData %>" hx-swap="<%= swap ? swap : 'innerHtml' %>" name="message-box">
       <div class="blinking-arrow">&#129171;</div>
     <% break;
 

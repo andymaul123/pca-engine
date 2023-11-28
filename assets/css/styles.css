@@ -1,10 +1,37 @@
+@font-face {
+  font-family: "m5x7";
+  src: url("../fonts/m5x7.ttf");
+}
+@font-face {
+  font-family: "slim-fit";
+  src: url("../fonts/Slim_Fit.ttf");
+}
+body {
+  font-family: "m5x7", sans-serif;
+  color: #f6d6bd;
+}
+
+h1 {
+  font-size: 144px;
+  font-weight: 700;
+}
+
+button {
+  font-size: 32px;
+  color: #08141e;
+  font-family: "m5x7";
+}
+
+p {
+  font-size: 32px;
+  color: #f6d6bd;
+}
+
 *,
 html {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: "Pixelify Sans", sans-serif;
-  color: #f6d6bd;
 }
 
 html {
@@ -53,11 +80,6 @@ body {
   transition: opacity 1s ease-out;
 }
 
-h1 {
-  font-size: 144px;
-  font-weight: 700;
-}
-
 #decision-box .wrapper {
   width: 1280px;
   height: 720px;
@@ -104,79 +126,6 @@ h1 {
   background-color: hsla(0, 0%, 51%, 0.5);
 }
 
-#text-overlay .wrapper.revealed {
-  display: block;
-}
-
-#text-overlay .wrapper.no-click {
-  pointer-events: none;
-}
-
-#text-overlay .wrapper {
-  z-index: 31;
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #f6d6bd;
-  width: 1280px;
-  height: 720px;
-  display: none;
-}
-
-#text-overlay .text-box {
-  background-color: hsla(207, 58%, 7%, 0.7);
-  width: 100%;
-  max-height: 106px;
-  position: absolute;
-  bottom: 0;
-  border: 1px solid #f6d6bd;
-  box-sizing: border-box;
-}
-
-#text-overlay .text-message {
-  font-size: 24px;
-  color: #f6d6bd;
-  padding: 1em;
-}
-
-#text-overlay .text-message span {
-  opacity: 0;
-}
-
-#text-overlay .text-message span.revealed {
-  opacity: 1;
-}
-
-#text-overlay .text-message span.callout {
-  color: #c3a38a;
-}
-
-#text-overlay .blinking-arrow {
-  animation: blinky 1s infinite;
-  position: absolute;
-  top: 680px;
-  left: 1240px;
-  z-index: 32;
-  color: #f6d6bd;
-  font-size: 48px;
-  display: none;
-}
-
-#text-overlay .blinking-arrow.revealed {
-  display: block;
-}
-
-@keyframes blinky {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 .overlay svg {
   position: absolute;
   top: 0;
@@ -200,20 +149,30 @@ h1 {
   opacity: 1;
 }
 
-#main-menu .menu-bar {
-  width: 1280px;
-  height: 25px;
+#inventory-menu .inner {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 30;
+  width: 1280px;
+  height: 720px;
+  background-color: #997577;
+  z-index: 32;
+  display: none;
 }
 
-#main-menu .menu-bar button {
+#inventory-menu .inner button {
   position: absolute;
-  top: 0;
   right: 0;
-  z-index: 31;
+  top: 0;
+  z-index: 33;
+}
+
+#inventory-menu * {
+  color: #08141e;
+}
+
+#inventory-menu .inner.open {
+  display: block;
 }
 
 #main-menu .inner {
@@ -240,6 +199,97 @@ h1 {
 
 #main-menu .inner.open {
   display: block;
+}
+
+#menu-bar {
+  width: 1280px;
+  height: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#menu-bar button {
+  display: block;
+  z-index: 31;
+  max-width: 200px;
+  margin-left: 25px;
+  padding: 0 10px;
+}
+
+#text-overlay .wrapper.revealed {
+  display: block;
+}
+
+#text-overlay .wrapper.no-click {
+  pointer-events: none;
+}
+
+#text-overlay .wrapper {
+  z-index: 31;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1280px;
+  height: 720px;
+  display: none;
+}
+
+#text-overlay .text-box {
+  background-color: hsla(207, 58%, 7%, 0.9);
+  width: 100%;
+  max-height: 106px;
+  position: absolute;
+  bottom: 0;
+  border: 1px solid #c3a38a;
+  box-sizing: border-box;
+}
+
+#text-overlay .text-message {
+  padding: 24px;
+}
+
+#text-overlay .text-message span {
+  opacity: 0;
+}
+
+#text-overlay .text-message span.revealed {
+  opacity: 1;
+}
+
+#text-overlay .text-message span.callout {
+  color: #816271;
+}
+
+#text-overlay .blinking-arrow {
+  animation: blinky 1s infinite;
+  position: absolute;
+  top: 680px;
+  left: 1240px;
+  z-index: 32;
+  color: #c3a38a;
+  font-size: 48px;
+  display: none;
+}
+
+#text-overlay .blinking-arrow.revealed {
+  display: block;
+}
+
+@keyframes blinky {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

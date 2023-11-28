@@ -6,7 +6,7 @@ export class Stairs extends Scene {
       this.id = "scene-stairs";
       this.state = {};
       this.basemat = function() {
-        return "image/stairs-final.png"
+        return "image/stairs-nyx.png"
       },
       this.overlayNodes = {
         under: {

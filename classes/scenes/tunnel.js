@@ -6,7 +6,7 @@ export class Tunnel extends Scene {
       this.id = "scene-tunnel";
       this.state = {};
       this.basemat = function() {
-        return "image/tunnel-final.png"
+        return "image/tunnel-nyx.png"
       },
       this.overlayNodes = {
         window: {

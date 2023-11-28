@@ -7,6 +7,7 @@ export const stairsRoutes = express.Router();
 const stairsScene = new Stairs();
 
 stairsRoutes.get('/', (req, res) => {
+    console.log(req.app.locals.player.getInventory());
     res.render('partials/scene.ejs', stairsScene);
 });
 

@@ -15,7 +15,9 @@
     <audio id="background-music" loop autoplay src="/audio/Kingdom-in-Despair.mp3"></audio>
     <div class="flex-centered">
         <div id="main">
+            <%- include('./partials/menu-bar'); %>
             <%- include('./partials/main-menu'); %>
+            <%- include('./partials/inventory-menu'); %>
 
             <div id="main-scene" hx-get="/scenes/shrine" hx-swap="outerHTML swap:1s" hx-select="#main-scene" class="transition">
                 <h1 class="center-text"><%= mainTitle %></h1>

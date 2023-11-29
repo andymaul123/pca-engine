@@ -1,25 +1,83 @@
 @import '../palette.scss'; 
-
-
-#inventory-menu .inner {
+@import '../variables.scss';
+#inventory-menu {
+    @include zlayers($z-menu);
     position: absolute;
     top: 0;
     left: 0;
     width: 1280px;
-    height: 720px; 
-    background-color: $brown_hex;
-    z-index: 32;
-    display: none;
+    height: 720px;
+    pointer-events: none;
 }
-#inventory-menu .inner button {
+
+#inventory-menu .inner {
+    @include zlayers($z-menu, 1);
+    width: 100%;
+    height: 100%;
+    pointer-events: all;
+}
+
+#inventory-menu .close {
     position: absolute;
-    right: 0;
     top: 0;
-    z-index: 33;
+    width: 1280px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
-#inventory-menu * {
-    color: $black_hex;
+
+#inventory-menu .close button {
+    @include zlayers($z-menu, 2);
+    height: 32px;
+    width: 32px;
 }
-#inventory-menu .inner.open {
-    display: block;
+
+#inventory-menu .header {
+    position: absolute;
+    top: 0;
+    width: 1280px;
+    height: 160px;
+    background-color: $tan_hex;
 }
+
+#inventory-menu .visuals {
+    position: absolute;
+    top: 160px;
+    left: 0;
+    width: 560px;
+    height: 560px;
+    background-color: $purple_hex;
+}
+
+#inventory-menu .list {
+    position: absolute;
+    top: 160px;
+    left: 560px;
+    width: 720px;
+    height: 560px;
+    background-color: $lightOrange_hex;
+}
+
+// #inventory-menu .inner {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 1280px;
+//     height: 720px; 
+//     background-color: $brown_hex;
+//     z-index: 32;
+//     display: none;
+// }
+// #inventory-menu .inner button {
+//     position: absolute;
+//     right: 0;
+//     top: 0;
+//     z-index: 33;
+// }
+// #inventory-menu * {
+//     color: $black_hex;
+// }
+// #inventory-menu .inner.open {
+//     display: block;
+// }

@@ -1,3 +1,5 @@
+@import 'variables.scss'; 
+
 #decision-box .wrapper {
     width: 1280px;
     height: 720px;
@@ -6,7 +8,7 @@
     left: 0;
     justify-content:center;
     align-items:center;
-    z-index: 30;
+    @include zlayers($z-menu);
     display: flex;
 }
 #decision-box .container {
@@ -40,6 +42,6 @@
 }
 
 #decision-box .wrapper .container .choices .decision-button:hover {
-    cursor: url('/image/cursor.png'), auto;
+    cursor: $default-cursor;
     background-color: hsla(0, 0%, 51%, 0.5);
 }

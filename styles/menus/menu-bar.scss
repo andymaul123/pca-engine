@@ -6,7 +6,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 30;
+    @include zlayers($z-menu);
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -14,7 +14,7 @@
 
 #menu-bar button {
     display: block;
-    z-index: 31;
+    @include zlayers($z-menu, 1);
     max-width: 200px;
     margin-left: 25px;
     padding: 0 10px;

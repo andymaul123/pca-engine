@@ -1,0 +1,18 @@
+// Cursors
+$default-cursor: url('/image/cursors/default.png'), auto;
+$point-cursor: url('/image/cursors/hand-point.png'), auto;
+
+// Z-Index Layers
+// The general idea is to declare general 'layers' in increments of ten.
+// Each component that operates on a layer can be more granular by using
+// zlayers mixin to achieve the right stacking without having to resort
+// to codifying all of those changes
+
+
+$z-base: 10;
+$z-interaction: 20;
+$z-menu: 30;
+
+@mixin zlayers($layer, $add: 0) {
+    z-index: $layer + $add;
+  }

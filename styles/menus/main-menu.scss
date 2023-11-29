@@ -10,14 +10,14 @@
     width: 1280px;
     height: 720px; 
     background-color: $brown_hex;
-    z-index: 32;
+    @include zlayers($z-menu, 2);
     display: none;
 }
 #main-menu .inner button {
     position: absolute;
     right: 0;
     top: 0;
-    z-index: 33;
+    @include zlayers($z-menu, 3);
 }
 #main-menu * {
     color: $black_hex;

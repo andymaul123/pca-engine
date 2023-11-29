@@ -7,7 +7,7 @@
     pointer-events: none;
 }
 #text-overlay .wrapper {
-    z-index: 31;
+    @include zlayers($z-menu, 1);
     position: absolute;
     top: 0;
     left: 0;
@@ -45,7 +45,7 @@
     position: absolute;
     top: 680px;
     left: 1240px;
-    z-index: 32;
+    @include zlayers($z-menu, 2);
     color: $tan_hex;
     font-size: 48px;
     display: none;

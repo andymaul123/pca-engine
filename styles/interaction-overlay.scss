@@ -1,13 +1,16 @@
+@import 'variables.scss'; 
+
 .overlay svg {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 20;
+    @include zlayers($z-interaction);
 }
 .overlay svg polygon {
     fill: transparent;
     opacity: 0;
     display: none;
+    cursor: $point-cursor;
 }
 .overlay svg polygon.revealed {
     display: inline;

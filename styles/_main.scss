@@ -1,4 +1,5 @@
-@import 'palette.scss'; 
+@import 'palette.scss';
+@import 'variables.scss'; 
 
 *,
 html {
@@ -17,7 +18,7 @@ body {
     height: 100%;
     position: relative;
     background-color: $black_hex;
-    cursor: url('/image/cursor.png'), auto;
+    cursor: $default-cursor;
     user-select: none;
 }
 
@@ -34,6 +35,16 @@ body {
     text-align: center;
 }
 
+#outer-container {
+    width: 1600px;
+    height: 900px;
+    background-color: $brown_hex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #main, #main-scene {
     position: relative;
     width: 1280px;
@@ -45,7 +56,7 @@ body {
     top: 0;
     left: 0;
     image-rendering: pixelated;
-    z-index: 10;
+    @include zlayers($z-base);
 }
 
 .transition.htmx-swapping {

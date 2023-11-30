@@ -4,7 +4,29 @@ export class Player {
     }
 
     getInventory() {
-        return this.inventory;
+        // Temporary
+        return {
+            inventory: [
+                {
+                    name: "candle",
+                    image: "image/items/candle.png",
+                    description: "Description of a candle item."
+                },
+                // {
+                //     name: "ring",
+                //     image: "image/items/ring.png",
+                //     description: "Description of a ring item."
+                // },
+                // {
+                //     name: "sword",
+                //     image: "image/items/sword.png",
+                //     description: "Description of a sword item."
+                // },
+            ],
+        }
+
+
+        //return this.inventory;
     }
 
     addInventoryItem(item) {
@@ -12,3 +34,4 @@ export class Player {
         return this.inventory;
     }
   }
+

@@ -1,15 +1,27 @@
 
     <div class="inner">
         <div class="close">
-            <button hx-get="/deleteme" hx-target="#inventory-menu .inner" hx-swap="delete">X</button>
+            <button hx-get="/deleteme" hx-target="#inventory-menu .inner" hx-swap="delete" hx-trigger="click">X</button>
         </div>
         <div class="header">
             <h1>Inventory</h1>
         </div>
-        <div class="visuals">
-    
-        </div>
+        <% for (let index = 0; index < inventory.length; index++) {%>
+            <div class="visuals revealed" data-id="<%= inventory[index].name %>">
+                <div class="item-portrait revealed">
+                    <img src="<%= inventory[index].image %>"/>
+                </div>
+                <div class="item-description">
+                    <p><%= inventory[index].description %></p>
+                </div>
+            </div>
+        <% } %>
+
         <div class="list">
-            <!-- for each item, render a row -->
+            <% for (let index = 0; index < inventory.length; index++) {%>
+                <div class="item-row" data-key="<%= inventory[index].name %>">
+                    <p><%= inventory[index].name %></p>
+                </div>
+            <% } %>
         </div>
     </div>

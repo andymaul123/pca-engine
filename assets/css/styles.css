@@ -201,6 +201,11 @@ body {
   background-color: #c3a38a;
 }
 
+#inventory-menu .header h1 {
+  margin-left: 25px;
+  color: #08141e;
+}
+
 #inventory-menu .visuals {
   position: absolute;
   top: 160px;
@@ -221,7 +226,8 @@ body {
   left: 0;
   width: 560px;
   height: 560px;
-  display: none;
+  display: block;
+  z-index: 32;
 }
 
 #inventory-menu .visuals .item-description {
@@ -231,14 +237,27 @@ body {
   width: 560px;
   height: 560px;
   display: none;
+  z-index: 33;
+  background-color: hsla(207, 58%, 7%, 0.9);
+}
+
+#inventory-menu .inner.show-description .item-description {
+  display: block;
+}
+
+#inventory-menu .visuals .toggle-description {
+  position: absolute;
+  top: 535px;
+  left: 140px;
+  width: 280px;
+  height: 25px;
+  color: #08141e;
+  z-index: 34;
 }
 
 #inventory-menu .visuals .item-description p {
   color: #f6d6bd;
-}
-
-#inventory-menu .visuals .item-portrait.revealed, #inventory-menu .visuals .item-description.revealed {
-  display: block;
+  padding: 25px;
 }
 
 #inventory-menu .list {
@@ -254,12 +273,23 @@ body {
 
 #inventory-menu .list .item-row {
   width: 100%;
-  height: 100px;
-  padding: 0 10px;
+}
+
+#inventory-menu .list .item-row.selected {
+  background-color: #0f2a3f;
+}
+
+#inventory-menu .list .item-row.selected p {
+  color: #f6d6bd;
+}
+
+#inventory-menu .list .item-row:hover {
+  background-color: #c3a38a;
 }
 
 #inventory-menu .list .item-row p {
   color: #08141e;
+  padding: 10px 25px;
 }
 
 #main-menu .inner {

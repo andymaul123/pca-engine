@@ -1,5 +1,6 @@
 @import '../palette.scss'; 
 @import '../variables.scss';
+
 #inventory-menu {
     @include zlayers($z-menu);
     position: absolute;
@@ -41,6 +42,11 @@
     background-color: $tan_hex;
 }
 
+#inventory-menu .header h1 {
+    margin-left: 25px;
+    color: $black_hex;
+}
+
 #inventory-menu .visuals {
     position: absolute;
     top: 160px;
@@ -61,7 +67,8 @@
     left: 0;
     width: 560px;
     height: 560px;
-    display: none;
+    display: block;
+    @include zlayers($z-menu, 2);
 }
 
 #inventory-menu .visuals .item-description {
@@ -71,14 +78,27 @@
     width: 560px;
     height: 560px;
     display: none;
+    @include zlayers($z-menu, 3);
+    background-color: hsla(207, 58%, 7%, 0.9);
+}
+
+#inventory-menu .inner.show-description .item-description {
+    display: block;
+}
+
+#inventory-menu .visuals .toggle-description {
+    position: absolute;
+    top: 535px;
+    left: 140px;
+    width: 280px;
+    height: 25px;
+    color: $black_hex;
+    @include zlayers($z-menu, 4);
 }
 
 #inventory-menu .visuals .item-description p {
     color: $lightOrange_hex;
-}
-
-#inventory-menu .visuals .item-portrait.revealed, #inventory-menu .visuals .item-description.revealed {
-    display: block;
+    padding: 25px;
 }
 
 #inventory-menu .list {
@@ -94,33 +114,21 @@
 
 #inventory-menu .list .item-row {
     width: 100%;
-    height: 100px;
-    padding: 0 10px;
+}
+
+#inventory-menu .list .item-row.selected {
+    background-color: $darkBlue-hex;
+}
+
+#inventory-menu .list .item-row.selected p {
+    color: $lightOrange-hex;
+}
+
+#inventory-menu .list .item-row:hover {
+    background-color: $tan_hex;
 }
 
 #inventory-menu .list .item-row p {
     color: $black_hex;
+    padding: 10px 25px;
 }
-
-// #inventory-menu .inner {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 1280px;
-//     height: 720px; 
-//     background-color: $brown_hex;
-//     z-index: 32;
-//     display: none;
-// }
-// #inventory-menu .inner button {
-//     position: absolute;
-//     right: 0;
-//     top: 0;
-//     z-index: 33;
-// }
-// #inventory-menu * {
-//     color: $black_hex;
-// }
-// #inventory-menu .inner.open {
-//     display: block;
-// }

@@ -5,8 +5,10 @@ export const interactivity = {
         console.log(messageToLog);
     },
     typeWriter: typeWriter,
-    toggleClass: function(className, target) {
-        const targetElement = document.querySelector(target);
-        targetElement.classList.toggle(className);
-    }
+    toggleClass: function(toggleItems) {
+        toggleItems.forEach((element) => {
+            const targetElement = document.querySelector(element.target);
+            targetElement.classList.toggle(element.className);
+        });
+    },
 };

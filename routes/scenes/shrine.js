@@ -7,9 +7,9 @@ const shrineScene = new Shrine();
 
 
 shrineRoutes.get('/', (req, res) => {
-    console.log(req.app.locals.player.getInventory());
-    req.app.locals.player.addInventoryItem('pickle');
-    console.log(req.app.locals.player.getInventory());
+    // console.log(req.app.locals.player.getInventory());
+    // req.app.locals.player.addInventoryItem('pickle');
+    // console.log(req.app.locals.player.getInventory());
     res.render('partials/scene.ejs', shrineScene);
 });
 

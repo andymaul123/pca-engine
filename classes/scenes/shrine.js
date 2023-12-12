@@ -25,8 +25,8 @@ export class Shrine extends Scene {
         shrine: {
             coords: "737,531,765,541,779,542,788,540,809,534,863,521,860,429,864,428,865,425,865,421,868,417,864,410,860,403,858,379,840,360,834,353,829,350,828,348,828,345,830,342,828,338,827,334,824,330,819,326,814,323,808,322,804,321,796,326,796,331,797,341,787,352,783,357,775,357,769,368,765,376,766,380,761,388,765,395,764,403,759,405,749,406,748,411,752,413,760,416,761,421,762,462,749,462,746,464,748,466,748,472,744,477,745,497,737,498,732,502,737,510",
             id: "shrine",
-            triggerScript: "scenes/shrine/messages/shrine",
-            triggerTarget: "text-overlay",
+            triggerScript: "scenes/shrine/decisions/takecandle",
+            triggerTarget: "decision-box",
             triggerScriptType: "GET",
             swap: null,
             show: () => {
@@ -46,35 +46,36 @@ export class Shrine extends Scene {
         },
     };
       this.messages = {
-        shrine: {
-            nextMessage: "scenes/shrine/messages/shrine2",
-            triggerScript: null,
-            triggerScriptType: "GET",
-            actionData: null,
-            targetId: null,
-            textArray: [
-                {
-                    speed: 50,
-                    text: "One of two messages, illustrating the multi-message system.",
-                    classes: [],
-                },
-            ],
-        },
-        shrine2: {
-            nextMessage: null,
-            triggerScript: "scenes/shrine",
-            triggerScriptType: "PUT",
-            actionData: JSON.stringify({candleLit: false}),
-            targetId: "#main-scene",
-            swap: "outerHTML",
-            textArray: [
-                {
-                    speed: 50,
-                    text: "This will terminate into another script, snuffing out the shrine's candle.",
-                    classes: [],
-                },
-            ],
-        }, 
+        // shrine: {
+        //     nextMessage: null,
+        //     triggerScript: "scenes/shrine/decisions/takecandle",
+        //     triggerScriptType: "GET",
+        //     actionData: null,
+        //     targetId: "#decision-box",
+        //     swap: null,
+        //     textArray: [
+        //         {
+        //             speed: 50,
+        //             text: "A strange candle sits on the shrine, flickering weakly.",
+        //             classes: [],
+        //         },
+        //     ],
+        // },
+        // shrine2: {
+        //     nextMessage: null,
+        //     triggerScript: "scenes/shrine/decisions/takecandle",
+        //     triggerScriptType: "GET",
+        //     actionData: null,
+        //     targetId: "#main-scene",
+        //     swap: "outerHTML",
+        //     textArray: [
+        //         {
+        //             speed: 50,
+        //             text: "This will terminate into another script, snuffing out the shrine's candle.",
+        //             classes: [],
+        //         },
+        //     ],
+        // }, 
       };
       this.decisions = {
         exit: {
@@ -93,7 +94,24 @@ export class Shrine extends Scene {
                     swap: null,
                 }
             ]
-        } 
+        },
+        takecandle: {
+            decisionText: "Take the candle?",
+            buttons: [
+                {
+                    buttonText: "Yes",
+                    triggerScript: "scenes/shrine/takecandle",
+                    triggerTarget: "#main-scene",
+                    swap: "outerHTML",
+                },
+                {
+                    buttonText: "No",
+                    triggerScript: null,
+                    triggerTarget: null,
+                    swap: null,
+                }
+            ]
+        },
       };
 
     };
@@ -105,7 +123,9 @@ export class Shrine extends Scene {
         this.state.candleLit = value;
     }
 
-    
+    takeCandle() {
+        this.state.candleLit = false;
+    }
 
 
   }

@@ -1,4 +1,6 @@
 export class GameObject {
-    constructor() {}
-
+    constructor(id, name) {
+      this.id = id;
+      this.name = name;
+    }
   }

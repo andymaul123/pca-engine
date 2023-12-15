@@ -104,9 +104,9 @@ body {
 
 #decision-box .container {
   position: relative;
-  background-color: hsla(0, 100%, 0%, 0.5);
+  background-color: hsla(207, 58%, 7%, 0.9);
   width: 640px;
-  border: 1px white solid;
+  border: 1px #f6d6bd solid;
   padding: 1em;
 }
 
@@ -117,23 +117,23 @@ body {
 
 #decision-box .wrapper .container .title {
   font-size: 48px;
-  color: white;
+  color: #f6d6bd;
   font-family: "Pixelify Sans", sans-serif;
   margin-bottom: 1em;
 }
 
 #decision-box .wrapper .container .choices .decision-button {
   font-size: 24px;
-  color: white;
+  color: #f6d6bd;
   font-family: "Pixelify Sans", sans-serif;
-  background-color: hsla(0, 100%, 0%, 0.5);
-  border: 1px white solid;
+  background-color: hsla(207, 58%, 7%, 0.9);
+  border: 1px #f6d6bd solid;
   margin-bottom: 1em;
 }
 
 #decision-box .wrapper .container .choices .decision-button:hover {
   cursor: url("/image/cursors/default.png"), auto;
-  background-color: hsla(0, 0%, 51%, 0.5);
+  background-color: hsla(254, 13%, 33%, 0.9);
 }
 
 .overlay svg {

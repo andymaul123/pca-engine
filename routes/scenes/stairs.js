@@ -1,17 +1,14 @@
 import express from 'express';
 
-import { Stairs } from '../../classes/scenes/stairs.js';
-
 export const stairsRoutes = express.Router();
 
-const stairsScene = new Stairs();
-
 stairsRoutes.get('/', (req, res) => {
-    // console.log(req.app.locals.player.getInventory());
+    const stairsScene = req.app.locals.dungeonMaster.sceneInstanceMap('stairs');
     res.render('partials/scene.ejs', stairsScene);
 });
 
 stairsRoutes.get('/messages/:id', (req, res) => {
+    const stairsScene = req.app.locals.dungeonMaster.sceneInstanceMap('stairs');
     const id = req.params.id;
     res.render('partials/message-box', stairsScene.messages[id]);
 });

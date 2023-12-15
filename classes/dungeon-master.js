@@ -4,9 +4,8 @@
 // The Dungeon Master handles mixing data and calling individual classes
 
 import { Player } from './player/player.js';
-import { ItemData } from './game-objects/items/data/items.js';
-import { Item } from './game-objects/items/item.js';
 import { SceneFactory } from './scenes/sceneFactory.js';
+import { ItemFactory } from './game-objects/items/itemFactory.js';
 
 export const DungeonMaster = {
 
@@ -68,12 +67,14 @@ export const DungeonMaster = {
      * @returns {any} An Item instance
      **/
     itemInstanceMap: function(id) {
+        console.log(`id is ${id}`);
         if(this.itemInstances.get(id)) {
             console.log("Item found, returning instance");
             return this.itemInstances.get(id);
         } else {
             console.log("No item found, creating new instance");
-            this.itemInstances.set(id, new Item(this.itemData[id]));
+            const item = ItemFactory(id);
+            this.itemInstances.set(id, new item());
             return this.itemInstances.get(id);
         }
     },
@@ -91,14 +92,11 @@ export const DungeonMaster = {
             return this.sceneInstances.get(id);
         } else {
             console.log("No scene found, creating new instance");
-            const Scene = SceneFactory(id);
-            this.sceneInstances.set(id, new Scene());
+            const scene = SceneFactory(id);
+            this.sceneInstances.set(id, new scene());
             return this.sceneInstances.get(id);
         }
     },
-
-
-    itemData: ItemData,
 
 
 

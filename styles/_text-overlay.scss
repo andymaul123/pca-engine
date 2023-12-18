@@ -16,7 +16,7 @@
     display: none;
 }
 #text-overlay .text-box {
-    background-color: hsla(207, 58%, 7%, 0.9);
+    background-color: $transparent_black_bg;
     width: 100%;
     max-height: 106px;
     position: absolute;

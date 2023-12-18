@@ -10,7 +10,7 @@
     hx-get="/<%= triggerScript %>"
     hx-target="#<%= triggerTarget %>"
     hx-swap="<%= swap ? swap : 'innerHtml' %>"
-    class="<%= show() ? 'revealed' : '' %>"
+    class="<%= show ? 'revealed' : '' %>"
     />
     <% break;
 
@@ -23,7 +23,7 @@
     hx-post="/<%= triggerScript %>"
     hx-target="#<%= triggerTarget %>"
     hx-swap="<%= swap ? swap : 'innerHtml' %>"
-    class="<%= show() ? 'revealed' : '' %>"
+    class="<%= show ? 'revealed' : '' %>"
     />
     <% break;
 
@@ -36,7 +36,7 @@
     hx-put="/<%= triggerScript %>"
     hx-target="#<%= triggerTarget %>"
     hx-swap="<%= swap ? swap : 'innerHtml' %>"
-    class="<%= show() ? 'revealed' : '' %>"
+    class="<%= show ? 'revealed' : '' %>"
     />
     <% break;
 

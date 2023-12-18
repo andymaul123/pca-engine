@@ -1,14 +1,10 @@
-import { Scene } from './scene.js';
+export const tunnelModel = {
+    id: "tunnel",
+    basemats: {
+        current: "image/tunnel-nyx.png",
+    },
 
-export class Tunnel extends Scene {
-    constructor() {
-      super();
-      this.id = "scene-tunnel";
-      this.state = {};
-      this.basemat = function() {
-        return "image/tunnel-nyx.png"
-      },
-      this.overlayNodes = {
+    overlayNodes: {
         window: {
             coords: "831, 498, 906, 498, 897, 396, 867, 381, 843, 396",
             id: "window",
@@ -16,12 +12,10 @@ export class Tunnel extends Scene {
             triggerTarget: "text-overlay",
             triggerScriptType: "GET",
             swap: null,
-            show: () => {
-                return true;
-            },
+            show: true,
         },
-     };
-      this.messages = {
+    },
+    messages: {
         window: {
             nextMessage: null,
             triggerScript: null,
@@ -46,12 +40,6 @@ export class Tunnel extends Scene {
                 },
             ],
         },
-      };
-      this.decisions = {};
-
-    };
-
-
-
-
+    },
+    decisions: {},
   }

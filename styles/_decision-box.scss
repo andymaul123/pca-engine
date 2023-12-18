@@ -14,7 +14,7 @@
 }
 #decision-box .container {
     position: relative;
-    background-color: hsla(207, 58%, 7%, 0.9);
+    background-color: $transparent_black_bg;
     width: 640px;
     border: 1px $lightOrange_hex solid;
     padding: 1em;
@@ -36,7 +36,7 @@
     font-size: 24px;
     color: $lightOrange_hex;
     font-family: 'Pixelify Sans', sans-serif;
-    background-color: hsla(207, 58%, 7%, 0.9);
+    background-color: $transparent_black_bg;
     border: 1px $lightOrange_hex solid;
     margin-bottom: 1em;
 

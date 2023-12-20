@@ -23,17 +23,17 @@ export function typeWriter() {
       );
 
     // Begin the recursive character reveal
-    revealOneCharacter3(listOfCharacters);
+    revealOneCharacter(listOfCharacters);
 
     
     // Hoisted functions
-    function revealOneCharacter3(htmlCollection) {
+    function revealOneCharacter(htmlCollection) {
         if(counter <= htmlCollection.length -1) {
             htmlCollection[counter].classList.add('revealed');
             let delay = revealAll ? 0 : htmlCollection[counter].dataset.speed;
             counter ++;
                 setTimeout(function() {
-                    revealOneCharacter3(htmlCollection);
+                    revealOneCharacter(htmlCollection);
                 }, delay);
         } else {
             textOverlayWrapper.classList.add('finished-streaming');

@@ -32,6 +32,7 @@
     @include zlayers($z-menu, 2);
     height: 32px;
     width: 32px;
+    cursor: $default-cursor;
 }
 
 #inventory-menu .header {

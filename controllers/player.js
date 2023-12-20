@@ -31,13 +31,18 @@ export const playerController = {
             itemDescriptionToggle: itemDescriptionToggleArray
         }
     },
-    addItemToInventory: function(id) {
-        player.inventory.push(id);
-    },
     addItemsToInventory: function(ids) {
         ids.forEach((id) => {
             player.inventory.push(id);
-        })
+        });
     },
+    removeItemsFromInventory: function(ids) {
+        ids.forEach((id) => {
+            const indexToRemove = player.inventory.indexOf(id);
+            if(indexToRemove > -1) {
+                player.inventory.splice(indexToRemove, 1);
+            }
+        });
+    }
 
 }

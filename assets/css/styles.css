@@ -116,16 +116,16 @@ body {
 }
 
 #decision-box .wrapper .container .title {
-  font-size: 48px;
+  font-size: 64px;
   color: #f6d6bd;
-  font-family: "Pixelify Sans", sans-serif;
+  font-family: "m5x7", sans-serif;
   margin-bottom: 1em;
 }
 
 #decision-box .wrapper .container .choices .decision-button {
-  font-size: 24px;
+  font-size: 36px;
   color: #f6d6bd;
-  font-family: "Pixelify Sans", sans-serif;
+  font-family: "m5x7", sans-serif;
   background-color: hsla(207, 58%, 7%, 0.9);
   border: 1px #f6d6bd solid;
   margin-bottom: 1em;
@@ -191,6 +191,7 @@ body {
   z-index: 32;
   height: 32px;
   width: 32px;
+  cursor: url("/image/cursors/default.png"), auto;
 }
 
 #inventory-menu .header {
@@ -308,6 +309,7 @@ body {
   right: 0;
   top: 0;
   z-index: 33;
+  cursor: url("/image/cursors/default.png"), auto;
 }
 
 #main-menu * {
@@ -336,6 +338,7 @@ body {
   max-width: 200px;
   margin-left: 25px;
   padding: 0 10px;
+  cursor: url("/image/cursors/default.png"), auto;
 }
 
 #text-overlay .wrapper.revealed {

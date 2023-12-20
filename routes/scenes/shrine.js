@@ -23,7 +23,7 @@ shrineRoutes.get('/decisions/:id', (req, res) => {
 
 shrineRoutes.get('/takecandle', (req, res) => {
     shrineController.takeCandle();
-    playerController.addItemToInventory('candle');
+    playerController.addItemsToInventory(['candle']);
     res.render('partials/scene.ejs', shrineScene);
 });
 

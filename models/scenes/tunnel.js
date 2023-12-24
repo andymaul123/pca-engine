@@ -13,6 +13,7 @@ export const tunnelModel = {
             triggerScriptType: "GET",
             swap: null,
             show: true,
+            soundEffect: null,
         },
     },
     messages: {

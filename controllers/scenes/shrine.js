@@ -8,4 +8,8 @@ export const shrineController = {
         shrine.basemats.current = shrine.basemats.candleOff;
         shrine.overlayNodes.shrine.show = false;
     },
+    breakWindow: function() {
+        shrine.windowBroken = true;
+        shrine.basemats.current = shrine.basemats.windowBroken;
+    },
 }

@@ -7,6 +7,7 @@ const port = 3000;
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+//app.disable('view cache');
 
 // Temporary
 playerController.addItemsToInventory(['sword', 'ring']);

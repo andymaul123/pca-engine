@@ -1,5 +1,5 @@
 <div id="menu-bar">
-    <button hx-on:click="window.gameInteractivity.toggleClass([{className: 'open', target: '#main-menu .inner'}])">Menu</button>
+    <button hx-on:click="window.interactivity.toggleClass([{className: 'open', target: '#main-menu .inner'}])">Menu</button>
     <button hx-get="/player/inventory" hx-trigger="click" hx-target="#inventory-menu" hx-swap="innerHTML">Inventory</button>
 </div>
 

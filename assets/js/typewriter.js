@@ -12,6 +12,9 @@ export function typeWriter() {
     const textOverlay = document.querySelector('#text-overlay');
     const textOverlayWrapper = textOverlay.querySelector('.wrapper');
     const dataElement = textOverlay.querySelector('.text-message');
+    if(!dataElement) {
+        return;
+    }
     const listOfCharacters = dataElement.children;
     let counter = 0;
     let revealAll = false;

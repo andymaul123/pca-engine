@@ -11,6 +11,7 @@
     hx-target="#<%= triggerTarget %>"
     hx-swap="<%= swap ? swap : 'innerHtml' %>"
     class="<%= show ? 'revealed' : '' %>"
+    data-sound="<%= soundEffect ? JSON.stringify(soundEffect) : 'null' %>"
     />
     <% break;
 

@@ -16,13 +16,13 @@
 
                     <p><%= inventory[index].descriptionFlavor %></p>
                 </div>
-                <button class="toggle-description" hx-on="click: window.gameInteractivity.toggleClass(<%= JSON.stringify(itemDescriptionToggle) %>) ">Toggle Description</button>
+                <button class="toggle-description" hx-on="click: window.interactivity.toggleClass(<%= JSON.stringify(itemDescriptionToggle) %>) ">Toggle Description</button>
             </div>
         <% } %>
 
         <div class="list">
             <% for (let index = 0; index < inventory.length; index++) {%>
-                <div class="item-row <%= index === 0 ? 'selected' : '' %>" data-key="<%= inventory[index].id %>" hx-on="click: window.gameInteractivity.toggleClass(<%= JSON.stringify(itemRowToggle[index]) %>)">
+                <div class="item-row <%= index === 0 ? 'selected' : '' %>" data-key="<%= inventory[index].id %>" hx-on="click: window.interactivity.toggleClass(<%= JSON.stringify(itemRowToggle[index]) %>)">
                     <p><%= inventory[index].name %></p>
                 </div>
             <% } %>

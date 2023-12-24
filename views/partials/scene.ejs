@@ -1,6 +1,7 @@
 <!-- Primary Scene -->
+<div id="main-events" hx-on="htmx:load: window.interactivity.soundEffectManager()" hx-swap-oob="true"></div>
 <div id="main-scene" class="transition">
-  <div id="text-overlay" hx-on="htmx:load: window.gameInteractivity.typeWriter()"></div>
+  <div id="text-overlay" hx-on="htmx:load: window.interactivity.typeWriter()"></div>
   <div id="decision-box"></div>
   <div class="overlay">
     <svg width="1280" height="720">

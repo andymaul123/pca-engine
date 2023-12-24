@@ -1,4 +1,5 @@
 import { typeWriter } from "./typewriter.js";
+import { soundEffectHandler } from "./sound-effects.js";
 
 export const interactivity = {
     logMessage: function(messageToLog) {
@@ -11,4 +12,5 @@ export const interactivity = {
             targetElement.classList.toggle(element.className);
         });
     },
+    soundEffectManager: soundEffectHandler,
 };

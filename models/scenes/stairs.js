@@ -13,6 +13,7 @@ export const stairsModel = {
             triggerScriptType: "GET",
             swap: null,
             show: true,
+            soundEffect: null,
         },
     },
     messages: {

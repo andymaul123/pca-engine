@@ -27,3 +27,8 @@ shrineRoutes.get('/takecandle', (req, res) => {
     res.render('partials/scene.ejs', shrineScene);
 });
 
+shrineRoutes.get('/breakwindow', (req, res) => {
+    shrineController.breakWindow();
+    res.render('partials/scene.ejs', shrineScene);
+});
+

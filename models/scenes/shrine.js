@@ -17,11 +17,7 @@ export const shrineModel = {
             triggerScriptType: "GET",
             swap: null,
             show: true,
-            soundEffect: {
-                path: "audio/glass-shatter.wav",
-                element: "#window",
-                playOnce: true,
-            }
+            soundEffect: null,
         },
         shrine: {
             coords: "737,531,765,541,779,542,788,540,809,534,863,521,860,429,864,428,865,425,865,421,868,417,864,410,860,403,858,379,840,360,834,353,829,350,828,348,828,345,830,342,828,338,827,334,824,330,819,326,814,323,808,322,804,321,796,326,796,331,797,341,787,352,783,357,775,357,769,368,765,376,766,380,761,388,765,395,764,403,759,405,749,406,748,411,752,413,760,416,761,421,762,462,749,462,746,464,748,466,748,472,744,477,745,497,737,498,732,502,737,510",
@@ -59,6 +55,7 @@ export const shrineModel = {
                     classes: [],
                 },
             ],
+            soundEffect: null,
         },
         window: {
             nextMessage: null,
@@ -74,6 +71,7 @@ export const shrineModel = {
                     classes: [],
                 },
             ],
+            soundEffect: null,
         },
     // shrine2: {
     //     nextMessage: null,
@@ -100,12 +98,14 @@ export const shrineModel = {
                     triggerScript: "scenes/tunnel",
                     triggerTarget: "#main-scene",
                     swap: "outerHTML swap:1s",
+                    soundEffect: null,
                 },
                 {
                     buttonText: "No",
                     triggerScript: null,
                     triggerTarget: null,
                     swap: null,
+                    soundEffect: null,
                 }
             ]
         },
@@ -117,12 +117,19 @@ export const shrineModel = {
                     triggerScript: "scenes/shrine/takecandle",
                     triggerTarget: "#main-scene",
                     swap: "outerHTML",
+                    soundEffect: {
+                        path: "audio/glass-shatter.wav",
+                        element: "#window",
+                        playOnce: true,
+                        waitForFinish: false,
+                    }
                 },
                 {
                     buttonText: "No",
                     triggerScript: null,
                     triggerTarget: null,
                     swap: null,
+                    soundEffect: null,
                 }
             ]
         },
@@ -134,12 +141,19 @@ export const shrineModel = {
                     triggerScript: "scenes/shrine/breakwindow",
                     triggerTarget: "#main-scene",
                     swap: "outerHTML",
+                    soundEffect: {
+                        path: "audio/glass-shatter.wav",
+                        element: "#window",
+                        playOnce: true,
+                        waitForFinish: false,
+                    }
                 },
                 {
                     buttonText: "No",
                     triggerScript: null,
                     triggerTarget: null,
                     swap: null,
+                    soundEffect: null,
                 }
             ]
         },

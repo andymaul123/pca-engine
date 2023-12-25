@@ -1,7 +1,12 @@
 
     <div class="inner">
         <div class="close">
-            <button hx-get="/deleteme" hx-target="#inventory-menu .inner" hx-swap="delete" hx-trigger="click">X</button>
+            <button 
+            hx-get="/deleteme" 
+            hx-target="#inventory-menu .inner" 
+            hx-swap="delete" 
+            hx-trigger="triggerClick"
+            hx-on:click="window.interactivity.clickBus(event)">X</button>
         </div>
         <div class="header">
             <h1>Inventory</h1>

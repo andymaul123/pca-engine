@@ -1,45 +1,13 @@
-
-
-<% switch(triggerScriptType) {
-    case 'GET' : %>
-    <polygon
-    width="1280"
-    height="720"
-    points="<%= coords %>"
-    filter="url(#f1)"
-    hx-get="/<%= triggerScript %>"
-    hx-target="#<%= triggerTarget %>"
-    hx-swap="<%= swap ? swap : 'innerHtml' %>"
-    class="<%= show ? 'revealed' : '' %>"
-    data-sound="<%= soundEffect ? JSON.stringify(soundEffect) : 'null' %>"
-    />
-    <% break;
-
-    case 'POST' : %>
-    <polygon
-    width="1280"
-    height="720"
-    points="<%= coords %>"
-    filter="url(#f1)"
-    hx-post="/<%= triggerScript %>"
-    hx-target="#<%= triggerTarget %>"
-    hx-swap="<%= swap ? swap : 'innerHtml' %>"
-    class="<%= show ? 'revealed' : '' %>"
-    />
-    <% break;
-
-    case 'PUT' : %>
-    <polygon
-    width="1280"
-    height="720"
-    points="<%= coords %>"
-    filter="url(#f1)"
-    hx-put="/<%= triggerScript %>"
-    hx-target="#<%= triggerTarget %>"
-    hx-swap="<%= swap ? swap : 'innerHtml' %>"
-    class="<%= show ? 'revealed' : '' %>"
-    />
-    <% break;
-
-    }
-    %>
+<polygon
+width="1280"
+height="720"
+points="<%= coords %>"
+filter="url(#f1)"
+hx-get="/<%= triggerScript %>"
+hx-target="#<%= triggerTarget %>"
+hx-swap="<%= swap ? swap : 'innerHtml' %>"
+class="<%= show ? 'revealed' : '' %>"
+data-sound="<%= soundEffect ? JSON.stringify(soundEffect) : 'null' %>"
+hx-trigger="triggerClick"
+hx-on:click="window.interactivity.clickBus(event)"
+/>

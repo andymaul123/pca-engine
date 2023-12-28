@@ -3,7 +3,7 @@ export const tunnelModel = {
     basemats: {
         current: "image/tunnel-nyx.png",
     },
-
+    fragments: null,
     overlayNodes: {
         window: {
             coords: "831, 498, 906, 498, 897, 396, 867, 381, 843, 396",

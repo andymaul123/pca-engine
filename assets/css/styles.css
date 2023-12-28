@@ -77,14 +77,6 @@ body {
   height: 720px;
 }
 
-.base-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  image-rendering: pixelated;
-  z-index: 10;
-}
-
 .transition.htmx-swapping {
   opacity: 0;
   transition: opacity 1s ease-out;
@@ -410,6 +402,35 @@ body {
   100% {
     opacity: 1;
   }
+}
+.base-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  image-rendering: pixelated;
+  z-index: 10;
+}
+
+#fragments {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1280px;
+  height: 720px;
+  z-index: 11;
+}
+
+#fragments img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1280px;
+  height: 720px;
+  display: none;
+}
+
+#fragments img.revealed {
+  display: block;
 }
 
 /*# sourceMappingURL=styles.css.map */

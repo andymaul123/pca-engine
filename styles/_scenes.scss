@@ -1,0 +1,29 @@
+.base-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    image-rendering: pixelated;
+    @include zlayers($z-base);
+}
+
+#fragments {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1280px;
+    height: 720px;
+    @include zlayers($z-base, 1);
+}
+
+#fragments img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1280px;
+    height: 720px;
+    display: none;   
+}
+
+#fragments img.revealed {
+    display: block;
+}

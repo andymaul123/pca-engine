@@ -3,10 +3,20 @@ export const shrineModel = {
     candleOn: true,
     windowBroken: false,
     basemats: {
-        current: "image/shrine-nyx.gif",
+        current: "image/shrine-no-candle-nyx.png",
         candleOn: "image/shrine-nyx.gif",
         candleOff: "image/shrine-no-candle-nyx.png",
         windowBroken: "image/shrine-window-broken-nyx.png"
+    },
+    fragments: {
+        window: {
+            path: "image/shrine-window-broken-fragment-nyx.png",
+            show: false,
+        },
+        candle: {
+            path: "image/shrine-candlelit-fragment-nyx.gif",
+            show: true,
+        }
     },
     overlayNodes: {
         window: {
@@ -17,6 +27,16 @@ export const shrineModel = {
             triggerScriptType: "GET",
             swap: null,
             show: true,
+            soundEffect: null,
+        },
+        windowBroken: {
+            coords: "153, 357, 183, 354, 210, 354, 237, 348, 264, 345, 282, 336, 282, 300, 282, 258, 279, 225, 267, 192, 258, 159, 243, 114, 228, 84, 204, 108, 192, 132, 180, 159, 159, 180, 153, 207, 138, 234, 144, 258, 144, 285, 144, 312",
+            id: "windowBroken",
+            triggerScript: "scenes/shrine/messages/brokenwindow",
+            triggerTarget: "text-overlay",
+            triggerScriptType: "GET",
+            swap: null,
+            show: false,
             soundEffect: null,
         },
         shrine: {
@@ -73,6 +93,22 @@ export const shrineModel = {
             ],
             soundEffect: null,
         },
+        brokenwindow: {
+            nextMessage: null,
+            triggerScript: "scenes/shrine/decisions/traveltunnel",
+            triggerScriptType: "GET",
+            actionData: null,
+            targetId: "#decision-box",
+            swap: null,
+            textArray: [
+                {
+                    speed: 50,
+                    text: "Beyond the broken shards is a tunnel. If you punch out the rest of the glass and bend a bar, you could squeeze through.",
+                    classes: [],
+                },
+            ],
+            soundEffect: null,
+        },
     // shrine2: {
     //     nextMessage: null,
     //     triggerScript: "scenes/shrine/decisions/takecandle",
@@ -117,12 +153,7 @@ export const shrineModel = {
                     triggerScript: "scenes/shrine/takecandle",
                     triggerTarget: "#main-scene",
                     swap: "outerHTML",
-                    soundEffect: {
-                        path: "audio/glass-shatter.wav",
-                        element: "#window",
-                        playOnce: true,
-                        waitForFinish: false,
-                    }
+                    soundEffect: null,
                 },
                 {
                     buttonText: "No",
@@ -147,6 +178,25 @@ export const shrineModel = {
                         playOnce: true,
                         waitForFinish: false,
                     }
+                },
+                {
+                    buttonText: "No",
+                    triggerScript: null,
+                    triggerTarget: null,
+                    swap: null,
+                    soundEffect: null,
+                }
+            ]
+        },
+        traveltunnel: {
+            decisionText: "Move to tunnel?",
+            buttons: [
+                {
+                    buttonText: "Yes",
+                    triggerScript: "scenes/tunnel",
+                    triggerTarget: "#main-scene",
+                    swap: "outerHTML swap:1s",
+                    soundEffect: null,
                 },
                 {
                     buttonText: "No",

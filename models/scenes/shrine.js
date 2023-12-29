@@ -75,6 +75,7 @@ export const shrineModel = {
                     classes: [],
                 },
             ],
+            textString: null,
             soundEffect: null,
         },
         window: {
@@ -91,6 +92,7 @@ export const shrineModel = {
                     classes: [],
                 },
             ],
+            textString: null,
             soundEffect: null,
         },
         brokenwindow: {
@@ -107,6 +109,7 @@ export const shrineModel = {
                     classes: [],
                 },
             ],
+            textString: null,
             soundEffect: null,
         },
     // shrine2: {

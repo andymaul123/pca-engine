@@ -13,6 +13,7 @@ shrineRoutes.get('/', (req, res) => {
 
 shrineRoutes.get('/messages/:id', (req, res) => {
     const id = req.params.id;
+    shrineController.transformText();
     res.render('partials/message-box', shrineScene.messages[id]);
 });
 

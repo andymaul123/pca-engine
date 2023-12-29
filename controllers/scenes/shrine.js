@@ -1,4 +1,5 @@
 import { dataStore } from "../../models/index.js";
+import { transformTextToHTML } from "../../utils/transformTextToHtml.js";
 
 const shrine = dataStore.scenes.shrine;
 
@@ -13,5 +14,10 @@ export const shrineController = {
         shrine.fragments.window.show = true;
         shrine.overlayNodes.window.show = false;
         shrine.overlayNodes.windowBroken.show = true;
+    },
+    transformText: function() {
+        for (const key in shrine.messages) {
+            shrine.messages[key].textString = transformTextToHTML(shrine.messages[key].textArray);
+        };
     },
 }

@@ -9,7 +9,7 @@
     <div class="blinking-arrow">&#129171;</div>
 <% } %>
   <div class="text-box">
-    <p class="text-message"><% var space = "&nbsp;"%><% for (var i = 0; i < textArray.length; i++) {%><% var characters = textArray[i].text.split('') %><% for (var j = 0; j < characters.length; j++) {%><span class="<%= textArray[i].classes %>" data-speed="<%= characters[j] == ' ' ? 0 : textArray[i].speed %>"><%- characters[j] == " " ? space : characters[j] %></span><% } %><% } %></p>
+    <p class="text-message"><%- textString %></p>
   </div>
 </div>
 

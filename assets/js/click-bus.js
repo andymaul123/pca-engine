@@ -1,7 +1,7 @@
 /**
  * Intercepts click events in the game, performs additional side effects, and emits
  * a 'triggerClick' event back to the referring element to complete the loop
- * @param {object} event Event object
+ * @param {Event} event
  * @returns {void} 
  */
 

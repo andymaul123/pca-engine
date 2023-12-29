@@ -29,15 +29,15 @@
     padding: 24px;
 }
 
-#text-overlay .text-message span {
+#text-overlay .text-message .character {
     opacity: 0;
 }
 
-#text-overlay .text-message span.revealed {
+#text-overlay .text-message .character.revealed {
     opacity: 1;
 }
 
-#text-overlay .text-message span.callout {
+#text-overlay .text-message .character.callout {
     color: $purple_hex;
 }
 

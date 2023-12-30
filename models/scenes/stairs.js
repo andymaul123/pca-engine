@@ -1,3 +1,5 @@
+import { roomIsDark } from "./common.js";
+
 export const stairsModel = {
     id: "stairs",
     isDark: true,
@@ -43,6 +45,24 @@ export const stairsModel = {
                 },
             ],
         },
+        start: {
+            nextMessage: null,
+            triggerScript: null,
+            triggerScriptType: null,
+            actionData: null,
+            targetId: null,
+            swap: null,
+            textArray: [
+                {
+                    speed: 50,
+                    text: "Stairs Test startup message",
+                    classes: [],
+                },
+            ],
+            textString: null,
+            soundEffect: null,
+        },
+        roomIsDark: roomIsDark,
     },
     decisions: {},
   }

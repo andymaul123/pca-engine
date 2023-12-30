@@ -6,7 +6,6 @@
  */
 
 export async function clickBus(event) {
-    console.log("click bus event received");
     const referringElement = event?.target;
     const soundEffect = event?.srcElement?.dataset?.sound ? JSON.parse(event?.srcElement?.dataset?.sound) : null;
     const streamMessage = event?.srcElement?.dataset?.streammessage ? JSON.parse(event?.srcElement?.dataset?.streammessage) : null;
@@ -27,7 +26,6 @@ export async function clickBus(event) {
     }
 
     if(referringElement) {
-        console.log("click bus dispatching triggerClick");
         htmx.trigger(referringElement, "triggerClick");
     }
     

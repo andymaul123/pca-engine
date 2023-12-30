@@ -1,9 +1,12 @@
+import { roomIsDark } from "./common.js";
+
 export const shrineModel = {
     id: "shrine",
     candleOn: true,
     windowBroken: false,
     isDark: false,
     isCurrentlyDark: false,
+    startmessage: "scenes/shrine/startmessage",
     basemats: {
         current: "image/shrine-no-candle-nyx.png",
     },
@@ -111,6 +114,8 @@ export const shrineModel = {
             textString: null,
             soundEffect: null,
         },
+        start: null,
+        roomIsDark: roomIsDark,
     },
     decisions: {
         exit: {
@@ -120,7 +125,7 @@ export const shrineModel = {
                     buttonText: "Yes",
                     triggerScript: "scenes/stairs",
                     triggerTarget: "#main-scene",
-                    swap: "outerHTML swap:1s",
+                    swap: "outerHTML",
                     soundEffect: null,
                 },
                 {

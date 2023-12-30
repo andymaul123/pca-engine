@@ -1,6 +1,7 @@
 <!-- Primary Scene -->
 <div id="main-events" hx-swap-oob="true"></div>
 <div id="main-scene" class="transition">
+  <div id="start-up" hx-trigger="load" hx-get="/scenes/<%= id %>/startmessage" hx-target="#text-overlay"></div>
   <div id="text-overlay" hx-on="htmx:load: window.interactivity.typeWriter()"></div>
   <div id="decision-box"></div>
   <div id="is-dark" class="<%= isCurrentlyDark ? 'revealed' : '' %>"></div>

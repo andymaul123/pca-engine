@@ -1,7 +1,15 @@
+/** 
+* @typedef SoundEffect 
+* @prop {string} path  
+* @prop {string} element 
+* @prop {boolean} playOnce 
+* @prop {boolean} waitForFinish 
+*/
+
 /**
- * Takes a soundObj and plays an audio file
- * @param {object} sound Sound object
- * @returns {Promise} Promise response
+ * Takes a SoundEffect and plays an audio file
+ * @param {SoundEffect} sound
+ * @returns {Promise}
  */
 
 export function playSound(sound) {
@@ -20,7 +28,7 @@ export function playSound(sound) {
  * Plays an audio file and returns a promise that resolves when the audio *finishes*
  * This is different than normal audio.play() as they resolve a promise when the audio starts playing
  * @param {Audio} audio 
- * @returns {Promise} Promise response
+ * @returns {Promise}
  */
 
 function playAudio(audio){

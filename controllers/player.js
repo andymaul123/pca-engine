@@ -1,11 +1,30 @@
+import "../types/types.js";
+
+/**
+ * Returns player inventory array
+ * @param {DataStore} dataStore
+ * @returns {Array} 
+ */
 export function getInventory(dataStore) {
     return dataStore.player.inventory;
 }
 
+/**
+ * Checks inventory array for a matching item id
+ * @param {DataStore} dataStore
+ * @param {string} id
+ * @returns {boolean} 
+ */
 export function isItemInInventory(dataStore, id) {
     return dataStore.player.inventory.indexOf(id) > -1;
 }
 
+/**
+ * More advanced version of getInventory that also supplies
+ * a InventoryGUI object used to render the inventory menu screen
+ * @param {DataStore} dataStore
+ * @returns {InventoryGUI} 
+ */
 export function getInventoryWithGui(dataStore) {
     const inventoryIds = dataStore.player.inventory;
     const inventoryObjects = [];
@@ -32,12 +51,24 @@ export function getInventoryWithGui(dataStore) {
     }
 }
 
+/**
+ * Adds items to player's inventory array
+ * @param {DataStore} dataStore
+ * @param {Array<string>} ids
+ * @returns {void} 
+ */
 export function addItemsToInventory(dataStore, ids) {
     ids.forEach((id) => {
         dataStore.player.inventory.push(id);
     }); 
 }
 
+/**
+ * Removes items from player's inventory array
+ * @param {DataStore} dataStore
+ * @param {Array<string>} ids
+ * @returns {void} 
+ */
 export function removeItemsFromInventory(dataStore, ids) {
     ids.forEach((id) => {
         const indexToRemove = dataStore.player.inventory.indexOf(id);

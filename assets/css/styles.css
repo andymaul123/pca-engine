@@ -90,7 +90,7 @@ body {
   left: 0;
   justify-content: center;
   align-items: center;
-  z-index: 30;
+  z-index: 40;
   display: flex;
 }
 
@@ -153,7 +153,7 @@ body {
 }
 
 #inventory-menu {
-  z-index: 30;
+  z-index: 40;
   position: absolute;
   top: 0;
   left: 0;
@@ -163,7 +163,7 @@ body {
 }
 
 #inventory-menu .inner {
-  z-index: 31;
+  z-index: 41;
   width: 100%;
   height: 100%;
   pointer-events: all;
@@ -180,7 +180,7 @@ body {
 }
 
 #inventory-menu .close button {
-  z-index: 32;
+  z-index: 42;
   height: 32px;
   width: 32px;
   cursor: url("/image/cursors/default.png"), auto;
@@ -220,7 +220,7 @@ body {
   width: 560px;
   height: 560px;
   display: block;
-  z-index: 32;
+  z-index: 42;
 }
 
 #inventory-menu .visuals .item-description {
@@ -230,7 +230,7 @@ body {
   width: 560px;
   height: 560px;
   display: none;
-  z-index: 33;
+  z-index: 43;
   background-color: hsla(207, 58%, 7%, 0.9);
 }
 
@@ -245,7 +245,7 @@ body {
   width: 280px;
   height: 25px;
   color: #08141e;
-  z-index: 34;
+  z-index: 44;
 }
 
 #inventory-menu .visuals .item-description p {
@@ -292,7 +292,7 @@ body {
   width: 1280px;
   height: 720px;
   background-color: #997577;
-  z-index: 32;
+  z-index: 42;
   display: none;
 }
 
@@ -300,7 +300,7 @@ body {
   position: absolute;
   right: 0;
   top: 0;
-  z-index: 33;
+  z-index: 43;
   cursor: url("/image/cursors/default.png"), auto;
 }
 
@@ -318,7 +318,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 30;
+  z-index: 40;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -326,7 +326,7 @@ body {
 
 #menu-bar button {
   display: block;
-  z-index: 31;
+  z-index: 41;
   max-width: 200px;
   margin-left: 25px;
   padding: 0 10px;
@@ -342,7 +342,7 @@ body {
 }
 
 #text-overlay .wrapper {
-  z-index: 31;
+  z-index: 41;
   position: absolute;
   top: 0;
   left: 0;
@@ -382,7 +382,7 @@ body {
   position: absolute;
   top: 680px;
   left: 1240px;
-  z-index: 32;
+  z-index: 42;
   color: #c3a38a;
   font-size: 48px;
   display: none;
@@ -430,6 +430,21 @@ body {
 }
 
 #fragments img.revealed {
+  display: block;
+}
+
+#is-dark {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1280px;
+  height: 720px;
+  display: none;
+  background-color: hsla(207, 58%, 7%, 0.9);
+  z-index: 30;
+}
+
+#is-dark.revealed {
   display: block;
 }
 

@@ -2,11 +2,10 @@ export const shrineModel = {
     id: "shrine",
     candleOn: true,
     windowBroken: false,
+    isDark: false,
+    isCurrentlyDark: false,
     basemats: {
         current: "image/shrine-no-candle-nyx.png",
-        candleOn: "image/shrine-nyx.gif",
-        candleOff: "image/shrine-no-candle-nyx.png",
-        windowBroken: "image/shrine-window-broken-nyx.png"
     },
     fragments: {
         window: {
@@ -112,21 +111,6 @@ export const shrineModel = {
             textString: null,
             soundEffect: null,
         },
-    // shrine2: {
-    //     nextMessage: null,
-    //     triggerScript: "scenes/shrine/decisions/takecandle",
-    //     triggerScriptType: "GET",
-    //     actionData: null,
-    //     targetId: "#main-scene",
-    //     swap: "outerHTML",
-    //     textArray: [
-    //         {
-    //             speed: 50,
-    //             text: "This will terminate into another script, snuffing out the shrine's candle.",
-    //             classes: [],
-    //         },
-    //     ],
-    // }, 
     },
     decisions: {
         exit: {
@@ -134,7 +118,7 @@ export const shrineModel = {
             buttons: [
                 {
                     buttonText: "Yes",
-                    triggerScript: "scenes/tunnel",
+                    triggerScript: "scenes/stairs",
                     triggerTarget: "#main-scene",
                     swap: "outerHTML swap:1s",
                     soundEffect: null,

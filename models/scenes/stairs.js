@@ -1,5 +1,7 @@
 export const stairsModel = {
     id: "stairs",
+    isDark: true,
+    isCurrentlyDark: true,
     basemats: {
         current: "image/stairs-nyx.png",
     },

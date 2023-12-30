@@ -1,6 +1,7 @@
 import express from 'express';
 import { allRoutes } from './routes/index.js';
-import { playerController } from './controllers/player.js';
+import { addItemsToInventory } from './controllers/player.js';
+import { dataStore } from './models/index.js';
 
 const app = express();
 const port = 3000;
@@ -10,7 +11,7 @@ app.use(express.json());
 //app.disable('view cache');
 
 // Temporary
-playerController.addItemsToInventory(['sword', 'ring']);
+addItemsToInventory(dataStore, ['sword', 'ring']);
 
 app.use('/', allRoutes);
 

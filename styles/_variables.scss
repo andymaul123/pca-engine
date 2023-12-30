@@ -11,7 +11,8 @@ $point-cursor: url('/image/cursors/hand-point.png'), auto;
 
 $z-base: 10;
 $z-interaction: 20;
-$z-menu: 30;
+$z-darkness: 30;
+$z-menu: 40;
 
 @mixin zlayers($layer, $add: 0) {
     z-index: $layer + $add;

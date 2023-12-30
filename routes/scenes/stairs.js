@@ -1,16 +1,17 @@
 import express from 'express';
 import { dataStore } from '../../models/index.js';
-import { stairsController } from '../../controllers/scenes/stairs.js';
+import { transformText, roomDarkness } from '../../controllers/scenes/common.js';
 
-const stairsScene = dataStore.scenes.stairs;
+
 export const stairsRoutes = express.Router();
 
 stairsRoutes.get('/', (req, res) => {
-    res.render('partials/scene.ejs', stairsScene);
+    roomDarkness(dataStore, "stairs");
+    res.render('partials/scene.ejs', dataStore.scenes.stairs);
 });
 
 stairsRoutes.get('/messages/:id', (req, res) => {
     const id = req.params.id;
-    stairsController.transformText();
-    res.render('partials/message-box', stairsScene.messages[id]);
+    transformText(dataStore, "stairs");
+    res.render('partials/message-box', dataStore.scenes.stairs.messages[id]);
 });

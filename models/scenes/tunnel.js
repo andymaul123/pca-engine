@@ -1,5 +1,7 @@
 export const tunnelModel = {
     id: "tunnel",
+    isDark: true,
+    isCurrentlyDark: true,
     basemats: {
         current: "image/tunnel-nyx.png",
     },

@@ -1,35 +1,35 @@
 import express from 'express';
-import { shrineController } from '../../controllers/scenes/shrine.js';
-import { playerController } from '../../controllers/player.js';
+import { takeCandle, breakWindow } from '../../controllers/scenes/shrine.js';
+import { transformText, roomDarkness } from '../../controllers/scenes/common.js';
+import { addItemsToInventory } from '../../controllers/player.js';
 import { dataStore } from '../../models/index.js';
-
-const shrineScene = dataStore.scenes.shrine;
 
 export const shrineRoutes = express.Router();
 
 shrineRoutes.get('/', (req, res) => {
-    res.render('partials/scene.ejs', shrineScene);
+    roomDarkness(dataStore, "scene");
+    res.render('partials/scene.ejs', dataStore.scenes.shrine);
 });
 
 shrineRoutes.get('/messages/:id', (req, res) => {
     const id = req.params.id;
-    shrineController.transformText();
-    res.render('partials/message-box', shrineScene.messages[id]);
+    transformText(dataStore, "shrine");
+    res.render('partials/message-box', dataStore.scenes.shrine.messages[id]);
 });
 
 shrineRoutes.get('/decisions/:id', (req, res) => {
     const id = req.params.id;
-    res.render('partials/decision-box', shrineScene.decisions[id]);
+    res.render('partials/decision-box', dataStore.scenes.shrine.decisions[id]);
 });
 
 shrineRoutes.get('/takecandle', (req, res) => {
-    shrineController.takeCandle();
-    playerController.addItemsToInventory(['candle']);
-    res.render('partials/scene.ejs', shrineScene);
+    takeCandle(dataStore);
+    addItemsToInventory(dataStore, ['candle']);
+    res.render('partials/scene.ejs', dataStore.scenes.shrine);
 });
 
 shrineRoutes.get('/breakwindow', (req, res) => {
-    shrineController.breakWindow();
-    res.render('partials/scene.ejs', shrineScene);
+    breakWindow(dataStore);
+    res.render('partials/scene.ejs', dataStore.scenes.shrine);
 });
 

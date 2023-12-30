@@ -1,23 +1,13 @@
-import { dataStore } from "../../models/index.js";
-import { transformTextToHTML } from "../../utils/transformTextToHtml.js";
 
-const shrine = dataStore.scenes.shrine;
+export function takeCandle(dataStore) {
+    dataStore.scenes.shrine.candleOn = false;
+    dataStore.scenes.shrine.fragments.candle.show = false;
+    dataStore.scenes.shrine.overlayNodes.shrine.show = false;
+}
 
-export const shrineController = {
-    takeCandle: function() {
-        shrine.candleOn = false;
-        shrine.fragments.candle.show = false;
-        shrine.overlayNodes.shrine.show = false;
-    },
-    breakWindow: function() {
-        shrine.windowBroken = true;
-        shrine.fragments.window.show = true;
-        shrine.overlayNodes.window.show = false;
-        shrine.overlayNodes.windowBroken.show = true;
-    },
-    transformText: function() {
-        for (const key in shrine.messages) {
-            shrine.messages[key].textString = transformTextToHTML(shrine.messages[key].textArray);
-        };
-    },
+export function breakWindow(dataStore) {
+    dataStore.scenes.shrine.windowBroken = true;
+    dataStore.scenes.shrine.fragments.window.show = true;
+    dataStore.scenes.shrine.overlayNodes.window.show = false;
+    dataStore.scenes.shrine.overlayNodes.windowBroken.show = true;
 }

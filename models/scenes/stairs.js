@@ -9,8 +9,18 @@ export const stairsModel = {
     },
     fragments: null,
     overlayNodes: {
+        back: {
+            coords: [849, 624, 1266, 624, 1266, 708, 849, 708],
+            id: "back",
+            triggerScript: "scenes/shrine",
+            triggerTarget: "main-scene",
+            triggerScriptType: "GET",
+            swap: "outerHTML swap:1s",
+            show: true,
+            soundEffect: null,
+        },
         under: {
-            coords: "306, 609, 303, 531, 303, 345, 348, 246, 408, 189, 465, 198, 492, 228, 522, 288, 537, 357, 525, 378, 525, 426, 525, 471, 516, 498, 438, 510, 420, 579, 402, 594",
+            coords: [306, 609, 303, 531, 303, 345, 348, 246, 408, 189, 465, 198, 492, 228, 522, 288, 537, 357, 525, 378, 525, 426, 525, 471, 516, 498, 438, 510, 420, 579, 402, 594],
             id: "under",
             triggerScript: "scenes/stairs/messages/under",
             triggerTarget: "text-overlay",

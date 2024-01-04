@@ -10,7 +10,7 @@ export const tunnelModel = {
     fragments: null,
     overlayNodes: {
         window: {
-            coords: "831, 498, 906, 498, 897, 396, 867, 381, 843, 396",
+            coords: [831, 498, 906, 498, 897, 396, 867, 381, 843, 396],
             id: "window",
             triggerScript: "scenes/tunnel/messages/window",
             triggerTarget: "text-overlay",

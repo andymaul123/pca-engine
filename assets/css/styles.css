@@ -152,6 +152,25 @@ body {
   opacity: 1;
 }
 
+#main-scene.is-dark .overlay svg polygon {
+  pointer-events: none;
+  opacity: 0;
+}
+
+#main-scene.is-dark .overlay svg polygon:hover {
+  opacity: 0;
+}
+
+#main-scene.is-dark .overlay svg polygon.show-dark {
+  pointer-events: auto;
+}
+
+#main-scene.is-dark .overlay svg polygon.show-dark:hover {
+  transition: opacity 0.2s ease-out;
+  fill: hsla(10, 100%, 100%, 0.2);
+  opacity: 1;
+}
+
 #inventory-menu {
   z-index: 40;
   position: absolute;
@@ -441,10 +460,10 @@ body {
   height: 720px;
   display: none;
   background-color: hsla(207, 58%, 7%, 0.9);
-  z-index: 30;
+  z-index: 12;
 }
 
-#is-dark.revealed {
+#main-scene.is-dark #is-dark {
   display: block;
 }
 

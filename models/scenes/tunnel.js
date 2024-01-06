@@ -18,6 +18,7 @@ export const tunnelModel = {
             swap: null,
             show: true,
             soundEffect: null,
+            showInDark: false,
         },
     },
     messages: {

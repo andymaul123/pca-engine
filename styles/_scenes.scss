@@ -39,9 +39,9 @@
     height: 720px;
     display: none;
     background-color: $transparent_black_bg;
-    @include zlayers($z-darkness);
+    @include zlayers($z-base, 2);
 }
 
-#is-dark.revealed {
+#main-scene.is-dark #is-dark {
     display: block;
 }

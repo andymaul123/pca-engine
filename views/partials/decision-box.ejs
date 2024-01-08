@@ -9,7 +9,7 @@
               hx-trigger="triggerClick"
               hx-on:click="window.interactivity.clickBus(event)"
               hx-get="/<%= buttons[i].triggerScript %>" 
-              hx-target="<%= buttons[i].triggerTarget %>" 
+              hx-target="#<%= buttons[i].triggerTarget %>" 
               hx-swap="<%= buttons[i].swap ? buttons[i].swap : 'innerHtml' %>"
               data-sound="<%= buttons[i].soundEffect ? JSON.stringify(buttons[i].soundEffect) : 'null' %>">
                 <%= buttons[i].buttonText %>

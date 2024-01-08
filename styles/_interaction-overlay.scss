@@ -10,7 +10,6 @@
     fill: transparent;
     opacity: 0;
     display: none;
-    cursor: $point-cursor;
 }
 .overlay svg polygon.revealed {
     display: inline;
@@ -19,7 +18,6 @@
     transition: opacity 0.2s ease-out;
     fill: hsla(10, 100%, 100%, 0.2);
     opacity: 1;
-
 }
 
 #main-scene.is-dark .overlay svg polygon {
@@ -40,4 +38,14 @@
     transition: opacity 0.2s ease-out;
     fill: hsla(10, 100%, 100%, 0.2);
     opacity: 1;
+}
+
+.overlay svg polygon.cursor-default {
+    cursor: $cursor-default;
+}
+.overlay svg polygon.cursor-point {
+    cursor: $cursor-point;
+}
+.overlay svg polygon.cursor-walk {
+    cursor: $cursor-walk;
 }

@@ -1,4 +1,4 @@
-import { roomIsDark } from "./common.js";
+import { roomIsDark, sceneTransition } from "./common.js";
 
 export const stairsModel = {
     id: "stairs",
@@ -15,10 +15,11 @@ export const stairsModel = {
             triggerScript: "scenes/shrine",
             triggerTarget: "main-scene",
             triggerScriptType: "GET",
-            swap: "outerHTML swap:1s",
+            swap: sceneTransition,
             show: true,
             soundEffect: null,
             showInDark: true,
+            cursor: "walk",
         },
         under: {
             coords: [306, 609, 303, 531, 303, 345, 348, 246, 408, 189, 465, 198, 492, 228, 522, 288, 537, 357, 525, 378, 525, 426, 525, 471, 516, 498, 438, 510, 420, 579, 402, 594],
@@ -30,6 +31,7 @@ export const stairsModel = {
             show: true,
             soundEffect: null,
             showInDark: false,
+            cursor: "point",
         },
     },
     messages: {

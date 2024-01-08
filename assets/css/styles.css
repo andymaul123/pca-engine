@@ -139,7 +139,6 @@ body {
   fill: transparent;
   opacity: 0;
   display: none;
-  cursor: url("/image/cursors/hand-point.png"), auto;
 }
 
 .overlay svg polygon.revealed {
@@ -169,6 +168,18 @@ body {
   transition: opacity 0.2s ease-out;
   fill: hsla(10, 100%, 100%, 0.2);
   opacity: 1;
+}
+
+.overlay svg polygon.cursor-default {
+  cursor: url("/image/cursors/default.png"), auto;
+}
+
+.overlay svg polygon.cursor-point {
+  cursor: url("/image/cursors/hand-point.png"), auto;
+}
+
+.overlay svg polygon.cursor-walk {
+  cursor: url("/image/cursors/walk.png"), auto;
 }
 
 #inventory-menu {

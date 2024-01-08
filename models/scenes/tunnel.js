@@ -1,4 +1,4 @@
-import { roomIsDark } from "./common.js";
+import { roomIsDark, sceneTransition } from "./common.js";
 
 export const tunnelModel = {
     id: "tunnel",
@@ -9,6 +9,18 @@ export const tunnelModel = {
     },
     fragments: null,
     overlayNodes: {
+        back: {
+            coords: [849, 624, 1266, 624, 1266, 708, 849, 708],
+            id: "back",
+            triggerScript: "scenes/shrine",
+            triggerTarget: "main-scene",
+            triggerScriptType: "GET",
+            swap: sceneTransition,
+            show: true,
+            soundEffect: null,
+            showInDark: true,
+            cursor: "walk",
+        },
         window: {
             coords: [831, 498, 906, 498, 897, 396, 867, 381, 843, 396],
             id: "window",
@@ -19,6 +31,7 @@ export const tunnelModel = {
             show: true,
             soundEffect: null,
             showInDark: false,
+            cursor: "point",
         },
     },
     messages: {

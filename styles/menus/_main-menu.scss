@@ -18,7 +18,7 @@
     right: 0;
     top: 0;
     @include zlayers($z-menu, 3);
-    cursor: $default-cursor;
+    cursor: $cursor-default;
 }
 #main-menu * {
     color: $black_hex;

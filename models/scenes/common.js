@@ -15,3 +15,5 @@ export const roomIsDark = {
     textString: null,
     soundEffect: null,
 };
+
+export const sceneTransition = "outerHTML swap:1s";

@@ -1,19 +1,21 @@
 import express from 'express';
-import { dataStore } from '../../models/index.js';
-import { transformText, roomDarkness, determineStartMessage } from '../../controllers/scenes/common.js';
-
+import { 
+    initializeController, 
+    startMessageController,
+    messageController,
+    decisionController,
+ } from '../../controllers/scenes/tunnel.js';
 export const tunnelRoutes = express.Router();
 
 tunnelRoutes.get('/', (req, res) => {
-    transformText(dataStore, "tunnel");
-    roomDarkness(dataStore, "tunnel");
-    res.render('partials/scene.ejs', dataStore.scenes.tunnel);
+    const initialScene = initializeController();
+    res.render('partials/scene.ejs', initialScene);
 });
 
 tunnelRoutes.get('/startmessage', (req, res) => {
-    const startMessage = determineStartMessage(dataStore, "tunnel");
+    const startMessage = startMessageController();
     if(startMessage != null) {
-        res.render('partials/message-box', dataStore.scenes.tunnel.messages[startMessage]);
+        res.render('partials/message-box', startMessage);
     } else {
         res.sendStatus(200);
     }
@@ -21,7 +23,14 @@ tunnelRoutes.get('/startmessage', (req, res) => {
 
 tunnelRoutes.get('/messages/:id', (req, res) => {
     const id = req.params.id;
-    res.render('partials/message-box', dataStore.scenes.tunnel.messages[id]);
+    const message = messageController(id);
+    res.render('partials/message-box', message);
+});
+
+tunnelRoutes.get('/decisions/:id', (req, res) => {
+    const id = req.params.id;
+    const decision = decisionController(id);
+    res.render('partials/decision-box', decision);
 });
 
 

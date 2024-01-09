@@ -1,6 +1,6 @@
 import express from 'express';
 import { allRoutes } from './routes/index.js';
-import { addItemsToInventory } from './controllers/player.js';
+import { addItemsToInventory } from './controllers/player/common.js';
 import { dataStore } from './models/index.js';
 
 const app = express();

@@ -1,20 +1,22 @@
 import express from 'express';
-import { dataStore } from '../../models/index.js';
-import { transformText, roomDarkness, determineStartMessage } from '../../controllers/scenes/common.js';
-
+import { 
+    initializeController, 
+    startMessageController,
+    messageController,
+    decisionController,
+ } from '../../controllers/scenes/stairs.js';
 
 export const stairsRoutes = express.Router();
 
 stairsRoutes.get('/', (req, res) => {
-    transformText(dataStore, "stairs");
-    roomDarkness(dataStore, "stairs");
-    res.render('partials/scene.ejs', dataStore.scenes.stairs);
+    const initialScene = initializeController();
+    res.render('partials/scene.ejs', initialScene);
 });
 
 stairsRoutes.get('/startmessage', (req, res) => {
-    const startMessage = determineStartMessage(dataStore, "stairs");
+    const startMessage = startMessageController();
     if(startMessage != null) {
-        res.render('partials/message-box', dataStore.scenes.stairs.messages[startMessage]);
+        res.render('partials/message-box', startMessage);
     } else {
         res.sendStatus(200);
     }
@@ -22,5 +24,12 @@ stairsRoutes.get('/startmessage', (req, res) => {
 
 stairsRoutes.get('/messages/:id', (req, res) => {
     const id = req.params.id;
-    res.render('partials/message-box', dataStore.scenes.stairs.messages[id]);
+    const message = messageController(id);
+    res.render('partials/message-box', message);
+});
+
+stairsRoutes.get('/decisions/:id', (req, res) => {
+    const id = req.params.id;
+    const decision = decisionController(id);
+    res.render('partials/decision-box', decision);
 });

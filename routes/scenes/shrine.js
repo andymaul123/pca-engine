@@ -1,21 +1,24 @@
 import express from 'express';
-import { takeCandle, breakWindow } from '../../controllers/scenes/shrine.js';
-import { transformText, roomDarkness, determineStartMessage } from '../../controllers/scenes/common.js';
-import { addItemsToInventory } from '../../controllers/player.js';
-import { dataStore } from '../../models/index.js';
+import { 
+    initializeController, 
+    startMessageController,
+    messageController,
+    decisionController,
+    takeCandleController,
+    breakWindowController,
+ } from '../../controllers/scenes/shrine.js';
 
 export const shrineRoutes = express.Router();
 
 shrineRoutes.get('/', (req, res) => {
-    transformText(dataStore, "shrine");
-    roomDarkness(dataStore, "shrine");
-    res.render('partials/scene.ejs', dataStore.scenes.shrine);
+    const initialScene = initializeController();
+    res.render('partials/scene.ejs', initialScene);
 });
 
 shrineRoutes.get('/startmessage', (req, res) => {
-    const startMessage = determineStartMessage(dataStore, "shrine");
+    const startMessage = startMessageController();
     if(startMessage != null) {
-        res.render('partials/message-box', dataStore.scenes.shrine.messages[startMessage]);
+        res.render('partials/message-box', startMessage);
     } else {
         res.sendStatus(200);
     }
@@ -23,22 +26,23 @@ shrineRoutes.get('/startmessage', (req, res) => {
 
 shrineRoutes.get('/messages/:id', (req, res) => {
     const id = req.params.id;
-    res.render('partials/message-box', dataStore.scenes.shrine.messages[id]);
+    const message = messageController(id);
+    res.render('partials/message-box', message);
 });
 
 shrineRoutes.get('/decisions/:id', (req, res) => {
     const id = req.params.id;
-    res.render('partials/decision-box', dataStore.scenes.shrine.decisions[id]);
+    const decision = decisionController(id);
+    res.render('partials/decision-box', decision);
 });
 
 shrineRoutes.get('/takecandle', (req, res) => {
-    takeCandle(dataStore);
-    addItemsToInventory(dataStore, ['candle']);
-    res.render('partials/scene.ejs', dataStore.scenes.shrine);
+    const updatedScene = takeCandleController();
+    res.render('partials/scene.ejs', updatedScene);
 });
 
 shrineRoutes.get('/breakwindow', (req, res) => {
-    breakWindow(dataStore);
-    res.render('partials/scene.ejs', dataStore.scenes.shrine);
+    const updatedScene = breakWindowController();
+    res.render('partials/scene.ejs', updatedScene);
 });
 

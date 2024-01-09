@@ -7,15 +7,17 @@ import { dataStore } from '../../models/index.js';
 export const shrineRoutes = express.Router();
 
 shrineRoutes.get('/', (req, res) => {
+    transformText(dataStore, "shrine");
     roomDarkness(dataStore, "shrine");
     res.render('partials/scene.ejs', dataStore.scenes.shrine);
 });
 
 shrineRoutes.get('/startmessage', (req, res) => {
     const startMessage = determineStartMessage(dataStore, "shrine");
-    transformText(dataStore, "shrine");
     if(startMessage != null) {
         res.render('partials/message-box', dataStore.scenes.shrine.messages[startMessage]);
+    } else {
+        res.sendStatus(200);
     }
 });
 

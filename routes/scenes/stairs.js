@@ -6,15 +6,17 @@ import { transformText, roomDarkness, determineStartMessage } from '../../contro
 export const stairsRoutes = express.Router();
 
 stairsRoutes.get('/', (req, res) => {
+    transformText(dataStore, "stairs");
     roomDarkness(dataStore, "stairs");
     res.render('partials/scene.ejs', dataStore.scenes.stairs);
 });
 
 stairsRoutes.get('/startmessage', (req, res) => {
     const startMessage = determineStartMessage(dataStore, "stairs");
-    transformText(dataStore, "stairs");
     if(startMessage != null) {
         res.render('partials/message-box', dataStore.scenes.stairs.messages[startMessage]);
+    } else {
+        res.sendStatus(200);
     }
 });
 

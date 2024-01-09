@@ -5,7 +5,7 @@
             hx-get="/deleteme" 
             hx-target="#inventory-menu .inner" 
             hx-swap="delete" 
-            hx-trigger="triggerClick"
+            hx-trigger="triggerClick throttle:0.5s"
             hx-on:click="window.interactivity.clickBus(event)">X</button>
         </div>
         <div class="header">

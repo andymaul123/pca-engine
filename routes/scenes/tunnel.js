@@ -5,15 +5,17 @@ import { transformText, roomDarkness, determineStartMessage } from '../../contro
 export const tunnelRoutes = express.Router();
 
 tunnelRoutes.get('/', (req, res) => {
+    transformText(dataStore, "tunnel");
     roomDarkness(dataStore, "tunnel");
     res.render('partials/scene.ejs', dataStore.scenes.tunnel);
 });
 
 tunnelRoutes.get('/startmessage', (req, res) => {
     const startMessage = determineStartMessage(dataStore, "tunnel");
-    transformText(dataStore, "tunnel");
     if(startMessage != null) {
         res.render('partials/message-box', dataStore.scenes.tunnel.messages[startMessage]);
+    } else {
+        res.sendStatus(200);
     }
 });
 

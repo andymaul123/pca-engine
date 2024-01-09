@@ -3,7 +3,7 @@
   class="wrapper revealed" 
   hx-get="/<%= nextMessage %>" 
   hx-target="#text-overlay" 
-  hx-trigger="triggerClick" 
+  hx-trigger="triggerClick throttle:0.5s" 
   hx-on:click="window.interactivity.clickBus(event)" 
   data-streamMessage="true">
     <div class="blinking-arrow revealed">&#129171;</div>
@@ -12,7 +12,7 @@
   class="wrapper revealed" 
   hx-get="/<%= triggerScript %>" 
   hx-target="#<%= targetId %>" 
-  hx-trigger="triggerClick" 
+  hx-trigger="triggerClick throttle:0.5s" 
   hx-swap="<%= swap ? swap : 'innerHtml' %>" 
   hx-on:click="window.interactivity.clickBus(event)" 
   data-streamMessage="true">
@@ -22,7 +22,7 @@
   class="wrapper revealed" 
   hx-get="/deleteme" 
   hx-swap="delete" 
-  hx-trigger="triggerClick" 
+  hx-trigger="triggerClick throttle:0.5s" 
   hx-on:click="window.interactivity.clickBus(event)" 
   data-streamMessage="true">
     <div class="blinking-arrow">&#129171;</div>

@@ -6,7 +6,7 @@ export const shrineModel = {
     windowBroken: false,
     isDark: false,
     isCurrentlyDark: false,
-    startmessage: "scenes/shrine/startmessage",
+    messagesConverted: false,
     basemats: {
         current: "image/shrine-no-candle-nyx.png",
     },

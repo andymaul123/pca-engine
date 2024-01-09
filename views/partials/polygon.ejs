@@ -8,6 +8,6 @@ hx-target="#<%= triggerTarget %>"
 hx-swap="<%= swap ? swap : 'innerHtml' %>"
 class="<%= show ? 'revealed' : '' %> <%= showInDark ? 'show-dark' : '' %> cursor-<%= cursor ? cursor : 'default' %>"
 data-sound="<%= soundEffect ? JSON.stringify(soundEffect) : 'null' %>"
-hx-trigger="triggerClick"
+hx-trigger="triggerClick throttle:0.5s"
 hx-on:click="window.interactivity.clickBus(event)"
 />

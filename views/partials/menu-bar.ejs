@@ -5,7 +5,7 @@
     data-toggle="<%= JSON.stringify([{className: 'open', target: '#main-menu .inner'}]) %>">Menu</button>
     <button 
     hx-get="/player/inventory" 
-    hx-trigger="triggerClick"
+    hx-trigger="triggerClick throttle:0.5s"
     hx-on:click="window.interactivity.clickBus(event)"
     hx-target="#inventory-menu" 
     hx-swap="innerHTML">Inventory</button>

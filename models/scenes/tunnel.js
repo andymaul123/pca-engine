@@ -4,6 +4,7 @@ export const tunnelModel = {
     id: "tunnel",
     isDark: true,
     isCurrentlyDark: true,
+    messagesConverted: false,
     basemats: {
         current: "image/tunnel-nyx.png",
     },

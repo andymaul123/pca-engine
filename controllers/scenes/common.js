@@ -7,7 +7,7 @@ import "../../types/types.js";
  * @returns {void} 
  */
 export function transformText(dataStore, scene) {
-    if(!dataStore.scenes[scene].messages) {
+    if(!dataStore.scenes[scene].messages || dataStore.scenes[scene].messagesConverted == true) {
         return;
     }
     for (const key in dataStore.scenes[scene].messages) {
@@ -15,6 +15,7 @@ export function transformText(dataStore, scene) {
             dataStore.scenes[scene].messages[key].textString = transformTextToHTML(dataStore.scenes[scene].messages[key].textArray);
         }
     };
+    dataStore.scenes[scene].messagesConverted = true;
 }
 
 /**

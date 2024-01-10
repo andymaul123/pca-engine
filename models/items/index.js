@@ -1,3 +1,8 @@
+import "../../types/index.js";
+
+/** 
+* @type ItemsModel 
+*/
 export const itemsModel = {
     candle: {
         id: "candle",

@@ -1,6 +1,6 @@
 import { dataStore } from '../../models/index.js';
 import { transformText, roomDarkness, determineStartMessage } from './common.js';
-import "../../types/types.js";
+import "../../types/index.js";
 
 const sceneId = "tunnel";
 
@@ -8,7 +8,7 @@ const sceneId = "tunnel";
  * Initializes the scene
  * 1. Transforms the text arrays into html
  * 2. Evaluates room darkness
- * @returns {Scene} 
+ * @returns {SceneModel} 
  */
 export function initializeController() {
     transformText(dataStore, sceneId);

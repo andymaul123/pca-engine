@@ -1,4 +1,4 @@
-import "../../types/types.js";
+import "../../types/index.js";
 
 /**
  * Loops through message objects in a scene data object and sets the textString property
@@ -7,7 +7,7 @@ import "../../types/types.js";
  * @returns {void} 
  */
 export function transformText(dataStore, scene) {
-    if(!dataStore.scenes[scene].messages || dataStore.scenes[scene].messagesConverted == true) {
+    if(!dataStore.scenes[scene].messages || dataStore.scenes[scene].commonState.messagesConverted == true) {
         return;
     }
     for (const key in dataStore.scenes[scene].messages) {
@@ -15,7 +15,7 @@ export function transformText(dataStore, scene) {
             dataStore.scenes[scene].messages[key].textString = transformTextToHTML(dataStore.scenes[scene].messages[key].textArray);
         }
     };
-    dataStore.scenes[scene].messagesConverted = true;
+    dataStore.scenes[scene].commonState.messagesConverted = true;
 }
 
 /**
@@ -25,13 +25,13 @@ export function transformText(dataStore, scene) {
  * @returns {void} 
  */
 export function roomDarkness(dataStore, scene) {
-    if(!dataStore.scenes[scene] || !dataStore.scenes[scene].isDark) {
+    if(!dataStore.scenes[scene] || !dataStore.scenes[scene].commonState.isDark) {
         return;
     }
-    dataStore.scenes[scene].isCurrentlyDark = true;
+    dataStore.scenes[scene].commonState.isCurrentlyDark = true;
     dataStore.player.inventory.forEach((item) => {
         if(dataStore.items[item].lightSource) {
-            dataStore.scenes[scene].isCurrentlyDark = false;
+            dataStore.scenes[scene].commonState.isCurrentlyDark = false;
             return;
         }
     });
@@ -48,7 +48,7 @@ export function determineStartMessage(dataStore, scene) {
     if(!dataStore.scenes[scene]) {
         return;
     }
-    if(dataStore.scenes[scene].isCurrentlyDark) {
+    if(dataStore.scenes[scene].commonState.isCurrentlyDark) {
         return "roomIsDark";
     } else if(dataStore.scenes[scene].messages.start) {
        return "start";
@@ -59,8 +59,8 @@ export function determineStartMessage(dataStore, scene) {
 /**
  * Helper function to offload heavy logic from EJS partials
  * where characters are wrapped in elements for the typewriter
- * Takes a MessageTextData object and converts it to a string of text with proper HTML tags
- * @param {Array<MessageTextData>} messages
+ * Takes a TextChunk object and converts it to a string of text with proper HTML tags
+ * @param {Array<TextChunk>} messages
  * @returns {string}
  */
 

@@ -1,12 +1,19 @@
 import { roomIsDark, sceneTransition } from "./common.js";
 
+/** 
+* @type SceneModel 
+*/
 export const shrineModel = {
     id: "shrine",
-    candleOn: true,
-    windowBroken: false,
-    isDark: false,
-    isCurrentlyDark: false,
-    messagesConverted: false,
+    commonState: {
+        isDark: false,
+        isCurrentlyDark: false,
+        messagesConverted: false,
+    },
+    uniqueState: {
+        candleOn: true,
+        windowBroken: false,
+    },
     basemats: {
         current: "image/shrine-no-candle-nyx.png",
     },
@@ -26,7 +33,6 @@ export const shrineModel = {
             id: "window",
             triggerScript: "scenes/shrine/messages/window",
             triggerTarget: "text-overlay",
-            triggerScriptType: "GET",
             swap: null,
             show: true,
             soundEffect: null,
@@ -38,7 +44,6 @@ export const shrineModel = {
             id: "windowBroken",
             triggerScript: "scenes/shrine/messages/brokenwindow",
             triggerTarget: "text-overlay",
-            triggerScriptType: "GET",
             swap: null,
             show: false,
             soundEffect: null,
@@ -50,7 +55,6 @@ export const shrineModel = {
             id: "shrine",
             triggerScript: "scenes/shrine/messages/shrine",
             triggerTarget: "text-overlay",
-            triggerScriptType: "GET",
             swap: null,
             show: true,
             soundEffect: null,
@@ -62,7 +66,6 @@ export const shrineModel = {
             id: "exit",
             triggerScript: "scenes/stairs",
             triggerTarget: "main-scene",
-            triggerScriptType: "GET",
             swap: sceneTransition,
             show: true,
             soundEffect: null,
@@ -74,8 +77,6 @@ export const shrineModel = {
         shrine: {
             nextMessage: null,
             triggerScript: "scenes/shrine/decisions/takecandle",
-            triggerScriptType: "GET",
-            actionData: null,
             targetId: "decision-box",
             swap: null,
             textArray: [
@@ -91,8 +92,6 @@ export const shrineModel = {
         window: {
             nextMessage: null,
             triggerScript: "scenes/shrine/decisions/breakwindow",
-            triggerScriptType: "GET",
-            actionData: null,
             targetId: "decision-box",
             swap: null,
             textArray: [
@@ -108,8 +107,6 @@ export const shrineModel = {
         brokenwindow: {
             nextMessage: null,
             triggerScript: "scenes/shrine/decisions/traveltunnel",
-            triggerScriptType: "GET",
-            actionData: null,
             targetId: "decision-box",
             swap: null,
             textArray: [

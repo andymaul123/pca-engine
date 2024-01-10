@@ -1,10 +1,16 @@
 import { roomIsDark, sceneTransition } from "./common.js";
 
+/** 
+* @type SceneModel 
+*/
 export const tunnelModel = {
     id: "tunnel",
-    isDark: true,
-    isCurrentlyDark: true,
-    messagesConverted: false,
+    commonState: {
+        isDark: true,
+        isCurrentlyDark: true,
+        messagesConverted: false,
+    },
+    uniqueState: {},
     basemats: {
         current: "image/tunnel-nyx.png",
     },
@@ -15,7 +21,6 @@ export const tunnelModel = {
             id: "back",
             triggerScript: "scenes/shrine",
             triggerTarget: "main-scene",
-            triggerScriptType: "GET",
             swap: sceneTransition,
             show: true,
             soundEffect: null,
@@ -27,7 +32,6 @@ export const tunnelModel = {
             id: "window",
             triggerScript: "scenes/tunnel/messages/window",
             triggerTarget: "text-overlay",
-            triggerScriptType: "GET",
             swap: null,
             show: true,
             soundEffect: null,
@@ -39,7 +43,6 @@ export const tunnelModel = {
         window: {
             nextMessage: null,
             triggerScript: null,
-            triggerScriptType: "GET",
             actionData: null,
             targetId: null,
             textArray: [

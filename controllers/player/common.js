@@ -1,4 +1,4 @@
-import "../../types/types.js";
+import "../../types/index.js";
 
 /**
  * Returns player inventory array

@@ -1,7 +1,7 @@
 import { dataStore } from '../../models/index.js';
 import { transformText, roomDarkness, determineStartMessage } from './common.js';
 import { addItemsToInventory } from '../player/common.js';
-import "../../types/types.js";
+import "../../types/index.js";
 
 const sceneId = "shrine";
 
@@ -9,7 +9,7 @@ const sceneId = "shrine";
  * Initializes the scene
  * 1. Transforms the text arrays into html
  * 2. Evaluates room darkness
- * @returns {Scene} 
+ * @returns {SceneModel} 
  */
 export function initializeController() {
     transformText(dataStore, sceneId);
@@ -48,10 +48,10 @@ export function decisionController(id) {
 
 /**
  * Updates the Shrine scene values relevant to the player taking the candle
- * @returns {Scene} 
+ * @returns {SceneModel} 
  */
 export function takeCandleController() {
-    dataStore.scenes[sceneId].candleOn = false;
+    dataStore.scenes[sceneId].uniqueState.candleOn = false;
     dataStore.scenes[sceneId].fragments.candle.show = false;
     dataStore.scenes[sceneId].overlayNodes[sceneId].show = false;
     addItemsToInventory(dataStore, ["candle"]);
@@ -60,10 +60,10 @@ export function takeCandleController() {
 
 /**
  * Updates the Shrine scene values relevant to the player breaking the window
- * @returns {Scene} 
+ * @returns {SceneModel} 
  */
 export function breakWindowController() {
-    dataStore.scenes[sceneId].windowBroken = true;
+    dataStore.scenes[sceneId].uniqueState.windowBroken = true;
     dataStore.scenes[sceneId].fragments.window.show = true;
     dataStore.scenes[sceneId].overlayNodes.window.show = false;
     dataStore.scenes[sceneId].overlayNodes.windowBroken.show = true;

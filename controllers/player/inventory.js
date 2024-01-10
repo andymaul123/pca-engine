@@ -1,5 +1,5 @@
 import { dataStore } from '../../models/index.js';
-import "../../types/types.js";
+import "../../types/index.js";
 
 
 /**

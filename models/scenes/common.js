@@ -1,8 +1,11 @@
+import "../../types/index.js";
+
+/** 
+* @type Message 
+*/
 export const roomIsDark = {
     nextMessage: null,
     triggerScript: null,
-    triggerScriptType: null,
-    actionData: null,
     targetId: null,
     swap: null,
     textArray: [

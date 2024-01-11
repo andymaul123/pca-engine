@@ -1,6 +1,8 @@
 # PCA-Engine
 A framework for building Point-and-Click Adventure games in the web browser.
 
+Uses NodeJS & Express as the back-end, and HTMX & Vanilla JS on the front-end.
+
 **Current Status:** Proof of Concept
 
 ## Installation

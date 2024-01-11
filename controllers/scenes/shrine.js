@@ -69,3 +69,13 @@ export function breakWindowController() {
     dataStore.scenes[sceneId].overlayNodes.windowBroken.show = true;
     return dataStore.scenes[sceneId];
 }
+
+/**
+ * Updates Shrine model after the player enters the window the first time
+ * This replaces the broken window with a copy without the messages and decisions each time
+ * @returns {void} 
+ */
+export function updateWindowController() {
+    dataStore.scenes[sceneId].overlayNodes.windowBroken.show = false;
+    dataStore.scenes[sceneId].overlayNodes.windowBrokenAfter.show = true;
+}

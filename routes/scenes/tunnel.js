@@ -32,5 +32,3 @@ tunnelRoutes.get('/decisions/:id', (req, res) => {
     const decision = decisionController(id);
     res.render('partials/decision-box', decision);
 });
-
-

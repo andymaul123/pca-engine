@@ -6,6 +6,7 @@ import {
     decisionController,
     takeCandleController,
     breakWindowController,
+    updateWindowController,
  } from '../../controllers/scenes/shrine.js';
 
 export const shrineRoutes = express.Router();
@@ -45,4 +46,11 @@ shrineRoutes.get('/breakwindow', (req, res) => {
     const updatedScene = breakWindowController();
     res.render('partials/scene.ejs', updatedScene);
 });
+
+
+shrineRoutes.get('/updatewindow', (req, res) => {
+    updateWindowController();
+    res.redirect('/scenes/tunnel');
+});
+
 

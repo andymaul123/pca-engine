@@ -4,6 +4,7 @@ A framework for building Point-and-Click Adventure games in the web browser.
 Uses NodeJS & Express as the back-end, and HTMX & Vanilla JS on the front-end.
 
 **Current Status:** Proof of Concept
+![Animation](https://github.com/andymaul123/pca-engine/assets/6220616/2ab61fa3-8099-447e-86d2-775b322a7527)
 
 ## Installation
 - `npm install`

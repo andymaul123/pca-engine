@@ -47,7 +47,6 @@ shrineRoutes.get('/breakwindow', (req, res) => {
     res.render('partials/scene.ejs', updatedScene);
 });
 
-
 shrineRoutes.get('/updatewindow', (req, res) => {
     updateWindowController();
     res.redirect('/scenes/tunnel');

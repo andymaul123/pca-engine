@@ -18,7 +18,6 @@ body {
     height: 100%;
     position: relative;
     background-color: $black_hex;
-    cursor: $cursor-default;
     user-select: none;
 }
 
@@ -43,12 +42,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url('/image/borders-wip.jpg');
 }
 
 #main, #main-scene {
     position: relative;
     width: 1280px;
     height: 720px;
+    cursor: $cursor-default;
 }
 
 .transition.htmx-swapping {

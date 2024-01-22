@@ -1,12 +1,29 @@
 /**
  * Typewriter reveals characters in a string of text one-at-a-time
+ * @param {string} type
  * @returns {void}
  */
 
-export function typeWriter() {
-    const textOverlay = document.querySelector('#text-overlay');
-    const textOverlayWrapper = textOverlay.querySelector('.wrapper');
-    const dataElement = textOverlay.querySelector('.text-message');
+export function typeWriter(type) {
+    let textOverlay = null;
+    let textOverlayWrapper = null;
+    let dataElement = null;
+
+    switch(type) {
+        case "message":
+            textOverlay = document.querySelector('#text-overlay');
+            textOverlayWrapper = textOverlay.querySelector('.wrapper');
+            dataElement = textOverlay.querySelector('.text-message');
+          break;
+        case "dialogue":
+            textOverlay = document.querySelector('#npc-dialogue');
+            textOverlayWrapper = textOverlay.querySelector('.wrapper');
+            dataElement = textOverlay.querySelector('.text-message');
+          break;
+        default:
+          // code block
+      }
+
     if(!dataElement) {
         return;
     }

@@ -1,0 +1,46 @@
+<div class="container">
+    <% if (message.nextMessage != null) { %>
+        <div 
+            class="wrapper revealed" 
+            hx-get="/<%= message.nextMessage %>" 
+            hx-target="#text-overlay" 
+            hx-trigger="triggerClick throttle:0.5s" 
+            hx-on:click="window.interactivity.clickBus(event)" 
+            data-streamMessage="true">
+              <div class="blinking-arrow revealed">&#129171;</div>
+          <% } else if (message.triggerScript != null && message.targetId != null) { %>
+            <div 
+            class="wrapper revealed" 
+            hx-get="/<%= message.triggerScript %>" 
+            hx-target="#<%= message.targetId %>" 
+            hx-trigger="triggerClick throttle:0.5s" 
+            hx-swap="<%= message.swap ? message.swap : 'innerHtml' %>" 
+            hx-on:click="window.interactivity.clickBus(event)" 
+            data-streamMessage="true">
+              <div class="blinking-arrow">&#129171;</div>
+          <% } else { %>
+            <div 
+            class="wrapper revealed" 
+            hx-get="/deleteme" 
+            hx-swap="delete"
+            hx-target="#npc-dialogue .container"
+            hx-trigger="triggerClick throttle:0.5s" 
+            hx-on:click="window.interactivity.clickBus(event)" 
+            data-streamMessage="true">
+              <div class="blinking-arrow">&#129171;</div>
+          <% } %>
+            <div class="text-box">
+              <p class="text-message"><%- message.textString %></p>
+            </div>
+          </div>
+        <div id="npc-portrait">
+            <img
+                src="/<%= portrait %>"
+                width="512"
+                height="512"
+                class="portrait-image"
+                id="id"
+            />
+        </div>
+        <div id="npc-name"><%= name %></div>
+</div>

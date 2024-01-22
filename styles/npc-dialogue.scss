@@ -1,0 +1,93 @@
+#npc-dialogue .wrapper.revealed {
+    display: block;
+}
+#npc-dialogue .wrapper.no-click {
+    pointer-events: none;
+}
+#npc-dialogue .wrapper {
+    @include zlayers($z-menu, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 720px;
+    display: none;
+    background: $transparent_black_bg;
+}
+#npc-dialogue .text-box {
+    background-color: $transparent_black_bg;
+    width: 768px;
+    max-height: 106px;
+    position: absolute;
+    left: 512px;
+    bottom: 0;
+    border: 1px solid $tan_hex;
+    box-sizing: border-box;
+}
+
+#npc-dialogue .text-message {
+    padding: 24px;
+}
+
+#npc-dialogue .text-message .character {
+    opacity: 0;
+}
+
+#npc-dialogue .text-message .character.revealed {
+    opacity: 1;
+}
+
+#npc-dialogue .text-message .character.callout {
+    color: $purple_hex;
+}
+
+#npc-dialogue .blinking-arrow {
+    animation: blinky 1s infinite;
+    position: absolute;
+    top: 680px;
+    left: 1240px;
+    @include zlayers($z-menu, 2);
+    color: $tan_hex;
+    font-size: 48px;
+    display: none;
+}
+#npc-dialogue .blinking-arrow.revealed {
+    display: block;
+}
+
+@keyframes blinky {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  #npc-dialogue img.portrait-image {
+    image-rendering: pixelated;
+  }
+
+  #npc-portrait {
+    width: 512px;
+    height: 512px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    @include zlayers($z-menu, 2);
+    border: 1px solid $lightOrange_hex;
+  }
+
+  #npc-name {
+    width: 768px;
+    max-height: 106px;
+    position: absolute;
+    left: 512px;
+    bottom: 78px;
+    @include zlayers($z-menu, 2);
+    font-size: 48px;
+    padding: 0 0 0 24px;
+  }

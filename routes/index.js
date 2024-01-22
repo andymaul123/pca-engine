@@ -4,6 +4,7 @@ import express from 'express';
 // import { fileURLToPath } from 'url';
 import { scenesRoutes } from './scenes/index.js';
 import { playerRoutes } from './player/index.js';
+import { npcRoutes } from './npcs/index.js';
 
 export const allRoutes = express.Router();
 
@@ -11,6 +12,7 @@ export const allRoutes = express.Router();
 
 allRoutes.use('/scenes', scenesRoutes);
 allRoutes.use('/player', playerRoutes);
+allRoutes.use('/npcs', npcRoutes);
 allRoutes.use(express.static('assets'));
 
 allRoutes.get('/', (req, res) => {

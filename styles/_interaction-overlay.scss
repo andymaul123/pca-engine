@@ -1,5 +1,3 @@
-@import 'variables.scss'; 
-
 .overlay svg {
     position: absolute;
     top: 0;
@@ -48,4 +46,11 @@
 }
 .overlay svg polygon.cursor-walk {
     cursor: $cursor-walk;
+}
+.overlay svg polygon.cursor-talk {
+    cursor: $cursor-talk;
+}
+
+#fragments img.fragment-image {
+    image-rendering: pixelated;
 }

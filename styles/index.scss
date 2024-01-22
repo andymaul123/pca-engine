@@ -1,4 +1,7 @@
+@import 'palette.scss';
+@import 'variables';
 @import 'fonts';
+
 @import 'main';
 
 @import 'decision-box';
@@ -6,5 +9,6 @@
 @import 'menus';
 @import 'text-overlay';
 @import 'scenes';
+@import 'npc-dialogue';
 
 

@@ -2,7 +2,8 @@
 <div id="main-events" hx-swap-oob="true"></div>
 <div id="main-scene" class="transition <%= commonState.isCurrentlyDark ? 'is-dark' : '' %>">
   <div id="start-up" hx-trigger="load throttle:0.5s" hx-get="/scenes/<%= id %>/startmessage" hx-target="#text-overlay"></div>
-  <div id="text-overlay" hx-on="htmx:load: window.interactivity.typeWriter()"></div>
+  <div id="text-overlay" hx-on="htmx:load: window.interactivity.typeWriter('message')"></div>
+  <div id="npc-dialogue" hx-on="htmx:load: window.interactivity.typeWriter('dialogue')"></div>
   <div id="decision-box"></div>
   <div id="is-dark"></div>
   <div class="overlay">

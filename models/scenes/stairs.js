@@ -14,7 +14,12 @@ export const stairsModel = {
     basemats: {
         current: "image/stairs-nyx.png",
     },
-    fragments: null,
+    fragments: {
+        lady: {
+            path: "image/stairs-npc1-fragment-nyx.png",
+            show: true,
+        },
+    },
     overlayNodes: {
         back: {
             coords: [849, 624, 1266, 624, 1266, 708, 849, 708],
@@ -37,6 +42,17 @@ export const stairsModel = {
             soundEffect: null,
             showInDark: false,
             cursor: "point",
+        },
+        lady: {
+            coords: [291, 696, 291, 720, 111, 720, 147, 642, 117, 633, 123, 624, 153, 612, 231, 411, 246, 411, 291, 501, 312, 618, 348, 633, 348, 636, 297, 657, 309, 693, 306, 696],
+            id: "lady",
+            triggerScript: "npcs/lady/dialogue/intro",
+            triggerTarget: "npc-dialogue",
+            swap: null,
+            show: true,
+            soundEffect: null,
+            showInDark: false,
+            cursor: "talk",
         },
     },
     messages: {

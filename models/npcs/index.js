@@ -2,7 +2,7 @@ import "../../types/index.js";
 
 
 /** 
-* @type NpcModel 
+* @type npcModel 
 */
 
 export const npcModel = {
@@ -14,9 +14,9 @@ export const npcModel = {
         messagesConverted: false,
         messages: {
             intro: {
-                nextMessage: null,
+                nextMessage: "npcs/lady/dialogue/second",
                 triggerScript: null,
-                targetId: "decision-box",
+                targetId: null,
                 swap: null,
                 textArray: [
                     {
@@ -32,6 +32,21 @@ export const npcModel = {
                     {
                         speed: 50,
                         text: ". Pleased to meet you.",
+                        classes: [],
+                    },
+                ],
+                textString: null,
+                soundEffect: null,
+            },
+            second: {
+                nextMessage: null,
+                triggerScript: null,
+                targetId: null,
+                swap: null,
+                textArray: [
+                    {
+                        speed: 50,
+                        text: "This is a linked message from the intro message.",
                         classes: [],
                     },
                 ],

@@ -3,7 +3,7 @@
         <div 
             class="wrapper revealed" 
             hx-get="/<%= message.nextMessage %>" 
-            hx-target="#text-overlay" 
+            hx-target="#npc-dialogue" 
             hx-trigger="triggerClick throttle:0.5s" 
             hx-on:click="window.interactivity.clickBus(event)" 
             data-streamMessage="true">

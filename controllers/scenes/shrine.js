@@ -14,6 +14,7 @@ const sceneId = "shrine";
 export function initializeController() {
     transformText(dataStore, sceneId);
     roomDarkness(dataStore, sceneId);
+    dataStore.scenes[sceneId].commonState.visited++;
     return dataStore.scenes[sceneId];
 }
 

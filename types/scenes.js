@@ -6,6 +6,7 @@
 * @prop {string} id
 * @prop {CommonState} commonState
 * @prop {UniqueState} uniqueState
+* @prop {string | null} areaTitle
 * @prop {Basemats} basemats
 * @prop {Fragments} fragments
 * @prop {Interactables} overlayNodes
@@ -21,6 +22,7 @@
 * @prop {boolean} isDark
 * @prop {boolean} isCurrentlyDark
 * @prop {boolean} messagesConverted
+* @prop {number} visited
 */
 
 /**

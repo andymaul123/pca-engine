@@ -13,6 +13,7 @@ const sceneId = "tunnel";
 export function initializeController() {
     transformText(dataStore, sceneId);
     roomDarkness(dataStore, sceneId);
+    dataStore.scenes[sceneId].commonState.visited++;
     return dataStore.scenes[sceneId];
 }
 

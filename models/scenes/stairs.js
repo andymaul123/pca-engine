@@ -9,8 +9,10 @@ export const stairsModel = {
         isDark: true,
         isCurrentlyDark: true,
         messagesConverted: false,
+        visited: false,
     },
     uniqueState: {},
+    areaTitle: null,
     basemats: {
         current: "image/stairs-nyx.png",
     },

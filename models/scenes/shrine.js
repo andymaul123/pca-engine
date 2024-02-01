@@ -9,11 +9,13 @@ export const shrineModel = {
         isDark: false,
         isCurrentlyDark: false,
         messagesConverted: false,
+        visited: 0,
     },
     uniqueState: {
         candleOn: true,
         windowBroken: false,
     },
+    areaTitle: "Western Wing",
     basemats: {
         current: "image/shrine-no-candle-nyx.png",
     },

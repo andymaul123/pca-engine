@@ -76,6 +76,7 @@ body {
   width: 1280px;
   height: 720px;
   cursor: url("/image/cursors/default.png"), auto;
+  overflow: hidden;
 }
 
 .transition.htmx-swapping {
@@ -91,7 +92,7 @@ body {
   left: 0;
   justify-content: center;
   align-items: center;
-  z-index: 40;
+  z-index: 50;
   display: flex;
 }
 
@@ -192,7 +193,7 @@ body {
 }
 
 #inventory-menu {
-  z-index: 40;
+  z-index: 50;
   position: absolute;
   top: 0;
   left: 0;
@@ -202,7 +203,7 @@ body {
 }
 
 #inventory-menu .inner {
-  z-index: 41;
+  z-index: 51;
   width: 100%;
   height: 100%;
   pointer-events: all;
@@ -219,7 +220,7 @@ body {
 }
 
 #inventory-menu .close button {
-  z-index: 42;
+  z-index: 52;
   height: 32px;
   width: 32px;
   cursor: url("/image/cursors/default.png"), auto;
@@ -259,7 +260,7 @@ body {
   width: 560px;
   height: 560px;
   display: block;
-  z-index: 42;
+  z-index: 52;
 }
 
 #inventory-menu .visuals .item-description {
@@ -269,7 +270,7 @@ body {
   width: 560px;
   height: 560px;
   display: none;
-  z-index: 43;
+  z-index: 53;
   background-color: hsla(207, 58%, 7%, 0.9);
 }
 
@@ -284,7 +285,7 @@ body {
   width: 280px;
   height: 25px;
   color: #08141e;
-  z-index: 44;
+  z-index: 54;
 }
 
 #inventory-menu .visuals .item-description p {
@@ -331,7 +332,7 @@ body {
   width: 1280px;
   height: 720px;
   background-color: #997577;
-  z-index: 42;
+  z-index: 52;
   display: none;
 }
 
@@ -339,7 +340,7 @@ body {
   position: absolute;
   right: 0;
   top: 0;
-  z-index: 43;
+  z-index: 53;
   cursor: url("/image/cursors/default.png"), auto;
 }
 
@@ -357,7 +358,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 40;
+  z-index: 50;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -365,7 +366,7 @@ body {
 
 #menu-bar button {
   display: block;
-  z-index: 41;
+  z-index: 51;
   max-width: 200px;
   margin-left: 25px;
   padding: 0 10px;
@@ -381,7 +382,7 @@ body {
 }
 
 #text-overlay .wrapper {
-  z-index: 41;
+  z-index: 51;
   position: absolute;
   top: 0;
   left: 0;
@@ -421,7 +422,7 @@ body {
   position: absolute;
   top: 680px;
   left: 1240px;
-  z-index: 42;
+  z-index: 52;
   color: #c3a38a;
   font-size: 48px;
   display: none;
@@ -487,6 +488,42 @@ body {
   display: block;
 }
 
+#area-title {
+  font-size: 96px;
+  font-family: "m5x7", sans-serif;
+  color: #f6d6bd;
+  text-align: center;
+  text-shadow: 5px 5px #08141e;
+  z-index: 40;
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  pointer-events: none;
+  animation: areaTitleMovement 3s 1;
+  bottom: 100%;
+  display: none;
+}
+
+#area-title.revealed {
+  display: block;
+}
+
+@keyframes areaTitleMovement {
+  0% {
+    bottom: 100%;
+  }
+  20% {
+    bottom: 80%;
+  }
+  80% {
+    bottom: 80%;
+  }
+  100% {
+    bottom: 100%;
+  }
+}
 #npc-dialogue .wrapper.revealed {
   display: block;
 }
@@ -496,7 +533,7 @@ body {
 }
 
 #npc-dialogue .wrapper {
-  z-index: 41;
+  z-index: 51;
   position: absolute;
   top: 0;
   left: 0;
@@ -538,7 +575,7 @@ body {
   position: absolute;
   top: 680px;
   left: 1240px;
-  z-index: 42;
+  z-index: 52;
   color: #c3a38a;
   font-size: 48px;
   display: none;
@@ -569,7 +606,7 @@ body {
   position: absolute;
   left: 0;
   bottom: 0;
-  z-index: 42;
+  z-index: 52;
   border: 1px solid #f6d6bd;
 }
 
@@ -579,7 +616,7 @@ body {
   position: absolute;
   left: 512px;
   bottom: 78px;
-  z-index: 42;
+  z-index: 52;
   font-size: 48px;
   padding: 0 0 0 24px;
 }

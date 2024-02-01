@@ -14,7 +14,8 @@ $cursor-talk: url('/image/cursors/talk.png'), auto;
 $z-base: 10;
 $z-interaction: 20;
 $z-darkness: 30;
-$z-menu: 40;
+$z-area-title: 40;
+$z-menu: 50;
 
 @mixin zlayers($layer, $add: 0) {
     z-index: $layer + $add;

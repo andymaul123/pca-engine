@@ -9,8 +9,10 @@ export const tunnelModel = {
         isDark: true,
         isCurrentlyDark: true,
         messagesConverted: false,
+        visited: false,
     },
     uniqueState: {},
+    areaTitle: null,
     basemats: {
         current: "image/tunnel-nyx.png",
     },

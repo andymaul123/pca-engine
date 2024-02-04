@@ -22,7 +22,7 @@
 * @prop {boolean} isDark
 * @prop {boolean} isCurrentlyDark
 * @prop {boolean} messagesConverted
-* @prop {number} visited
+* @prop {boolean} visited
 */
 
 /**

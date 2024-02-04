@@ -7,9 +7,9 @@
 
 export async function clickBus(event) {
     const referringElement = event?.target;
-    const soundEffect = event?.srcElement?.dataset?.sound ? JSON.parse(event?.srcElement?.dataset?.sound) : null;
-    const streamMessage = event?.srcElement?.dataset?.streammessage ? JSON.parse(event?.srcElement?.dataset?.streammessage) : null;
-    const toggleClass = event?.srcElement?.dataset?.toggle ? JSON.parse(event?.srcElement?.dataset?.toggle) : null;
+    const soundEffect = event?.target?.dataset?.sound ? JSON.parse(event?.target?.dataset?.sound) : null;
+    const streamMessage = event?.target?.dataset?.streammessage ? JSON.parse(event?.target?.dataset?.streammessage) : null;
+    const toggleClass = event?.target?.dataset?.toggle ? JSON.parse(event?.target?.dataset?.toggle) : null;
 
     if(soundEffect) {
         await window.interactivity.playSound(soundEffect);

@@ -9,7 +9,7 @@ export const shrineModel = {
         isDark: false,
         isCurrentlyDark: false,
         messagesConverted: false,
-        visited: 0,
+        visited: false,
     },
     uniqueState: {
         candleOn: true,

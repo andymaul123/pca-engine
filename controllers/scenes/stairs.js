@@ -13,8 +13,19 @@ const sceneId = "stairs";
 export function initializeController() {
     transformText(dataStore, sceneId);
     roomDarkness(dataStore, sceneId);
-    dataStore.scenes[sceneId].commonState.visited++;
     return dataStore.scenes[sceneId];
+}
+
+/**
+ * A sort of 'conttroller middleware', called by other controllers before
+ * their own logic.
+ * @returns {void} 
+ */
+function updateController() {
+    // Updates scene visited value once a player has made an interaction
+    if(dataStore.scenes[sceneId].commonState.visited == true) {
+        dataStore.scenes[sceneId].commonState.visited = false;
+    }
 }
 
 /**
@@ -22,6 +33,7 @@ export function initializeController() {
  * @returns {Message | null} 
  */
 export function startMessageController() {
+    updateController()
     const startMessage = determineStartMessage(dataStore, sceneId);
     return startMessage ? dataStore.scenes[sceneId].messages[startMessage] : null;
 }
@@ -32,6 +44,7 @@ export function startMessageController() {
  * @returns {Message | null} 
  */
 export function messageController(id) {
+    updateController()
     const message = dataStore.scenes[sceneId].messages[id];
     return message ? message : null;
 }
@@ -42,6 +55,7 @@ export function messageController(id) {
  * @returns {Decision | null} 
  */
 export function decisionController(id) {
+    updateController()
     const decision = dataStore.scenes[sceneId].decisions[id];
     return decision ? decision : null;
 }

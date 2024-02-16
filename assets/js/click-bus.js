@@ -10,6 +10,7 @@ export async function clickBus(event) {
     const soundEffect = event?.target?.dataset?.sound ? JSON.parse(event?.target?.dataset?.sound) : null;
     const streamMessage = event?.target?.dataset?.streammessage ? JSON.parse(event?.target?.dataset?.streammessage) : null;
     const toggleClass = event?.target?.dataset?.toggle ? JSON.parse(event?.target?.dataset?.toggle) : null;
+    const contextSwitch = event?.target?.dataset?.context ? event?.target?.dataset?.context : null;
 
     if(soundEffect) {
         await window.interactivity.playSound(soundEffect);
@@ -23,6 +24,10 @@ export async function clickBus(event) {
 
     if(toggleClass) {
         window.interactivity.toggleClass(toggleClass);
+    }
+
+    if(contextSwitch) {
+        window.interactivity.updateContext(contextSwitch);
     }
 
     if(referringElement) {

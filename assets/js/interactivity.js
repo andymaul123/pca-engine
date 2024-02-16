@@ -17,5 +17,8 @@ export const interactivity = {
     clickBus: clickBus,
     playSound: playSound,
     revealAll: false,
+    updateContext: function(context) {
+        document.querySelector("#main-scene").setAttribute('data-context', context);
+    }
 
 };

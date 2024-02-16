@@ -54,7 +54,6 @@
 * @prop {boolean} show
 * @prop {SoundEffect | null} soundEffect
 * @prop {boolean} showInDark
-* @prop {string} cursor
 */
 
 /**

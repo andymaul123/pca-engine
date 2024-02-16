@@ -1,4 +1,4 @@
 /** 
 * @typedef PlayerModel 
-* @prop {Array<string>} inventory  
+* @prop {Array<string>} inventory
 */

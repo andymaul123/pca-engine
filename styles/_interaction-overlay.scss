@@ -38,19 +38,19 @@
     opacity: 1;
 }
 
-.overlay svg polygon.cursor-default {
-    cursor: $cursor-default;
-}
-.overlay svg polygon.cursor-point {
-    cursor: $cursor-point;
-}
-.overlay svg polygon.cursor-walk {
-    cursor: $cursor-walk;
-}
-.overlay svg polygon.cursor-talk {
-    cursor: $cursor-talk;
-}
-
 #fragments img.fragment-image {
     image-rendering: pixelated;
+}
+
+#main-scene .overlay svg polygon {
+    cursor: $cursor-default;
+}
+#main-scene[data-context=look] .overlay svg polygon {
+    cursor: $cursor-look;
+}
+#main-scene[data-context=move] .overlay svg polygon {
+    cursor: $cursor-move;
+}
+#main-scene[data-context=talk] .overlay svg polygon {
+    cursor: $cursor-talk;
 }

@@ -53,3 +53,7 @@ shrineRoutes.get('/updatewindow', (req, res) => {
 });
 
 
+
+shrineRoutes.get('/interact/shrine/:context', (req, res) => {
+
+});

@@ -18,16 +18,17 @@
             <div id="main">
                 <%- include('./partials/menu-bar'); %>
                 <%- include('./partials/main-menu'); %>
+                <%- include('./partials/context-bar'); %>
                 <div id="inventory-menu"></div>
-                <div id="main-events" hx-swap-oob="true"></div>
                 <div 
                 id="main-scene" 
                 hx-get="/scenes/shrine" 
                 hx-swap="outerHTML swap:1s" 
                 hx-select="#main-scene" 
-                class="transition"
+                class="transition context-look"
                 hx-trigger="triggerClick throttle:0.5s"
-                hx-on:click="window.interactivity.clickBus(event)">
+                hx-on:click="window.interactivity.clickBus(event)"
+                data-context="look">
                     <h1 class="center-text"><%= mainTitle %></h1>
                 </div>
             </div>

@@ -27,7 +27,6 @@ export const tunnelModel = {
             show: true,
             soundEffect: null,
             showInDark: true,
-            cursor: "walk",
         },
         window: {
             coords: [831, 498, 906, 498, 897, 396, 867, 381, 843, 396],
@@ -38,7 +37,6 @@ export const tunnelModel = {
             show: true,
             soundEffect: null,
             showInDark: false,
-            cursor: "point",
         },
     },
     messages: {

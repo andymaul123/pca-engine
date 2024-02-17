@@ -7,6 +7,7 @@
         hx-trigger="triggerClick throttle:0.5s"
         hx-on:click="window.interactivity.clickBus(event)"
         data-context="look"
+        hx-target="#main-scene"
         checked
     />
     <label for="context-look">Look</label>
@@ -18,6 +19,7 @@
         hx-trigger="triggerClick throttle:0.5s"
         hx-on:click="window.interactivity.clickBus(event)"
         data-context="move"
+        hx-target="#main-scene"
         />
     <label for="context-move">Move</label>
     <input 
@@ -28,6 +30,7 @@
         hx-trigger="triggerClick throttle:0.5s"
         hx-on:click="window.interactivity.clickBus(event)"
         data-context="talk"
+        hx-target="#main-scene"
         />
     <label for="context-talk">Talk</label>
 </form>

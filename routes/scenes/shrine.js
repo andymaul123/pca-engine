@@ -7,6 +7,7 @@ import {
     takeCandleController,
     breakWindowController,
     updateWindowController,
+    contextualizeSceneRender,
  } from '../../controllers/scenes/shrine.js';
 
 export const shrineRoutes = express.Router();
@@ -14,6 +15,11 @@ export const shrineRoutes = express.Router();
 shrineRoutes.get('/', (req, res) => {
     const initialScene = initializeController();
     res.render('partials/scene.ejs', initialScene);
+});
+
+shrineRoutes.get('/context-render', (req, res) => {
+    const contextualizedScene = contextualizeSceneRender();
+    res.render('partials/scene.ejs', contextualizedScene);
 });
 
 shrineRoutes.get('/startmessage', (req, res) => {
@@ -50,10 +56,4 @@ shrineRoutes.get('/breakwindow', (req, res) => {
 shrineRoutes.get('/updatewindow', (req, res) => {
     updateWindowController();
     res.redirect('/scenes/tunnel');
-});
-
-
-
-shrineRoutes.get('/interact/shrine/:context', (req, res) => {
-
 });

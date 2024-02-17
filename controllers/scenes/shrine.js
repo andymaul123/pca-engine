@@ -1,6 +1,6 @@
 import { dataStore } from '../../models/index.js';
 import { transformText, roomDarkness, determineStartMessage } from './common.js';
-import { addItemsToInventory } from '../player/common.js';
+import { addItemsToInventory, getPlayerContext, setCurrentScene } from '../player/common.js';
 import "../../types/index.js";
 
 const sceneId = "shrine";
@@ -15,11 +15,13 @@ const sceneId = "shrine";
 export function initializeController() {
     transformText(dataStore, sceneId);
     roomDarkness(dataStore, sceneId);
+    dataStore.scenes[sceneId].commonState.context = getPlayerContext();
+    setCurrentScene(sceneId);
     return dataStore.scenes[sceneId];
 }
 
 /**
- * A sort of 'conttroller middleware', called by other controllers before
+ * A sort of 'controller middleware', called by other controllers before
  * their own logic.
  * @returns {void} 
  */
@@ -30,6 +32,15 @@ function updateController() {
     }
 }
 
+/**
+ * Reloads the scene when a player changes context
+ * @returns {SceneModel} 
+ */
+export function contextualizeSceneRender() {
+    dataStore.scenes[sceneId].commonState.context = getPlayerContext();
+    setCurrentScene(sceneId);
+    return dataStore.scenes[sceneId];
+}
 
 /**
  * Checks for start message, and if it exists, return a Message
@@ -98,4 +109,34 @@ export function updateWindowController() {
     updateController();
     dataStore.scenes[sceneId].overlayNodes.windowBroken.show = false;
     dataStore.scenes[sceneId].overlayNodes.windowBrokenAfter.show = true;
+}
+
+// todo desc
+// New paradigm where each 'interact' object defined in the model gets its own controller
+// This one is for the actual candle shrine
+// Needs to return an object with two properties:
+// The first is the string defining a partial path (the where to render)
+// And the second is a sceneObject (the what to render)
+// Maybe a third that dictates render types?
+export function shrineInteractController(context) {
+    let sceneData = {
+        routePath: "",
+        data: {},
+    };
+    switch (context) {
+        case 'look':
+
+            return sceneData;
+            break;
+
+        case 'move':
+
+          break;
+
+        case 'talk':
+
+          break;
+        default:
+          console.log(`Error: no known context received.`);
+      }
 }

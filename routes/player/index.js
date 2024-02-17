@@ -1,6 +1,6 @@
 import express from 'express';
 import { inventoryController } from '../../controllers/player/inventory.js';
-import { setPlayerContext } from '../../controllers/player/common.js';
+import { getCurrentScene, setPlayerContext } from '../../controllers/player/common.js';
 
 export const playerRoutes = express.Router();
 
@@ -12,5 +12,6 @@ playerRoutes.get('/inventory', (req, res) => {
 playerRoutes.get('/context/:context', (req, res) => {
     const context = req.params.context;
     setPlayerContext(context);
-    res.sendStatus(200);
+    const currentScene = getCurrentScene();
+    res.redirect(`/scenes/${currentScene}/context-render`);
 });

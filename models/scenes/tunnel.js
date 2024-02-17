@@ -10,6 +10,7 @@ export const tunnelModel = {
         isCurrentlyDark: true,
         messagesConverted: false,
         visited: false,
+        context: null,
     },
     uniqueState: {},
     areaTitle: null,
@@ -27,6 +28,7 @@ export const tunnelModel = {
             show: true,
             soundEffect: null,
             showInDark: true,
+            context: "move",
         },
         window: {
             coords: [831, 498, 906, 498, 897, 396, 867, 381, 843, 396],
@@ -37,6 +39,7 @@ export const tunnelModel = {
             show: true,
             soundEffect: null,
             showInDark: false,
+            context: "look",
         },
     },
     messages: {

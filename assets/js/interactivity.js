@@ -19,6 +19,5 @@ export const interactivity = {
     revealAll: false,
     updateContext: function(context) {
         document.querySelector("#main-scene").setAttribute('data-context', context);
-    }
-
+    },
 };

@@ -4,12 +4,18 @@ import {
     startMessageController,
     messageController,
     decisionController,
+    contextualizeSceneRender,
  } from '../../controllers/scenes/tunnel.js';
 export const tunnelRoutes = express.Router();
 
 tunnelRoutes.get('/', (req, res) => {
     const initialScene = initializeController();
     res.render('partials/scene.ejs', initialScene);
+});
+
+tunnelRoutes.get('/context-render', (req, res) => {
+    const contextualizedScene = contextualizeSceneRender();
+    res.render('partials/scene.ejs', contextualizedScene);
 });
 
 tunnelRoutes.get('/startmessage', (req, res) => {

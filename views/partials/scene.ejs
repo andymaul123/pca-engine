@@ -1,5 +1,5 @@
 <!-- Primary Scene -->
-<div id="main-scene" class="transition <%= commonState.isCurrentlyDark ? 'is-dark' : '' %>" data-context="look">
+<div id="main-scene" class="transition <%= commonState.isCurrentlyDark ? 'is-dark' : '' %>" data-context="<%= commonState.context %>">
   <div id="area-title" class="<%= commonState.visited ? '' : 'revealed'  %>"><%= areaTitle %></div>
   <div id="start-up" hx-trigger="load throttle:0.5s" hx-get="/scenes/<%= id %>/startmessage" hx-target="#text-overlay"></div>
   <div id="text-overlay" hx-on="htmx:load: window.interactivity.typeWriter('message')"></div>
@@ -14,7 +14,9 @@
         </filter>
       </defs>
       <% for (let key in overlayNodes) {%>
+        <% if (overlayNodes[key].context == commonState.context) {%>
           <%- include('./polygon', overlayNodes[key]); %>
+        <% }%>
       <% } %>
     </svg>
   </div>

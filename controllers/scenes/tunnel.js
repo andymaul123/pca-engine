@@ -1,5 +1,6 @@
 import { dataStore } from '../../models/index.js';
 import { transformText, roomDarkness, determineStartMessage } from './common.js';
+import { getPlayerContext, setCurrentScene } from '../player/common.js';
 import "../../types/index.js";
 
 const sceneId = "tunnel";
@@ -13,11 +14,13 @@ const sceneId = "tunnel";
 export function initializeController() {
     transformText(dataStore, sceneId);
     roomDarkness(dataStore, sceneId);
+    dataStore.scenes[sceneId].commonState.context = getPlayerContext();
+    setCurrentScene(sceneId);
     return dataStore.scenes[sceneId];
 }
 
 /**
- * A sort of 'conttroller middleware', called by other controllers before
+ * A sort of 'controller middleware', called by other controllers before
  * their own logic.
  * @returns {void} 
  */
@@ -26,6 +29,16 @@ function updateController() {
     if(dataStore.scenes[sceneId].commonState.visited == true) {
         dataStore.scenes[sceneId].commonState.visited = false;
     }
+}
+
+/**
+ * Reloads the scene when a player changes context
+ * @returns {SceneModel} 
+ */
+export function contextualizeSceneRender() {
+    dataStore.scenes[sceneId].commonState.context = getPlayerContext();
+    setCurrentScene(sceneId);
+    return dataStore.scenes[sceneId];
 }
 
 /**

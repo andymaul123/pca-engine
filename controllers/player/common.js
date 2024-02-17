@@ -46,3 +46,36 @@ export function removeItemsFromInventory(dataStore, ids) {
         }
     });
 }
+
+/**
+ * Returns player's current context
+ * @returns {string} 
+ */
+export function getPlayerContext() {
+    return dataStore.player.context;
+}
+
+/**
+ * Sets player's current context
+ * @returns {string} 
+ */
+export function setPlayerContext(context) {
+    dataStore.player.context = context;
+}
+
+
+/**
+ * Returns player's current scene
+ * @returns {string} 
+ */
+export function getCurrentScene() {
+    return dataStore.player.currentScene;
+}
+
+/**
+ * Sets player's current scene
+ * @returns {string} 
+ */
+export function setCurrentScene(newSceneId) {
+    dataStore.player.currentScene = newSceneId;
+}

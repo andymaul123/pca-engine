@@ -1,6 +1,6 @@
 import { dataStore } from '../../models/index.js';
 import { transformText, roomDarkness, determineStartMessage } from './common.js';
-import { addItemsToInventory, getPlayerContext, setCurrentScene } from '../player/common.js';
+import { addItemsToInventory, getPlayerContext, setCurrentScene, getCurrentScene } from '../player/common.js';
 import "../../types/index.js";
 
 const sceneId = "shrine";
@@ -16,6 +16,10 @@ export function initializeController() {
     transformText(dataStore, sceneId);
     roomDarkness(dataStore, sceneId);
     dataStore.scenes[sceneId].commonState.context = getPlayerContext();
+    // We want to show the start message once each time the player enters the scene
+    if(getCurrentScene() != sceneId) {
+        dataStore.scenes[sceneId].commonState.showSceneStartItems = true;
+    }
     setCurrentScene(sceneId);
     return dataStore.scenes[sceneId];
 }

@@ -1,6 +1,6 @@
 import { dataStore } from '../../models/index.js';
 import { transformText, roomDarkness, determineStartMessage } from './common.js';
-import { getPlayerContext, setCurrentScene } from '../player/common.js';
+import { getPlayerContext, setCurrentScene, getCurrentScene } from '../player/common.js';
 import "../../types/index.js";
 
 const sceneId = "tunnel";
@@ -15,6 +15,10 @@ export function initializeController() {
     transformText(dataStore, sceneId);
     roomDarkness(dataStore, sceneId);
     dataStore.scenes[sceneId].commonState.context = getPlayerContext();
+    // We want to show the start message once each time the player enters the scene
+    if(getCurrentScene() != sceneId) {
+        dataStore.scenes[sceneId].commonState.showSceneStartItems = true;
+    }
     setCurrentScene(sceneId);
     return dataStore.scenes[sceneId];
 }
@@ -26,8 +30,8 @@ export function initializeController() {
  */
 function updateController() {
     // Updates scene visited value once a player has made an interaction
-    if(dataStore.scenes[sceneId].commonState.visited == true) {
-        dataStore.scenes[sceneId].commonState.visited = false;
+    if(dataStore.scenes[sceneId].commonState.visited == false) {
+        dataStore.scenes[sceneId].commonState.visited = true;
     }
 }
 

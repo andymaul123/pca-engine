@@ -11,6 +11,7 @@ export const stairsModel = {
         messagesConverted: false,
         visited: false,
         context: null,
+        showSceneStartItems: true,
     },
     uniqueState: {},
     areaTitle: null,

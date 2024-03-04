@@ -1,7 +1,9 @@
 <!-- Primary Scene -->
 <div id="main-scene" class="transition <%= commonState.isCurrentlyDark ? 'is-dark' : '' %>" data-context="<%= commonState.context %>">
-  <div id="area-title" class="<%= commonState.visited ? '' : 'revealed'  %>"><%= areaTitle %></div>
-  <div id="start-up" hx-trigger="load throttle:0.5s" hx-get="/scenes/<%= id %>/startmessage" hx-target="#text-overlay"></div>
+  <% if (commonState.showSceneStartItems == true) { %>
+    <div id="area-title" class="<%= commonState.visited ? '' : 'revealed'  %>"><%= areaTitle %></div>
+    <div id="start-up" hx-trigger="load throttle:0.5s" hx-get="/scenes/<%= id %>/startmessage" hx-target="#text-overlay"></div>
+  <% } %>
   <div id="text-overlay" hx-on="htmx:load: window.interactivity.typeWriter('message')"></div>
   <div id="npc-dialogue" hx-on="htmx:load: window.interactivity.typeWriter('dialogue')"></div>
   <div id="decision-box"></div>

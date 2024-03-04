@@ -23,6 +23,7 @@
 * @prop {boolean} isCurrentlyDark
 * @prop {boolean} messagesConverted
 * @prop {boolean} visited
+* @prop {boolean} showSceneStartItems
 */
 
 /**

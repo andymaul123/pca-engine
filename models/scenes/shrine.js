@@ -75,9 +75,9 @@ export const shrineModel = {
             showInDark: false,
             context: "look",
         },
-        moveToStairs:{
+        sceneTransitionStairs_move:{
             coords: [198, 702, 6, 708, 0, 3, 102, 6, 84, 63, 66, 111, 39, 183, 36, 225, 57, 276, 39, 300, 39, 354, 24, 399, 42, 429, 48, 480, 60, 531, 141, 624],
-            id: "exit",
+            id: "sceneTransitionStairs_move",
             triggerScript: "scenes/stairs",
             triggerTarget: "main-scene",
             swap: sceneTransition,
@@ -85,6 +85,17 @@ export const shrineModel = {
             soundEffect: null,
             showInDark: false,
             context: "move",
+        },
+        sceneTransitionStairs_look:{
+            coords: [198, 702, 6, 708, 0, 3, 102, 6, 84, 63, 66, 111, 39, 183, 36, 225, 57, 276, 39, 300, 39, 354, 24, 399, 42, 429, 48, 480, 60, 531, 141, 624],
+            id: "sceneTransitionStairs_look",
+            triggerScript: "scenes/shrine/messages/stairslook",
+            triggerTarget: "text-overlay",
+            swap: null,
+            show: true,
+            soundEffect: null,
+            showInDark: false,
+            context: "look",
         },
     },
     messages: {
@@ -132,6 +143,19 @@ export const shrineModel = {
             ],
             textString: null,
             soundEffect: null,
+        },
+        stairslook: {
+            nextMessage: null,
+            triggerScript: null,
+            actionData: null,
+            targetId: null,
+            textArray: [
+                {
+                    speed: 50,
+                    text: "Behind this pillar is a passageway.",
+                    classes: [],
+                },
+            ],
         },
         start: null,
         roomIsDark: roomIsDark,

@@ -6,4 +6,6 @@ import "../../types/index.js";
 */
 export const playerModel = {
     inventory: [],
+    context: "look",
+    currentScene: "",
 }

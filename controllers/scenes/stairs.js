@@ -1,5 +1,6 @@
 import { dataStore } from '../../models/index.js';
 import { transformText, roomDarkness, determineStartMessage } from './common.js';
+import { getPlayerContext, setCurrentScene, getCurrentScene } from '../player/common.js';
 import "../../types/index.js";
 
 const sceneId = "stairs";
@@ -13,19 +14,36 @@ const sceneId = "stairs";
 export function initializeController() {
     transformText(dataStore, sceneId);
     roomDarkness(dataStore, sceneId);
+    dataStore.scenes[sceneId].commonState.context = getPlayerContext();
+    // We want to show the start message once each time the player enters the scene
+    if(getCurrentScene() != sceneId) {
+        dataStore.scenes[sceneId].commonState.showSceneStartItems = true;
+    }
+    setCurrentScene(sceneId);
     return dataStore.scenes[sceneId];
 }
 
 /**
- * A sort of 'conttroller middleware', called by other controllers before
+ * A sort of 'controller middleware', called by other controllers before
  * their own logic.
  * @returns {void} 
  */
 function updateController() {
     // Updates scene visited value once a player has made an interaction
-    if(dataStore.scenes[sceneId].commonState.visited == true) {
-        dataStore.scenes[sceneId].commonState.visited = false;
+    if(dataStore.scenes[sceneId].commonState.visited == false) {
+        dataStore.scenes[sceneId].commonState.visited = true;
     }
+    dataStore.scenes[sceneId].commonState.showSceneStartItems = false;
+}
+
+/**
+ * Reloads the scene when a player changes context
+ * @returns {SceneModel} 
+ */
+export function contextualizeSceneRender() {
+    dataStore.scenes[sceneId].commonState.context = getPlayerContext();
+    setCurrentScene(sceneId);
+    return dataStore.scenes[sceneId];
 }
 
 /**
@@ -33,7 +51,7 @@ function updateController() {
  * @returns {Message | null} 
  */
 export function startMessageController() {
-    updateController()
+    updateController();
     const startMessage = determineStartMessage(dataStore, sceneId);
     return startMessage ? dataStore.scenes[sceneId].messages[startMessage] : null;
 }
@@ -44,7 +62,7 @@ export function startMessageController() {
  * @returns {Message | null} 
  */
 export function messageController(id) {
-    updateController()
+    updateController();
     const message = dataStore.scenes[sceneId].messages[id];
     return message ? message : null;
 }
@@ -55,7 +73,7 @@ export function messageController(id) {
  * @returns {Decision | null} 
  */
 export function decisionController(id) {
-    updateController()
+    updateController();
     const decision = dataStore.scenes[sceneId].decisions[id];
     return decision ? decision : null;
 }

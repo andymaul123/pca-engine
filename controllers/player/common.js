@@ -1,3 +1,4 @@
+import { dataStore } from "../../models/index.js";
 import "../../types/index.js";
 
 /**
@@ -44,4 +45,37 @@ export function removeItemsFromInventory(dataStore, ids) {
             dataStore.player.inventory.splice(indexToRemove, 1);
         }
     });
+}
+
+/**
+ * Returns player's current context
+ * @returns {string} 
+ */
+export function getPlayerContext() {
+    return dataStore.player.context;
+}
+
+/**
+ * Sets player's current context
+ * @returns {string} 
+ */
+export function setPlayerContext(context) {
+    dataStore.player.context = context;
+}
+
+
+/**
+ * Returns player's current scene
+ * @returns {string} 
+ */
+export function getCurrentScene() {
+    return dataStore.player.currentScene;
+}
+
+/**
+ * Sets player's current scene
+ * @returns {string} 
+ */
+export function setCurrentScene(newSceneId) {
+    dataStore.player.currentScene = newSceneId;
 }

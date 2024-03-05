@@ -10,6 +10,7 @@ export const tunnelModel = {
         isCurrentlyDark: true,
         messagesConverted: false,
         visited: false,
+        context: null,
     },
     uniqueState: {},
     areaTitle: null,
@@ -18,16 +19,27 @@ export const tunnelModel = {
     },
     fragments: null,
     overlayNodes: {
-        back: {
+        back_move: {
             coords: [849, 624, 1266, 624, 1266, 708, 849, 708],
-            id: "back",
+            id: "back_move",
             triggerScript: "scenes/shrine",
             triggerTarget: "main-scene",
             swap: sceneTransition,
             show: true,
             soundEffect: null,
             showInDark: true,
-            cursor: "walk",
+            context: "move",
+        },
+        back_look: {
+            coords: [849, 624, 1266, 624, 1266, 708, 849, 708],
+            id: "back_look",
+            triggerScript: "scenes/tunnel/messages/back_look",
+            triggerTarget: "text-overlay",
+            swap: null,
+            show: true,
+            soundEffect: null,
+            showInDark: true,
+            context: "look",
         },
         window: {
             coords: [831, 498, 906, 498, 897, 396, 867, 381, 843, 396],
@@ -38,7 +50,7 @@ export const tunnelModel = {
             show: true,
             soundEffect: null,
             showInDark: false,
-            cursor: "point",
+            context: "look",
         },
     },
     messages: {
@@ -61,6 +73,29 @@ export const tunnelModel = {
                 {
                     speed: 50,
                     text: "word in it.",
+                    classes: [],
+                },
+            ],
+        },
+        back_look: {
+            nextMessage: null,
+            triggerScript: null,
+            actionData: null,
+            targetId: null,
+            textArray: [
+                {
+                    speed: 50,
+                    text: "The passageway back to the",
+                    classes: [],
+                },
+                {
+                    speed: 50,
+                    text: " Shrine ",
+                    classes: ['callout'],
+                },
+                {
+                    speed: 50,
+                    text: "room.",
                     classes: [],
                 },
             ],

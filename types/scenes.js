@@ -23,6 +23,7 @@
 * @prop {boolean} isCurrentlyDark
 * @prop {boolean} messagesConverted
 * @prop {boolean} visited
+* @prop {boolean} showSceneStartItems
 */
 
 /**
@@ -54,7 +55,6 @@
 * @prop {boolean} show
 * @prop {SoundEffect | null} soundEffect
 * @prop {boolean} showInDark
-* @prop {string} cursor
 */
 
 /**

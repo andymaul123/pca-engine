@@ -4,6 +4,7 @@ import {
     startMessageController,
     messageController,
     decisionController,
+    contextualizeSceneRender,
  } from '../../controllers/scenes/stairs.js';
 
 export const stairsRoutes = express.Router();
@@ -11,6 +12,11 @@ export const stairsRoutes = express.Router();
 stairsRoutes.get('/', (req, res) => {
     const initialScene = initializeController();
     res.render('partials/scene.ejs', initialScene);
+});
+
+stairsRoutes.get('/context-render', (req, res) => {
+    const contextualizedScene = contextualizeSceneRender();
+    res.render('partials/scene.ejs', contextualizedScene);
 });
 
 stairsRoutes.get('/startmessage', (req, res) => {

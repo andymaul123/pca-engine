@@ -32,8 +32,7 @@ body {
 }
 
 #outer-container {
-    width: 1600px;
-    height: 900px;
+    @include outerDimensions();
     background-color: $brown_hex;
     display: flex;
     flex-direction: column;
@@ -44,8 +43,7 @@ body {
 
 #main, #main-scene {
     position: relative;
-    width: 1280px;
-    height: 720px;
+    @include innerDimensions();
     cursor: $cursor-default;
     overflow: hidden;
 }

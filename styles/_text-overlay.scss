@@ -9,8 +9,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 1280px;
-    height: 720px;
+    @include innerDimensions();
     display: none;
 }
 #text-overlay .text-box {

@@ -3,11 +3,13 @@
     top: 0;
     left: 0;
     @include zlayers($z-interaction);
+    @include innerDimensions();
 }
 .overlay svg polygon {
     fill: transparent;
     opacity: 0;
     display: none;
+    @include innerDimensions();
 }
 .overlay svg polygon.revealed {
     display: inline;

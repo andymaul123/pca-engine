@@ -4,27 +4,26 @@
     left: 0;
     image-rendering: pixelated;
     @include zlayers($z-base);
+    @include innerDimensions();
 }
 
 #fragments {
     position: absolute;
     left: 0;
     top: 0;
-    width: 1280px;
-    height: 720px;
+    @include innerDimensions();
     @include zlayers($z-base, 1);
 }
 
-#fragments img {
+.fragment-image {
     position: absolute;
     left: 0;
     top: 0;
-    width: 1280px;
-    height: 720px;
+    @include innerDimensions();
     display: none;   
 }
 
-#fragments img.revealed {
+.fragment-image.revealed {
     display: block;
 }
 
@@ -32,8 +31,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 1280px;
-    height: 720px;
+    @include innerDimensions();
     display: none;
     background-color: $transparent_black_bg;
     @include zlayers($z-base, 2);

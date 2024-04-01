@@ -9,8 +9,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 1280px;
-    height: 720px;
+    @include innerDimensions();
     display: none;
     background: $transparent_black_bg;
 }
@@ -69,6 +68,8 @@
 
   #npc-dialogue img.portrait-image {
     image-rendering: pixelated;
+    width: 512px;
+    height: 512px;
   }
 
   #npc-portrait {

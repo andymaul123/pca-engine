@@ -9,7 +9,7 @@
   <div id="decision-box"></div>
   <div id="is-dark"></div>
   <div class="overlay">
-    <svg width="1280" height="720">
+    <svg>
       <defs>
         <filter id="f1" x="0" y="0">
           <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
@@ -27,8 +27,6 @@
       <% for (let key in fragments) {%>
         <img
           src="/<%= fragments[key].path %>"
-          width="1280"
-          height="720"
           class="fragment-image <%= fragments[key].show ? 'revealed' : ''  %>"
           id="#fragment-<%= key %>"
         />
@@ -38,8 +36,6 @@
   <div id="basemat">
     <img
       src="/<%= basemats.current %>"
-      width="1280"
-      height="720"
       class="base-image"
       id="#basemat-<%= id %>"
     />

@@ -41,3 +41,10 @@ export const palette = {
     },
 
 }
+
+export const sizes = {
+    outerWidth: 1600,
+    outerHeight: 900,
+    innerWidth: 1280,
+    innerHeight: 720,
+}

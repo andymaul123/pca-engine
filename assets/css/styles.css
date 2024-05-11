@@ -1,3 +1,7 @@
+/*
+Sunfall-12 color palette by SolitaryCatK1ng
+https://lospec.com/palette-list/sunfall-12
+*/
 @font-face {
   font-family: "m5x7";
   src: url("../fonts/m5x7.ttf");
@@ -696,10 +700,20 @@ body {
 
 #title-screen-options p {
   font-size: 48px;
+  color: #ffeb99;
+  text-shadow: 3px 3px 0 #4d1059, -3px 3px 0 #4d1059, -3px -3px 0 #4d1059, 3px -3px 0 #4d1059;
+}
+
+#title-screen-options p.disabled {
+  color: #c23e6e;
 }
 
 #title-screen-options p:hover {
-  color: #997577;
+  color: #ed9a6d;
+}
+
+#title-screen-options p.disabled:hover {
+  color: #c23e6e;
 }
 
 /*# sourceMappingURL=styles.css.map */

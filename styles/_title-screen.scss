@@ -29,8 +29,22 @@
 
 #title-screen-options p {
     @include fontSize(3);
+    color: $sunfall_gold1_hex;
+    text-shadow:
+    3px 3px 0 $sunfall_purple1_hex,
+    -3px 3px 0 $sunfall_purple1_hex,
+    -3px -3px 0 $sunfall_purple1_hex,
+    3px -3px 0 $sunfall_purple1_hex;
+}
+
+#title-screen-options p.disabled {
+    color: $sunfall_pink3_hex;
 }
 
 #title-screen-options p:hover {
-    color: $brown_hex;
+    color: $sunfall_orange1_hex;
+}
+
+#title-screen-options p.disabled:hover {
+    color: $sunfall_pink3_hex;
 }

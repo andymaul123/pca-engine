@@ -1,0 +1,36 @@
+#title-screen {
+    position: relative;
+    @include innerDimensions();
+    cursor: $cursor-default;
+    overflow: hidden;
+}
+
+
+.game-logo-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    image-rendering: pixelated;
+    @include zlayers($z-base, 1);
+    @include innerDimensions();
+}
+
+#title-screen-options {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    @include innerDimensions();
+    @include zlayers($z-base, 2);
+}
+
+#title-screen-options p {
+    @include fontSize(3);
+}
+
+#title-screen-options p:hover {
+    color: $brown_hex;
+}

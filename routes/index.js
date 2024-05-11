@@ -19,6 +19,10 @@ allRoutes.get('/', (req, res) => {
   res.render('index', {mainTitle: 'Main Title'});
 });
 
+allRoutes.get('/start', (req, res) => {
+  res.render('partials/starting-scene.ejs', {});
+});
+
 allRoutes.get('/deleteme', (req, res) => {
   res.send('');
 });

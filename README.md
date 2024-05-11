@@ -8,7 +8,7 @@ Uses NodeJS & Express as the back-end, and HTMX & Vanilla JS on the front-end.
 
 ## Installation
 - `npm install`
-- `npm run-script` compiles `.scss` files
+- `npm run-script css` compiles `.scss` files
 - `npm start` starts the server at `localhost:3000`
 
 ## History

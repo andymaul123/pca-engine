@@ -6,31 +6,16 @@
 </script>
 
 <head>
-    <title>Gui Test</title>
+    <title><%= mainTitle %></title>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
-    <audio id="background-music" loop autoplay src="/audio/Kingdom-in-Despair.mp3"></audio>
     <div class="flex-centered">
         <div id="outer-container">
             <div id="main">
-                <%- include('./partials/menu-bar'); %>
-                <%- include('./partials/main-menu'); %>
-                <%- include('./partials/context-bar'); %>
-                <div id="inventory-menu"></div>
-                <div 
-                id="main-scene" 
-                hx-get="/scenes/shrine" 
-                hx-swap="outerHTML swap:1s" 
-                hx-select="#main-scene" 
-                class="transition"
-                hx-trigger="triggerClick throttle:0.5s"
-                hx-on:click="window.interactivity.clickBus(event)"
-                data-context="look">
-                    <h1 class="center-text"><%= mainTitle %></h1>
-                </div>
+                <%- include('./partials/title-screen.ejs'); %>
             </div>
         </div>
     </div>
@@ -44,12 +29,12 @@
     // }
 
 
-    const audio = document.getElementById("background-music");
-    let volumeControls = document.getElementById("volume-control");
-    audio.volume = 0;
-    volumeControls.addEventListener("change", function(e) {
-        audio.volume = e.currentTarget.value / 100;
-    })
+    // const audio = document.getElementById("background-music");
+    // let volumeControls = document.getElementById("volume-control");
+    // audio.volume = 0;
+    // volumeControls.addEventListener("change", function(e) {
+    //     audio.volume = e.currentTarget.value / 100;
+    // })
 </script>
 
 </html>

@@ -18,6 +18,14 @@ $inner-height: 720;
     height: numberToPixels($inner-height);
 }
 
+// fontSize
+// Util to help me not have to remember the m5x7 font nice scaling
+// Just multiplies a number by 16
+
+@mixin fontSize($size: 0) {
+    font-size: numberToPixels($size * 16);
+}
+
 // Cursors
 $cursor-default: url('/image/cursors/default.png'), auto;
 $cursor-point: url('/image/cursors/hand-point.png'), auto;

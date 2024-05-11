@@ -663,4 +663,43 @@ body {
   padding: 0 0 0 24px;
 }
 
+#title-screen {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  cursor: url("/image/cursors/default.png"), auto;
+  overflow: hidden;
+}
+
+.game-logo-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  image-rendering: pixelated;
+  z-index: 11;
+  width: 1280px;
+  height: 720px;
+}
+
+#title-screen-options {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  width: 1280px;
+  height: 720px;
+  z-index: 12;
+}
+
+#title-screen-options p {
+  font-size: 48px;
+}
+
+#title-screen-options p:hover {
+  color: #997577;
+}
+
 /*# sourceMappingURL=styles.css.map */

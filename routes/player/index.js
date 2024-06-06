@@ -13,5 +13,5 @@ playerRoutes.get('/context/:context', (req, res) => {
     const context = req.params.context;
     setPlayerContext(context);
     const currentScene = getCurrentScene();
-    res.redirect(`/scenes/${currentScene}/context-render`);
+    res.redirect(`/scenes/context-render?sceneId=${currentScene}`);
 });

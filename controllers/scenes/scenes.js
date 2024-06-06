@@ -3,15 +3,13 @@ import { transformText, roomDarkness, determineStartMessage } from './common.js'
 import { getPlayerContext, setCurrentScene, getCurrentScene } from '../player/common.js';
 import "../../types/index.js";
 
-const sceneId = "stairs";
-
 /**
  * Initializes the scene
  * 1. Transforms the text arrays into html
  * 2. Evaluates room darkness
  * @returns {SceneModel} 
  */
-export function initializeController() {
+export function initializeController(sceneId) {
     transformText(dataStore, sceneId);
     roomDarkness(dataStore, sceneId);
     dataStore.scenes[sceneId].commonState.context = getPlayerContext();
@@ -28,7 +26,7 @@ export function initializeController() {
  * their own logic.
  * @returns {void} 
  */
-function updateController() {
+export function updateController(sceneId) {
     // Updates scene visited value once a player has made an interaction
     if(dataStore.scenes[sceneId].commonState.visited == false) {
         dataStore.scenes[sceneId].commonState.visited = true;
@@ -40,7 +38,7 @@ function updateController() {
  * Reloads the scene when a player changes context
  * @returns {SceneModel} 
  */
-export function contextualizeSceneRender() {
+export function contextualizeSceneRender(sceneId) {
     dataStore.scenes[sceneId].commonState.context = getPlayerContext();
     setCurrentScene(sceneId);
     return dataStore.scenes[sceneId];
@@ -50,9 +48,10 @@ export function contextualizeSceneRender() {
  * Checks for start message, and if it exists, return a Message
  * @returns {Message | null} 
  */
-export function startMessageController() {
-    updateController();
+export function startMessageController(sceneId) {
+    updateController(sceneId);
     const startMessage = determineStartMessage(dataStore, sceneId);
+    console.log(startMessage);
     return startMessage ? dataStore.scenes[sceneId].messages[startMessage] : null;
 }
 
@@ -61,9 +60,9 @@ export function startMessageController() {
  * @param {string} id
  * @returns {Message | null} 
  */
-export function messageController(id) {
-    updateController();
-    const message = dataStore.scenes[sceneId].messages[id];
+export function messageController(sceneId, messageId) {
+    updateController(sceneId);
+    const message = dataStore.scenes[sceneId].messages[messageId];
     return message ? message : null;
 }
 
@@ -72,8 +71,8 @@ export function messageController(id) {
  * @param {string} id
  * @returns {Decision | null} 
  */
-export function decisionController(id) {
-    updateController();
-    const decision = dataStore.scenes[sceneId].decisions[id];
+export function decisionController(sceneId, decisionId) {
+    updateController(sceneId);
+    const decision = dataStore.scenes[sceneId].decisions[decisionId];
     return decision ? decision : null;
 }

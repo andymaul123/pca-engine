@@ -11,6 +11,7 @@ export const tunnelModel = {
         messagesConverted: false,
         visited: false,
         context: null,
+        showSceneStartItems: false,
     },
     uniqueState: {},
     areaTitle: null,
@@ -22,7 +23,7 @@ export const tunnelModel = {
         back_move: {
             coords: [849, 624, 1266, 624, 1266, 708, 849, 708],
             id: "back_move",
-            triggerScript: "scenes/shrine",
+            triggerScript: "scenes/init?sceneId=shrine",
             triggerTarget: "main-scene",
             swap: sceneTransition,
             show: true,
@@ -33,7 +34,7 @@ export const tunnelModel = {
         back_look: {
             coords: [849, 624, 1266, 624, 1266, 708, 849, 708],
             id: "back_look",
-            triggerScript: "scenes/tunnel/messages/back_look",
+            triggerScript: "scenes/messages?sceneId=tunnel&messageId=back_look",
             triggerTarget: "text-overlay",
             swap: null,
             show: true,
@@ -44,7 +45,7 @@ export const tunnelModel = {
         window: {
             coords: [831, 498, 906, 498, 897, 396, 867, 381, 843, 396],
             id: "window",
-            triggerScript: "scenes/tunnel/messages/window",
+            triggerScript: "scenes/messages?sceneId=tunnel&messageId=window",
             triggerTarget: "text-overlay",
             swap: null,
             show: true,

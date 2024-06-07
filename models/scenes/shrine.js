@@ -17,6 +17,8 @@ export const shrineModel = {
         windowBroken: false,
     },
     areaTitle: "Western Wing",
+    audio: "/audio/Kingdom-in-Despair.mp3",
+    audioUpdate: false,
     basemats: {
         current: "image/shrine-no-candle-nyx.png",
     },

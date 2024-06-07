@@ -12,32 +12,17 @@
 </head>
 
 <body>
-    <div id="audio">
-        <%- include('./partials/audio-player.ejs'); %>
-    </div>
     <div class="flex-centered">
         <div id="outer-container">
             <div id="main">
+                <%- include('./partials/main-menu'); %>
+                <div id="inventory-menu"></div>
                 <%- include('./partials/title-screen.ejs'); %>
             </div>
         </div>
     </div>
+
+    <%- include('./partials/audio-player.ejs'); %>
 </body>
-
-<script>
-    // htmx.logger = function(elt, event, data) {
-    //     if(console) {
-    //         console.log(event, elt, data);
-    //     }
-    // }
-
-
-    const audio = document.getElementById("audio-player");
-    let volumeControls = document.getElementById("volume-control");
-    audio.volume = 0; //set to 0 for development, 0.1 to listen
-    volumeControls.addEventListener("change", function(e) {
-        audio.volume = e.currentTarget.value / 100;
-    })
-</script>
 
 </html>

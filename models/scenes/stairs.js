@@ -15,6 +15,8 @@ export const stairsModel = {
     },
     uniqueState: {},
     areaTitle: null,
+    audio: "/audio/Dragon-Mystery_Looping.mp3",
+    audioUpdate: false,
     basemats: {
         current: "image/stairs-nyx.png",
     },

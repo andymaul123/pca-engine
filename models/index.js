@@ -14,4 +14,7 @@ export const dataStore = {
     scenes: scenes,
     items: itemsModel,
     npcs: npcModel,
+    globalState: {
+        currentAudio: null,
+    },
 }

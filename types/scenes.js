@@ -7,6 +7,8 @@
 * @prop {CommonState} commonState
 * @prop {UniqueState} uniqueState
 * @prop {string | null} areaTitle
+* @prop {string | null} audio
+* @prop {boolean} audioUpdate
 * @prop {Basemats} basemats
 * @prop {Fragments} fragments
 * @prop {Interactables} overlayNodes

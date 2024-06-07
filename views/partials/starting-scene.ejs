@@ -1,15 +1,12 @@
-<div id="main">
-    <%- include('../partials/menu-bar'); %>
-    <%- include('../partials/main-menu'); %>
-    <%- include('../partials/context-bar'); %>
-    <div id="inventory-menu"></div>
-    <!-- TODO: Make starting scene dynamic -->
-    <div 
-        id="main-scene" 
-        hx-get="/scenes/init?sceneId=shrine" 
-        hx-swap="outerHTML" 
-        hx-select="#main-scene" 
-        class="transition"
-        hx-trigger="load">
-    </div>
+<%- include('../partials/menu-bar'); %>
+<%- include('../partials/context-bar'); %>
+
+<!-- TODO: Make starting scene dynamic -->
+<div 
+    id="main-scene" 
+    hx-get="/scenes/init?sceneId=shrine" 
+    hx-swap="outerHTML" 
+    hx-select="#main-scene" 
+    class="transition"
+    hx-trigger="load">
 </div>

@@ -41,4 +41,11 @@
     />
   </div>
 </div>
+
+<% if (audioUpdate) { %>
+<audio id="audio-player" loop 
+  hx-swap-oob="true">
+  <source src="<%= audio %>" type="audio/mpeg">
+</audio>
+<% } %>
   

@@ -15,6 +15,8 @@ export const tunnelModel = {
     },
     uniqueState: {},
     areaTitle: null,
+    audio: "/audio/Kingdom-in-Despair.mp3",
+    audioUpdate: false,
     basemats: {
         current: "image/tunnel-nyx.png",
     },

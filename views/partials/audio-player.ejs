@@ -1,4 +1,32 @@
-<!-- TODO: Make dynamic -->
-<audio id="audio-player" autoplay loop>
-    <source src="/audio/Dragon-Mystery_Looping.mp3" type="audio/mpeg">
-</audio>
+<!-- TODO: Make title screen data driven? -->
+<div id="audio">
+    <audio id="audio-player" autoplay loop>
+        <source src="/audio/Dragon-Mystery_Looping.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<script>
+    // Sets the starting volume for background music. Value should be same as whatever is set in interactivity.js
+    document.getElementById("audio-player").volume = 0.1;
+
+    // Volume slider in Menu
+    let volumeControls = document.getElementById("volume-control");
+    volumeControls.addEventListener("change", function(e) {
+        document.getElementById("audio-player").volume = e.currentTarget.value / 100;
+        document.getElementById("volume-label-value").innerText = e.currentTarget.value;
+        window.interactivity.currentVolume = e.currentTarget.value / 100;
+    })
+
+    // Mutation observer that sets the volume and plays audio whenever the element is updated
+    const targetNode = document.getElementById("audio");
+    const config = { childList: true };
+
+    const updateBackgroundAudio = () => {
+        const audio = document.getElementById("audio-player");
+        audio.volume = window.interactivity.currentVolume || 0.1;
+        audio.play();
+    };
+
+    const observer = new MutationObserver(updateBackgroundAudio);
+    observer.observe(targetNode, config);
+</script>

@@ -20,4 +20,5 @@ export const interactivity = {
     updateContext: function(context) {
         document.querySelector("#main-scene").setAttribute('data-context', context);
     },
+    currentVolume: 0.1,
 };

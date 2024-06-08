@@ -23,7 +23,7 @@
 
     const updateBackgroundAudio = () => {
         const audio = document.getElementById("audio-player");
-        audio.volume = window.interactivity.currentVolume || 0.1;
+        audio.volume = window.interactivity.currentVolume != null ? window.interactivity.currentVolume : 0.1;
         audio.play();
     };
 

@@ -39,7 +39,7 @@ export function roomDarkness(dataStore, scene) {
 }
 
 /**
- * Check's if a scene should display a start up message or not
+ * Checks if a scene should display a start up message or not
  * Darkness messages are given priority
  * @param {DataStore} dataStore
  * @param {string} scene

@@ -2,12 +2,13 @@
 @import '../variables.scss';
 
 #inventory-menu {
-    @include zlayers($z-menu);
+    @include zlayers($z-menu, 2);
     position: absolute;
     top: 0;
     left: 0;
     @include innerDimensions();
     pointer-events: none;
+    cursor: $cursor-default;
 }
 
 #inventory-menu .inner {
@@ -94,6 +95,7 @@
     height: 25px;
     color: $black_hex;
     @include zlayers($z-menu, 4);
+    cursor: $cursor-default;
 }
 
 #inventory-menu .visuals .item-description p {

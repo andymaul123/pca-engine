@@ -44,7 +44,7 @@ body {
 #main, #main-scene {
     position: relative;
     @include innerDimensions();
-    cursor: $cursor-default;
+    //cursor: $cursor-default;
     overflow: hidden;
 }
 

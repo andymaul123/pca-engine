@@ -1,0 +1,39 @@
+#main {
+    cursor: $cursor-default;
+}
+
+#main[data-context=look] {
+    cursor: $cursor-look;
+}
+
+#main[data-context=talk] {
+    cursor: $cursor-talk;
+}
+
+#main[data-context=move] {
+    cursor: $cursor-move;
+}
+
+#context-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: auto;
+    display: none;
+    flex-direction: column;
+}
+
+#context-menu button {
+    background-color: coral;
+    @include zlayers($z-menu);
+    cursor: $cursor-default;
+}
+
+#context-menu button:hover {
+    background-color: pink;
+}
+
+#context-menu.revealed {
+    display: flex;
+}

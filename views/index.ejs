@@ -3,6 +3,34 @@
 <script type="module">
     import { interactivity } from "/js/interactivity.js";
     window.interactivity = interactivity;
+
+    const main = document.getElementById("main");
+    const contextMenu = document.getElementById("context-menu");
+    const staticWidth = 100;
+    const staticHeight = 100;
+
+    // Context handler for right-click
+    main.addEventListener('contextmenu', function(e) {
+        console.dir(e.target);
+        const rect = main.getBoundingClientRect();
+        const topPos = e.pageY - rect.top >= rect.height - staticHeight ? Math.floor(e.pageY - rect.top - staticHeight) : Math.floor(e.pageY - rect.top);
+        const leftPos = e.pageX - rect.left >= rect.width - staticWidth ? Math.floor(e.pageX - rect.left - staticWidth) : Math.floor(e.pageX - rect.left);
+        contextMenu.style.setProperty('top', `${topPos}px`);
+        contextMenu.style.setProperty('left', `${leftPos}px`); 
+        contextMenu.classList.toggle("revealed");
+        e.preventDefault();
+    }, false);
+
+    // Captures the data-context of the context menu button and sets the parent element data context to match
+    contextMenu.addEventListener('click', function(e) {
+        if (e.target.nodeName != 'BUTTON') {
+            console.log("Not a button!");
+            return;
+        }
+        main.dataset.context = event.target.dataset.context;
+        contextMenu.classList.toggle("revealed");
+    });
+
 </script>
 
 <head>
@@ -14,10 +42,11 @@
 <body>
     <div class="flex-centered">
         <div id="outer-container">
-            <div id="main">
-                <%- include('./partials/main-menu'); %>
+            <div id="main" data-context="look">
+                <%- include('./partials/menus/main-menu'); %>
                 <div id="inventory-menu"></div>
                 <%- include('./partials/title-screen.ejs'); %>
+                <%- include('./partials/menus/context-menu.ejs'); %>
             </div>
         </div>
     </div>

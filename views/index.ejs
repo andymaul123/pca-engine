@@ -5,13 +5,18 @@
     window.interactivity = interactivity;
 
     const main = document.getElementById("main");
+    const sceneWrapper = document.getElementById("main-scene-wrapper");
     const contextMenu = document.getElementById("context-menu");
     const staticWidth = 100;
     const staticHeight = 100;
 
     // Context handler for right-click
     main.addEventListener('contextmenu', function(e) {
-        console.dir(e.target);
+        e.preventDefault();
+    }, false);
+
+    sceneWrapper.addEventListener('contextmenu', function(e) {
+        e.stopPropagation();
         const rect = main.getBoundingClientRect();
         const topPos = e.pageY - rect.top >= rect.height - staticHeight ? Math.floor(e.pageY - rect.top - staticHeight) : Math.floor(e.pageY - rect.top);
         const leftPos = e.pageX - rect.left >= rect.width - staticWidth ? Math.floor(e.pageX - rect.left - staticWidth) : Math.floor(e.pageX - rect.left);
@@ -45,7 +50,10 @@
             <div id="main" data-context="look">
                 <%- include('./partials/menus/main-menu'); %>
                 <div id="inventory-menu"></div>
-                <%- include('./partials/title-screen.ejs'); %>
+                <div id="title-screen-wrapper">
+                    <%- include('./partials/title-screen.ejs'); %>
+                </div>
+                <div id="main-scene-wrapper"></div>
                 <%- include('./partials/menus/context-menu.ejs'); %>
             </div>
         </div>

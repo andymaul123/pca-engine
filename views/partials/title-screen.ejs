@@ -8,8 +8,8 @@
     <div id="title-screen-options">
         <p
             hx-get="/start" 
-            hx-swap="outerHTML" 
-            hx-target="#title-screen"
+            hx-swap="innerHTML" 
+            hx-target="#main-scene-wrapper"
             class="transition"
             hx-trigger="triggerClick throttle:0.5s"
             hx-on:click="window.interactivity.clickBus(event)">

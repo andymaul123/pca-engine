@@ -79,6 +79,7 @@ body {
   position: relative;
   width: 1280px;
   height: 720px;
+  cursor: url("/image/cursors/default.png"), auto;
   overflow: hidden;
 }
 
@@ -129,6 +130,7 @@ body {
 }
 
 #decision-box .wrapper .container .choices .decision-button:hover {
+  cursor: url("/image/cursors/default.png"), auto;
   background-color: hsla(254, 13%, 33%, 0.9);
 }
 
@@ -180,6 +182,22 @@ body {
 
 #fragments img.fragment-image {
   image-rendering: pixelated;
+}
+
+#main-scene .overlay svg polygon {
+  cursor: url("/image/cursors/default.png"), auto;
+}
+
+#main-scene[data-context=look] .overlay svg polygon {
+  cursor: url("/image/cursors/look.png"), auto;
+}
+
+#main-scene[data-context=move] .overlay svg polygon {
+  cursor: url("/image/cursors/move.png"), auto;
+}
+
+#main-scene[data-context=talk] .overlay svg polygon {
+  cursor: url("/image/cursors/talk.png"), auto;
 }
 
 #inventory-menu {
@@ -373,22 +391,6 @@ body {
   cursor: url("/image/cursors/default.png"), auto;
 }
 
-#main {
-  cursor: url("/image/cursors/default.png"), auto;
-}
-
-#main[data-context=look] {
-  cursor: url("/image/cursors/look.png"), auto;
-}
-
-#main[data-context=talk] {
-  cursor: url("/image/cursors/talk.png"), auto;
-}
-
-#main[data-context=move] {
-  cursor: url("/image/cursors/move.png"), auto;
-}
-
 #context-menu {
   position: absolute;
   top: 0;
@@ -396,21 +398,46 @@ body {
   width: 100px;
   height: auto;
   display: none;
+  background-color: #ed9a6d;
+  z-index: 50;
+}
+
+#context-menu form {
+  display: flex;
   flex-direction: column;
 }
 
-#context-menu button {
-  background-color: coral;
-  z-index: 50;
-  cursor: url("/image/cursors/default.png"), auto;
-}
-
-#context-menu button:hover {
-  background-color: pink;
-}
-
 #context-menu.revealed {
-  display: flex;
+  display: block;
+}
+
+#context-menu form label {
+  display: block;
+  z-index: 51;
+  padding: 0 10px;
+  cursor: url("/image/cursors/default.png"), auto;
+  background-color: #1f0a1f;
+  border: 1px solid #ffeb99;
+  border-bottom-width: 0px;
+  color: #ffeb99;
+  text-align: center;
+}
+
+#context-menu form label:last-child {
+  border-bottom-width: 1px;
+}
+
+#context-menu form label:hover {
+  background-color: #c23e6e;
+}
+
+#context-menu form input[type=radio] {
+  appearance: none;
+}
+
+#context-menu form input[type=radio]:checked + label {
+  background-color: #ed9a6d;
+  color: #1f0a1f;
 }
 
 #text-overlay .wrapper.revealed {

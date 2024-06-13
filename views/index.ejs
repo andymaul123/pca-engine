@@ -10,11 +10,17 @@
     const staticWidth = 100;
     const staticHeight = 100;
 
-    // Context handler for right-click
+    // Hijack the right-click
     main.addEventListener('contextmenu', function(e) {
         e.preventDefault();
     }, false);
 
+    // Clicking off the context menu should close it
+    main.addEventListener('click', function(e) {
+        contextMenu.classList.remove("revealed");
+    }, false);
+
+    // Spawn the game context menu on right click with positioning
     sceneWrapper.addEventListener('contextmenu', function(e) {
         e.stopPropagation();
         const rect = main.getBoundingClientRect();
@@ -25,16 +31,6 @@
         contextMenu.classList.toggle("revealed");
         e.preventDefault();
     }, false);
-
-    // Captures the data-context of the context menu button and sets the parent element data context to match
-    contextMenu.addEventListener('click', function(e) {
-        if (e.target.nodeName != 'BUTTON') {
-            console.log("Not a button!");
-            return;
-        }
-        main.dataset.context = event.target.dataset.context;
-        contextMenu.classList.toggle("revealed");
-    });
 
 </script>
 
@@ -47,7 +43,7 @@
 <body>
     <div class="flex-centered">
         <div id="outer-container">
-            <div id="main" data-context="look">
+            <div id="main">
                 <%- include('./partials/menus/main-menu'); %>
                 <div id="inventory-menu"></div>
                 <div id="title-screen-wrapper">

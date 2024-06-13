@@ -44,15 +44,15 @@
     image-rendering: pixelated;
 }
 
-// #main-scene .overlay svg polygon {
-//     cursor: $cursor-default;
-// }
-// #main-scene[data-context=look] .overlay svg polygon {
-//     cursor: $cursor-look;
-// }
-// #main-scene[data-context=move] .overlay svg polygon {
-//     cursor: $cursor-move;
-// }
-// #main-scene[data-context=talk] .overlay svg polygon {
-//     cursor: $cursor-talk;
-// }
+#main-scene .overlay svg polygon {
+    cursor: $cursor-default;
+}
+#main-scene[data-context=look] .overlay svg polygon {
+    cursor: $cursor-look;
+}
+#main-scene[data-context=move] .overlay svg polygon {
+    cursor: $cursor-move;
+}
+#main-scene[data-context=talk] .overlay svg polygon {
+    cursor: $cursor-talk;
+}

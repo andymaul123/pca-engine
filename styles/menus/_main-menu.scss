@@ -1,8 +1,5 @@
 @import '../palette.scss'; 
 
-
-
-
 #main-menu .inner {
     position: absolute;
     top: 0;
@@ -11,6 +8,7 @@
     background-color: $brown_hex;
     @include zlayers($z-menu, 2);
     display: none;
+    cursor: $cursor-default;
 }
 #main-menu .inner button {
     position: absolute;
@@ -24,4 +22,11 @@
 }
 #main-menu .inner.open {
     display: block;
+}
+
+#main-menu .close button {
+    @include zlayers($z-menu, 2);
+    height: 32px;
+    width: 32px;
+    cursor: $cursor-default;
 }

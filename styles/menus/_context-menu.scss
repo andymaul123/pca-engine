@@ -1,0 +1,48 @@
+#context-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: auto;
+    display: none;
+    background-color: $sunfall_orange1_hex;
+    @include zlayers($z-menu);
+}
+
+#context-menu form {
+    display: flex;
+    flex-direction: column;
+}
+
+#context-menu.revealed {
+    display: block;
+}
+
+#context-menu form label {
+    display: block;
+    @include zlayers($z-menu, 1);
+    padding: 0 10px;
+    cursor: $cursor-default;
+    background-color: $sunfall_black_hex;
+    border: 1px solid $sunfall_gold1_hex;
+    border-bottom-width: 0px;
+    color: $sunfall_gold1_hex;
+    text-align: center;
+}
+
+#context-menu form label:last-child {
+    border-bottom-width: 1px;
+}
+
+#context-menu form label:hover {
+    background-color: $sunfall_pink3_hex;
+}
+
+#context-menu form input[type=radio] {
+    appearance: none;  
+}
+
+#context-menu form input[type=radio]:checked+label {
+    background-color: $sunfall_orange1_hex;
+    color: $sunfall_black_hex;
+}

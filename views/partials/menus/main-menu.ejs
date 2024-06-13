@@ -1,6 +1,8 @@
 <div id="main-menu">
     <div class="inner">
-        <button hx-on:click="window.interactivity.toggleClass([{className: 'open', target: '#main-menu .inner'}])">Close</button>
+        <div class="close">
+            <button hx-on:click="window.interactivity.toggleClass([{className: 'open', target: '#main-menu .inner'}])">X</button>
+        </div>
         <h1>Main Menu</h1>
         <hr/>
         <p>Volume</p>

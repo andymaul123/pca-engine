@@ -1,0 +1,38 @@
+<div id="context-menu">
+    <form>
+        <input 
+            type="radio" 
+            id="context-look" 
+            name="context" 
+            hx-get="/player/context/look" 
+            hx-trigger="triggerClick throttle:0.5s"
+            hx-on:click="window.interactivity.clickBus(event)"
+            data-context="look"
+            hx-target="#main-scene"
+            checked
+        />
+        <label for="context-look">Look</label>
+        <input 
+            type="radio" 
+            id="context-move" 
+            name="context" 
+            hx-get="/player/context/move" 
+            hx-trigger="triggerClick throttle:0.5s"
+            hx-on:click="window.interactivity.clickBus(event)"
+            data-context="move"
+            hx-target="#main-scene"
+            />
+        <label for="context-move">Move</label>
+        <input 
+            type="radio" 
+            id="context-talk" 
+            name="context" 
+            hx-get="/player/context/talk" 
+            hx-trigger="triggerClick throttle:0.5s"
+            hx-on:click="window.interactivity.clickBus(event)"
+            data-context="talk"
+            hx-target="#main-scene"
+            />
+        <label for="context-talk">Talk</label>
+    </form>
+</div>

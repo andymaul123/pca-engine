@@ -201,13 +201,14 @@ body {
 }
 
 #inventory-menu {
-  z-index: 50;
+  z-index: 52;
   position: absolute;
   top: 0;
   left: 0;
   width: 1280px;
   height: 720px;
   pointer-events: none;
+  cursor: url("/image/cursors/default.png"), auto;
 }
 
 #inventory-menu .inner {
@@ -294,6 +295,7 @@ body {
   height: 25px;
   color: #08141e;
   z-index: 54;
+  cursor: url("/image/cursors/default.png"), auto;
 }
 
 #inventory-menu .visuals .item-description p {
@@ -342,6 +344,7 @@ body {
   background-color: #997577;
   z-index: 52;
   display: none;
+  cursor: url("/image/cursors/default.png"), auto;
 }
 
 #main-menu .inner button {
@@ -358,6 +361,13 @@ body {
 
 #main-menu .inner.open {
   display: block;
+}
+
+#main-menu .close button {
+  z-index: 52;
+  height: 32px;
+  width: 32px;
+  cursor: url("/image/cursors/default.png"), auto;
 }
 
 #menu-bar {
@@ -381,38 +391,53 @@ body {
   cursor: url("/image/cursors/default.png"), auto;
 }
 
-#context-bar {
-  width: 1280px;
-  height: 25px;
+#context-menu {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
+  width: 100px;
+  height: auto;
+  display: none;
+  background-color: #ed9a6d;
   z-index: 50;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
 }
 
-#context-bar label {
+#context-menu form {
+  display: flex;
+  flex-direction: column;
+}
+
+#context-menu.revealed {
+  display: block;
+}
+
+#context-menu form label {
   display: block;
   z-index: 51;
-  max-width: 200px;
-  margin-left: 25px;
   padding: 0 10px;
   cursor: url("/image/cursors/default.png"), auto;
-  background-color: #08141e;
-  border: 1px solid #f6d6bd;
-  color: #f6d6bd;
+  background-color: #1f0a1f;
+  border: 1px solid #ffeb99;
+  border-bottom-width: 0px;
+  color: #ffeb99;
+  text-align: center;
 }
 
-#context-bar input[type=radio] {
+#context-menu form label:last-child {
+  border-bottom-width: 1px;
+}
+
+#context-menu form label:hover {
+  background-color: #c23e6e;
+}
+
+#context-menu form input[type=radio] {
   appearance: none;
 }
 
-#context-bar input[type=radio]:checked + label {
-  background-color: #997577;
-  border: 1px solid #f6d6bd;
-  color: #f6d6bd;
+#context-menu form input[type=radio]:checked + label {
+  background-color: #ed9a6d;
+  color: #1f0a1f;
 }
 
 #text-overlay .wrapper.revealed {

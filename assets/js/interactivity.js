@@ -21,5 +21,4 @@ export const interactivity = {
         document.querySelector("#main-scene").setAttribute('data-context', context);
     },
     currentVolume: 0.1,
-    currentContext: "look",
 };

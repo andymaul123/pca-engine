@@ -16,9 +16,7 @@
         </filter>
       </defs>
       <% for (let key in overlayNodes) {%>
-        <% if (overlayNodes[key].context == commonState.context) {%>
-          <%- include('./polygon', overlayNodes[key]); %>
-        <% }%>
+        <%- include('./polygon', {coords: overlayNodes[key].coords, data: overlayNodes[key].contexts[commonState.context]}); %>
       <% } %>
     </svg>
   </div>

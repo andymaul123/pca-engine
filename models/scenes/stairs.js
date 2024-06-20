@@ -1,4 +1,4 @@
-import { roomIsDark, sceneTransition } from "./common.js";
+import { defaultLook, defaultMove, defaultTalk, roomIsDark, sceneTransition } from "./common.js";
 
 /** 
 * @type SceneModel 
@@ -27,60 +27,96 @@ export const stairsModel = {
         },
     },
     overlayNodes: {
-        back_move: {
+        back: {
             coords: [849, 624, 1266, 624, 1266, 708, 849, 708],
-            id: "back_move",
-            triggerScript: "scenes/init?sceneId=shrine",
-            triggerTarget: "main-scene",
-            swap: sceneTransition,
-            show: true,
-            soundEffect: null,
-            showInDark: true,
-            context: "move",
-        },
-        back_look: {
-            coords: [849, 624, 1266, 624, 1266, 708, 849, 708],
-            id: "back_look",
-            triggerScript: "scenes/messages?sceneId=stairs&messageId=back_look",
-            triggerTarget: "text-overlay",
-            swap: null,
-            show: true,
-            soundEffect: null,
-            showInDark: true,
-            context: "look",
+            id: "back",
+            contexts: {
+                look: {
+                    triggerScript: "scenes/messages?sceneId=stairs&messageId=back_look",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: true,
+                },
+                move: {
+                    triggerScript: "scenes/init?sceneId=shrine",
+                    triggerTarget: "main-scene",
+                    swap: sceneTransition,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: true,
+                },
+                talk: {
+                    triggerScript: "scenes/messages?sceneId=stairs&messageId=defaultTalk",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: true,
+                },
+            },
         },
         under: {
             coords: [306, 609, 303, 531, 303, 345, 348, 246, 408, 189, 465, 198, 492, 228, 522, 288, 537, 357, 525, 378, 525, 426, 525, 471, 516, 498, 438, 510, 420, 579, 402, 594],
             id: "under",
-            triggerScript: "scenes/messages?sceneId=stairs&messageId=under",
-            triggerTarget: "text-overlay",
-            swap: null,
-            show: true,
-            soundEffect: null,
-            showInDark: false,
+            contexts: {
+                look: {
+                    triggerScript: "scenes/messages?sceneId=stairs&messageId=under",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: false,
+                },
+                move: {
+                    triggerScript: "scenes/messages?sceneId=stairs&messageId=defaultMove",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: false,
+                },
+                talk: {
+                    triggerScript: "scenes/messages?sceneId=stairs&messageId=defaultTalk",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: false,
+                },
+            },
             context: "look",
         },
-        lady_talk: {
+        lady: {
             coords: [291, 696, 291, 720, 111, 720, 147, 642, 117, 633, 123, 624, 153, 612, 231, 411, 246, 411, 291, 501, 312, 618, 348, 633, 348, 636, 297, 657, 309, 693, 306, 696],
-            id: "lady_talk",
-            triggerScript: "npcs/lady/dialogue/intro",
-            triggerTarget: "npc-dialogue",
-            swap: null,
-            show: true,
-            soundEffect: null,
-            showInDark: false,
-            context: "talk",
-        },
-        lady_look: {
-            coords: [291, 696, 291, 720, 111, 720, 147, 642, 117, 633, 123, 624, 153, 612, 231, 411, 246, 411, 291, 501, 312, 618, 348, 633, 348, 636, 297, 657, 309, 693, 306, 696],
-            id: "lady_look",
-            triggerScript: "scenes/messages?sceneId=stairs&messageId=lady_look",
-            triggerTarget: "text-overlay",
-            swap: null,
-            show: true,
-            soundEffect: null,
-            showInDark: false,
-            context: "look",
+            id: "lady",
+            contexts: {
+                look: {
+                    triggerScript: "scenes/messages?sceneId=stairs&messageId=lady_look",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: false,
+                },
+                move: {
+                    triggerScript: "scenes/messages?sceneId=stairs&messageId=defaultMove",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: false,
+                },
+                talk: {
+                    triggerScript: "npcs/lady/dialogue/intro",
+                    triggerTarget: "npc-dialogue",
+                    swap: null,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: false,
+                }
+            },
         },
     },
     messages: {
@@ -171,6 +207,9 @@ export const stairsModel = {
             soundEffect: null,
         },
         roomIsDark: roomIsDark,
+        defaultLook: defaultLook,
+        defaultMove: defaultMove,
+        defaultTalk: defaultTalk,
     },
     decisions: {},
   }

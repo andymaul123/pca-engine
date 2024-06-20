@@ -56,3 +56,23 @@ export function determineStartMessage(dataStore, scene) {
     }
     return null;
 }
+
+
+/**
+ * Util for batch updating values across all context objects in a single overlay node
+ * @param {DataStore} dataStore
+ * @param {string} sceneId
+ * @param {string} overlayNodeId
+ * @param {string} propertyId
+ * @param {any} value
+ * @returns {void} 
+ */
+export function updateAllContexts(dataStore, sceneId, overlayNodeId, propertyId, value) {
+    if(!dataStore.scenes[sceneId]) {
+        console.log("Error: updateAllContexts couldn't find the scene.");
+        return;
+    }
+    dataStore.scenes[sceneId].overlayNodes[overlayNodeId].contexts.look[propertyId] = value;
+    dataStore.scenes[sceneId].overlayNodes[overlayNodeId].contexts.move[propertyId] = value;
+    dataStore.scenes[sceneId].overlayNodes[overlayNodeId].contexts.talk[propertyId] = value;
+}

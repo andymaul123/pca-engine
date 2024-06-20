@@ -1,4 +1,4 @@
-import { roomIsDark, sceneTransition } from "./common.js";
+import { defaultLook, defaultMove, defaultTalk, roomIsDark, sceneTransition } from "./common.js";
 
 /** 
 * @type SceneModel 
@@ -22,38 +22,65 @@ export const tunnelModel = {
     },
     fragments: null,
     overlayNodes: {
-        back_move: {
+        back: {
             coords: [849, 624, 1266, 624, 1266, 708, 849, 708],
-            id: "back_move",
-            triggerScript: "scenes/init?sceneId=shrine",
-            triggerTarget: "main-scene",
-            swap: sceneTransition,
-            show: true,
-            soundEffect: null,
-            showInDark: true,
-            context: "move",
-        },
-        back_look: {
-            coords: [849, 624, 1266, 624, 1266, 708, 849, 708],
-            id: "back_look",
-            triggerScript: "scenes/messages?sceneId=tunnel&messageId=back_look",
-            triggerTarget: "text-overlay",
-            swap: null,
-            show: true,
-            soundEffect: null,
-            showInDark: true,
-            context: "look",
+            id: "back",
+            contexts: {
+                look: {
+                    triggerScript: "scenes/messages?sceneId=tunnel&messageId=back_look",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: true,
+                },
+                move: {
+                    triggerScript: "scenes/init?sceneId=shrine",
+                    triggerTarget: "main-scene",
+                    swap: sceneTransition,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: true,
+                },
+                talk: {
+                    triggerScript: "scenes/messages?sceneId=tunnel&messageId=defaultTalk",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: true,
+                },
+            },
         },
         window: {
             coords: [831, 498, 906, 498, 897, 396, 867, 381, 843, 396],
             id: "window",
-            triggerScript: "scenes/messages?sceneId=tunnel&messageId=window",
-            triggerTarget: "text-overlay",
-            swap: null,
-            show: true,
-            soundEffect: null,
-            showInDark: false,
-            context: "look",
+            contexts: {
+                look: {
+                    triggerScript: "scenes/messages?sceneId=tunnel&messageId=window",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: false,
+                },
+                move: {
+                    triggerScript: "scenes/messages?sceneId=tunnel&messageId=defaultMove",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: false,
+                },
+                talk: {
+                    triggerScript: "scenes/messages?sceneId=tunnel&messageId=defaultTalk",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: false,
+                },
+            },
         },
     },
     messages: {
@@ -105,6 +132,9 @@ export const tunnelModel = {
         },
         start: null,
         roomIsDark: roomIsDark,
+        defaultLook: defaultLook,
+        defaultMove: defaultMove,
+        defaultTalk: defaultTalk,
     },
     decisions: {},
   }

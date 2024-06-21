@@ -67,4 +67,20 @@ export const defaultTalk = {
     soundEffect: null,
 };
 
+export const defaultItem = {
+    nextMessage: null,
+    triggerScript: null,
+    targetId: null,
+    swap: null,
+    textArray: [
+        {
+            speed: 50,
+            text: "You can't use that here.",
+            classes: [],
+        },
+    ],
+    textString: null,
+    soundEffect: null,
+};
+
 export const sceneTransition = "outerHTML swap:1s";

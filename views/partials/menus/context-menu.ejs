@@ -9,6 +9,7 @@
             hx-on:click="window.interactivity.clickBus(event)"
             data-context="look"
             hx-target="#main-scene"
+            hx-swap="outerHTML"
             checked
         />
         <label for="context-look">Look</label>
@@ -21,6 +22,7 @@
             hx-on:click="window.interactivity.clickBus(event)"
             data-context="move"
             hx-target="#main-scene"
+            hx-swap="outerHTML"
             />
         <label for="context-move">Move</label>
         <input 
@@ -32,6 +34,7 @@
             hx-on:click="window.interactivity.clickBus(event)"
             data-context="talk"
             hx-target="#main-scene"
+            hx-swap="outerHTML"
             />
         <label for="context-talk">Talk</label>
     </form>

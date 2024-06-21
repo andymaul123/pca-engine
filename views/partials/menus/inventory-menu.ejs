@@ -1,15 +1,21 @@
 
-    <div class="inner">
+    <div id="inventory-inner" class="inner">
         <div class="close">
             <button 
             hx-get="/deleteme" 
-            hx-target="#inventory-menu .inner" 
+            hx-target="#inventory-inner" 
             hx-swap="delete" 
             hx-trigger="triggerClick throttle:0.5s"
             hx-on:click="window.interactivity.clickBus(event)">X</button>
         </div>
         <div class="header">
             <h1>Inventory</h1>
+            <button 
+                class="use-item" 
+                hx-get="player/inventory/use-item?item=sword"
+                hx-target="#main-scene"
+                hx-swap="outerHTML"
+                >Use Item</button>
         </div>
         <% for (let index = 0; index < inventory.length; index++) {%>
             <div class="visuals <%= index === 0 ? 'revealed' : '' %>" data-id="<%= inventory[index].id %>">

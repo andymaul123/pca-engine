@@ -2,6 +2,15 @@ import { dataStore } from "../../models/index.js";
 import "../../types/index.js";
 
 /**
+ * Returns all player data
+ * @returns {PlayerModel} 
+ */
+export function getPlayer() {
+    return dataStore.player;
+}
+
+
+/**
  * Returns player inventory array
  * @param {DataStore} dataStore
  * @returns {Array} 
@@ -57,7 +66,8 @@ export function getPlayerContext() {
 
 /**
  * Sets player's current context
- * @returns {string} 
+ * @param {string} context
+ * @returns {void} 
  */
 export function setPlayerContext(context) {
     dataStore.player.context = context;
@@ -74,8 +84,18 @@ export function getCurrentScene() {
 
 /**
  * Sets player's current scene
- * @returns {string} 
+ * @param {string} newSceneId
+ * @returns {void} 
  */
 export function setCurrentScene(newSceneId) {
     dataStore.player.currentScene = newSceneId;
+}
+
+/**
+ * Sets player's currently selected item
+ * @param {string} itemId
+ * @returns {void} 
+ */
+export function setCurrentItem(itemId) {
+    dataStore.player.currentItem = itemId;
 }

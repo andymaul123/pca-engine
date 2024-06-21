@@ -48,6 +48,10 @@
     color: $black_hex;
 }
 
+#inventory-menu .header button.use-item {
+    float: right;
+}
+
 #inventory-menu .visuals {
     position: absolute;
     top: 160px;

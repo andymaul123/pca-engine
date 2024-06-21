@@ -200,6 +200,10 @@ body {
   cursor: url("/image/cursors/talk.png"), auto;
 }
 
+#main-scene[data-context=item] .overlay svg polygon {
+  cursor: url("/image/cursors/item.png"), auto;
+}
+
 #inventory-menu {
   z-index: 52;
   position: absolute;
@@ -246,6 +250,10 @@ body {
 #inventory-menu .header h1 {
   margin-left: 25px;
   color: #08141e;
+}
+
+#inventory-menu .header button.use-item {
+  float: right;
 }
 
 #inventory-menu .visuals {

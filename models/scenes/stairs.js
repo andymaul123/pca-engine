@@ -10,7 +10,6 @@ export const stairsModel = {
         isCurrentlyDark: true,
         messagesConverted: false,
         visited: false,
-        context: null,
         showSceneStartItems: true,
     },
     uniqueState: {},

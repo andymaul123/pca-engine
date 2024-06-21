@@ -8,4 +8,5 @@ export const playerModel = {
     inventory: [],
     context: "look",
     currentScene: "",
+    currentItem: "",
 }

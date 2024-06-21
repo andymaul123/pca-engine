@@ -1,4 +1,4 @@
-import { defaultLook, defaultMove, defaultTalk, roomIsDark, sceneTransition } from "./common.js";
+import { defaultLook, defaultMove, defaultTalk, defaultItem, roomIsDark, sceneTransition } from "./common.js";
 
 /** 
 * @type SceneModel 
@@ -50,6 +50,18 @@ export const tunnelModel = {
                     soundEffect: null,
                     showInDark: true,
                 },
+                item: {
+                    default: {
+                        triggerScript: "scenes/messages?sceneId=tunnel&messageId=defaultItem",
+                        triggerTarget: "text-overlay",
+                        swap: null,
+                        show: true,
+                        soundEffect: null,
+                        showInDark: true,
+                        linkedItemId: null,
+                    },
+                },
+
             },
         },
         window: {
@@ -79,6 +91,26 @@ export const tunnelModel = {
                     show: true,
                     soundEffect: null,
                     showInDark: false,
+                },
+                item: {
+                    default: {
+                        triggerScript: "scenes/messages?sceneId=tunnel&messageId=defaultItem",
+                        triggerTarget: "text-overlay",
+                        swap: null,
+                        show: true,
+                        soundEffect: null,
+                        showInDark: true,
+                        linkedItemId: null,
+                    },
+                    sword: {
+                        triggerScript: "scenes/messages?sceneId=tunnel&messageId=sword_window",
+                        triggerTarget: "text-overlay",
+                        swap: null,
+                        show: true,
+                        soundEffect: null,
+                        showInDark: true,
+                        linkedItemId: "sword",
+                    },
                 },
             },
         },
@@ -130,11 +162,35 @@ export const tunnelModel = {
                 },
             ],
         },
+        sword_window: {
+            nextMessage: null,
+            triggerScript: null,
+            actionData: null,
+            targetId: null,
+            textArray: [
+                {
+                    speed: 50,
+                    text: "The",
+                    classes: [],
+                },
+                {
+                    speed: 50,
+                    text: " sword ",
+                    classes: ['callout'],
+                },
+                {
+                    speed: 50,
+                    text: "vibrates as the light from the window washes over it.",
+                    classes: [],
+                },
+            ],
+        },
         start: null,
         roomIsDark: roomIsDark,
         defaultLook: defaultLook,
         defaultMove: defaultMove,
         defaultTalk: defaultTalk,
+        defaultItem: defaultItem,
     },
     decisions: {},
   }

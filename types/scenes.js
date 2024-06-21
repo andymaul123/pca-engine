@@ -52,7 +52,14 @@
 * @typedef Interactable 
 * @prop {string} id
 * @prop {Array<number>} coords
-* @prop {Object.<string, ContextualData>} contexts
+* @prop {Contexts} contexts
+*/
+/** 
+* @typedef Contexts 
+* @prop {ContextualData} look
+* @prop {ContextualData} move
+* @prop {ContextualData} talk
+* @prop {Object.<string, ContextualData} item
 */
 /** 
 * @typedef ContextualData 
@@ -62,6 +69,7 @@
 * @prop {boolean} show
 * @prop {SoundEffect | null} soundEffect
 * @prop {boolean} showInDark
+* @prop {string | null} [linkedItemId]
 */
 
 

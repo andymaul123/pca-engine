@@ -10,7 +10,7 @@ export const shrineModel = {
         isCurrentlyDark: false,
         messagesConverted: false,
         visited: false,
-        context: null,
+        showSceneStartItems: false,
     },
     uniqueState: {
         candleOn: true,

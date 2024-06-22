@@ -3,5 +3,6 @@
 * @prop {Array<string>} inventory
 * @prop {string} context
 * @prop {string} currentScene
-* @prop {string} currentItem
+* @prop {string} usedItem
+* @prop {string} selectedItem
 */

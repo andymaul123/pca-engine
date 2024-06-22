@@ -15,11 +15,10 @@
           <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
         </filter>
       </defs>
-
       <% for (let key in sceneData.overlayNodes) {%>
         <% if (playerData.context == "item") { %>
           <% for (let itemContext in sceneData.overlayNodes[key].contexts.item) {%>
-            <% if (sceneData.overlayNodes[key].contexts.item[itemContext].linkedItemId == playerData.currentItem) { %>
+            <% if (sceneData.overlayNodes[key].contexts.item[itemContext].linkedItemId == playerData.usedItem) { %>
               <%- include('./polygon', {coords: sceneData.overlayNodes[key].coords, data: sceneData.overlayNodes[key].contexts.item[itemContext]}); %>
               <% break; %>
             <% } %>
@@ -29,11 +28,6 @@
         <% } else { %>
           <%- include('./polygon', {coords: sceneData.overlayNodes[key].coords, data: sceneData.overlayNodes[key].contexts[playerData.context]}); %>
         <% } %>
-      <% } %>
-
-
-      <% for (let key in sceneData.overlayNodes) {%>
-        <%- include('./polygon', {coords: sceneData.overlayNodes[key].coords, data: sceneData.overlayNodes[key].contexts[playerData.context]}); %>
       <% } %>
     </svg>
   </div>
@@ -65,3 +59,47 @@
 <% } %>
 
 <div id="inventory-menu" hx-swap-oob="true"></div>
+
+<!-- Resets the context menu selection -->
+<% if (playerData.context == "item") { %>
+
+        <input 
+            type="radio" 
+            id="context-look" 
+            name="context" 
+            hx-get="/player/context/look" 
+            hx-trigger="triggerClick throttle:0.5s"
+            hx-on:click="window.interactivity.clickBus(event)"
+            data-context="look"
+            hx-target="#main-scene"
+            hx-swap="outerHTML"
+            hx-swap-oob="true"
+        />
+
+        <input 
+            type="radio" 
+            id="context-move" 
+            name="context" 
+            hx-get="/player/context/move" 
+            hx-trigger="triggerClick throttle:0.5s"
+            hx-on:click="window.interactivity.clickBus(event)"
+            data-context="move"
+            hx-target="#main-scene"
+            hx-swap="outerHTML"
+            hx-swap-oob="true"
+            />
+
+        <input 
+            type="radio" 
+            id="context-talk" 
+            name="context" 
+            hx-get="/player/context/talk" 
+            hx-trigger="triggerClick throttle:0.5s"
+            hx-on:click="window.interactivity.clickBus(event)"
+            data-context="talk"
+            hx-target="#main-scene"
+            hx-swap="outerHTML"
+            hx-swap-oob="true"
+            />
+
+<% } %>

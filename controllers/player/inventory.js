@@ -26,7 +26,7 @@ export function inventoryController() {
     const itemDescriptionToggleArray = [{className: 'show-description', target: '#inventory-menu .inner'}];
 
     return {
-        inventory: inventoryObjects,
+        itemsArray: inventoryObjects,
         itemRowToggle: itemRowToggleArray,
         itemDescriptionToggle: itemDescriptionToggleArray
     }

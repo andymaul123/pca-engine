@@ -263,11 +263,6 @@ body {
   width: 560px;
   height: 560px;
   background-color: #08141e;
-  display: none;
-}
-
-#inventory-menu .visuals.revealed {
-  display: block;
 }
 
 #inventory-menu .visuals .item-portrait {
@@ -291,7 +286,7 @@ body {
   background-color: hsla(207, 58%, 7%, 0.9);
 }
 
-#inventory-menu .inner.show-description .item-description {
+#inventory-menu .visuals .item-description.revealed {
   display: block;
 }
 

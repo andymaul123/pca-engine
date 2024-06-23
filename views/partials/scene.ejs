@@ -17,13 +17,10 @@
       </defs>
       <% for (let key in sceneData.overlayNodes) {%>
         <% if (playerData.context == "item") { %>
-          <% for (let itemContext in sceneData.overlayNodes[key].contexts.item) {%>
-            <% if (sceneData.overlayNodes[key].contexts.item[itemContext].linkedItemId == playerData.usedItem) { %>
-              <%- include('./polygon', {coords: sceneData.overlayNodes[key].coords, data: sceneData.overlayNodes[key].contexts.item[itemContext]}); %>
-              <% break; %>
-            <% } %>
+          <% if (sceneData.overlayNodes[key].contexts.item[playerData.usedItem]) { %>
+            <%- include('./polygon', {coords: sceneData.overlayNodes[key].coords, data: sceneData.overlayNodes[key].contexts.item[playerData.usedItem]}); %>
+          <% } else { %>
             <%- include('./polygon', {coords: sceneData.overlayNodes[key].coords, data: sceneData.overlayNodes[key].contexts.item.default}); %>
-
           <% } %>
         <% } else { %>
           <%- include('./polygon', {coords: sceneData.overlayNodes[key].coords, data: sceneData.overlayNodes[key].contexts[playerData.context]}); %>

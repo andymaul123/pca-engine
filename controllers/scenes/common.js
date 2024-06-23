@@ -75,4 +75,8 @@ export function updateAllContexts(dataStore, sceneId, overlayNodeId, propertyId,
     dataStore.scenes[sceneId].overlayNodes[overlayNodeId].contexts.look[propertyId] = value;
     dataStore.scenes[sceneId].overlayNodes[overlayNodeId].contexts.move[propertyId] = value;
     dataStore.scenes[sceneId].overlayNodes[overlayNodeId].contexts.talk[propertyId] = value;
+
+    for (const key in dataStore.scenes[sceneId].overlayNodes[overlayNodeId].contexts.item) {
+        dataStore.scenes[sceneId].overlayNodes[overlayNodeId].contexts.item[key][propertyId] = value;
+    };
 }

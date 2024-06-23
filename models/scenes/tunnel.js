@@ -61,7 +61,6 @@ export const tunnelModel = {
                         linkedItemId: null,
                     },
                 },
-
             },
         },
         window: {
@@ -101,15 +100,6 @@ export const tunnelModel = {
                         soundEffect: null,
                         showInDark: true,
                         linkedItemId: null,
-                    },
-                    sword: {
-                        triggerScript: "scenes/messages?sceneId=tunnel&messageId=sword_window",
-                        triggerTarget: "text-overlay",
-                        swap: null,
-                        show: true,
-                        soundEffect: null,
-                        showInDark: true,
-                        linkedItemId: "sword",
                     },
                 },
             },
@@ -158,29 +148,6 @@ export const tunnelModel = {
                 {
                     speed: 50,
                     text: "room.",
-                    classes: [],
-                },
-            ],
-        },
-        sword_window: {
-            nextMessage: null,
-            triggerScript: null,
-            actionData: null,
-            targetId: null,
-            textArray: [
-                {
-                    speed: 50,
-                    text: "The",
-                    classes: [],
-                },
-                {
-                    speed: 50,
-                    text: " sword ",
-                    classes: ['callout'],
-                },
-                {
-                    speed: 50,
-                    text: "vibrates as the light from the window washes over it.",
                     classes: [],
                 },
             ],

@@ -1,4 +1,4 @@
-import { defaultLook, defaultMove, defaultTalk, roomIsDark, sceneTransition } from "./common.js";
+import { defaultLook, defaultMove, defaultTalk, defaultItem, roomIsDark, sceneTransition } from "./common.js";
 
 /** 
 * @type SceneModel 
@@ -54,6 +54,17 @@ export const stairsModel = {
                     soundEffect: null,
                     showInDark: true,
                 },
+                item: {
+                    default: {
+                        triggerScript: "scenes/messages?sceneId=tunnel&messageId=defaultItem",
+                        triggerTarget: "text-overlay",
+                        swap: null,
+                        show: true,
+                        soundEffect: null,
+                        showInDark: true,
+                        linkedItemId: null,
+                    },
+                },
             },
         },
         under: {
@@ -83,6 +94,17 @@ export const stairsModel = {
                     show: true,
                     soundEffect: null,
                     showInDark: false,
+                },
+                item: {
+                    default: {
+                        triggerScript: "scenes/messages?sceneId=tunnel&messageId=defaultItem",
+                        triggerTarget: "text-overlay",
+                        swap: null,
+                        show: true,
+                        soundEffect: null,
+                        showInDark: true,
+                        linkedItemId: null,
+                    },
                 },
             },
             context: "look",
@@ -114,7 +136,18 @@ export const stairsModel = {
                     show: true,
                     soundEffect: null,
                     showInDark: false,
-                }
+                },
+                item: {
+                    default: {
+                        triggerScript: "scenes/messages?sceneId=tunnel&messageId=defaultItem",
+                        triggerTarget: "text-overlay",
+                        swap: null,
+                        show: true,
+                        soundEffect: null,
+                        showInDark: true,
+                        linkedItemId: null,
+                    },
+                },
             },
         },
     },
@@ -209,6 +242,7 @@ export const stairsModel = {
         defaultLook: defaultLook,
         defaultMove: defaultMove,
         defaultTalk: defaultTalk,
+        defaultItem: defaultItem,
     },
     decisions: {},
   }

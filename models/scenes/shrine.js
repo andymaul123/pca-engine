@@ -1,4 +1,4 @@
-import { defaultLook, defaultMove, defaultTalk, roomIsDark, sceneTransition } from "./common.js";
+import { defaultLook, defaultMove, defaultTalk, defaultItem, roomIsDark, sceneTransition } from "./common.js";
 
 /** 
 * @type SceneModel 
@@ -61,6 +61,26 @@ export const shrineModel = {
                     soundEffect: null,
                     showInDark: false,
                 },
+                item: {
+                    default: {
+                        triggerScript: "scenes/messages?sceneId=shrine&messageId=defaultItem",
+                        triggerTarget: "text-overlay",
+                        swap: null,
+                        show: true,
+                        soundEffect: null,
+                        showInDark: true,
+                        linkedItemId: null,
+                    },
+                    sword: {
+                        triggerScript: "scenes/messages?sceneId=shrine&messageId=sword_window",
+                        triggerTarget: "text-overlay",
+                        swap: null,
+                        show: true,
+                        soundEffect: null,
+                        showInDark: true,
+                        linkedItemId: "sword",
+                    },
+                },
             },
         },
         windowBroken: {
@@ -90,6 +110,17 @@ export const shrineModel = {
                     show: false,
                     soundEffect: null,
                     showInDark: false,
+                },
+                item: {
+                    default: {
+                        triggerScript: "scenes/messages?sceneId=tunnel&messageId=defaultItem",
+                        triggerTarget: "text-overlay",
+                        swap: null,
+                        show: false,
+                        soundEffect: null,
+                        showInDark: true,
+                        linkedItemId: null,
+                    },
                 },
             },
         },
@@ -121,6 +152,17 @@ export const shrineModel = {
                     soundEffect: null,
                     showInDark: false,
                 },
+                item: {
+                    default: {
+                        triggerScript: "scenes/messages?sceneId=tunnel&messageId=defaultItem",
+                        triggerTarget: "text-overlay",
+                        swap: null,
+                        show: true,
+                        soundEffect: null,
+                        showInDark: true,
+                        linkedItemId: null,
+                    },
+                },
             },
         },
         sceneTransitionStairs:{
@@ -151,10 +193,34 @@ export const shrineModel = {
                     soundEffect: null,
                     showInDark: false,
                 },
+                item: {
+                    default: {
+                        triggerScript: "scenes/messages?sceneId=tunnel&messageId=defaultItem",
+                        triggerTarget: "text-overlay",
+                        swap: null,
+                        show: true,
+                        soundEffect: null,
+                        showInDark: true,
+                        linkedItemId: null,
+                    },
+                },
             },
         },
     },
     messages: {
+        window: {
+            nextMessage: null,
+            triggerScript: null,
+            actionData: null,
+            targetId: null,
+            textArray: [
+                {
+                    speed: 50,
+                    text: "The glass in the window looks brittle; you could probably break it with something.",
+                    classes: [],
+                },
+            ]
+        },
         shrine: {
             nextMessage: null,
             triggerScript: "scenes/decisions?sceneId=shrine&decisionId=takecandle",
@@ -170,7 +236,7 @@ export const shrineModel = {
             textString: null,
             soundEffect: null,
         },
-        window: {
+        sword_window: {
             nextMessage: null,
             triggerScript: "scenes/decisions?sceneId=shrine&decisionId=breakwindow",
             targetId: "decision-box",
@@ -218,6 +284,7 @@ export const shrineModel = {
         defaultLook: defaultLook,
         defaultMove: defaultMove,
         defaultTalk: defaultTalk,
+        defaultItem: defaultItem,
     },
     decisions: {
         takecandle: {

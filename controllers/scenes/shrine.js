@@ -1,6 +1,6 @@
 import { dataStore } from '../../models/index.js';
 import { updateController } from './scenes.js';
-import { addItemsToInventory } from '../player/common.js';
+import { addItemsToInventory } from '../player/inventory.js';
 import { updateAllContexts } from './common.js';
 import "../../types/index.js";
 

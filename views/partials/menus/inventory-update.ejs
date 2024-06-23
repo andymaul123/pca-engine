@@ -10,17 +10,17 @@
 
 <div id="inventory-visuals" class="visuals" hx-swap-oob="true">
     <div class="item-portrait">
-        <% for (let index = 0; index < inventory.itemsArray.length; index++) {%>
-        <% if(selectedItem == inventory.itemsArray[index].id) {  %>
-        <img src="<%= inventory.itemsArray[index].image %>"/>
+        <% for (let index = 0; index < inventory.length; index++) {%>
+        <% if(selectedItem == inventory[index].id) {  %>
+        <img src="<%= inventory[index].image %>"/>
         <% } %>
         <% } %>
     </div>
     <div class="item-description">
-        <% for (let index = 0; index < inventory.itemsArray.length; index++) {%>
-        <% if(selectedItem == inventory.itemsArray[index].id) {  %>
-        <p><%= inventory.itemsArray[index].descriptionRules %></p>
-        <p><%= inventory.itemsArray[index].descriptionFlavor %></p>
+        <% for (let index = 0; index < inventory.length; index++) {%>
+        <% if(selectedItem == inventory[index].id) {  %>
+        <p><%= inventory[index].descriptionRules %></p>
+        <p><%= inventory[index].descriptionFlavor %></p>
         <% } %>
         <% } %>
     </div>
@@ -30,15 +30,15 @@
 </div>
 
 <div id="inventory-list" class="list" hx-swap-oob="true">
-    <% for (let index = 0; index < inventory.itemsArray.length; index++) {%>
+    <% for (let index = 0; index < inventory.length; index++) {%>
     <div 
-        class="item-row <%= selectedItem == inventory.itemsArray[index].id ? 'selected' : '' %>" 
-        hx-get="player/inventory/select-item?item=<%= inventory.itemsArray[index].id %>"
+        class="item-row <%= selectedItem == inventory[index].id ? 'selected' : '' %>" 
+        hx-get="player/inventory/select-item?item=<%= inventory[index].id %>"
         hx-swap="outerHTML"
         hx-trigger="triggerClick throttle:0.5s"
         hx-on:click="window.interactivity.clickBus(event)"
         >
-        <p><%= inventory.itemsArray[index].name %></p>
+        <p><%= inventory[index].name %></p>
     </div>
     <% } %>
 </div>

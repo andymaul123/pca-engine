@@ -1,11 +1,11 @@
 import express from 'express';
-import { inventoryController } from '../../controllers/player/inventory.js';
+import { getInventoryItems } from '../../controllers/player/inventory.js';
 import { getCurrentScene, setPlayerContext, setUsedItem, getSelectedItem, setSelectedItem } from '../../controllers/player/common.js';
 
 export const playerRoutes = express.Router();
 
 playerRoutes.get('/inventory', (req, res) => {
-    const fullInventory = inventoryController();
+    const fullInventory = getInventoryItems();
     const currentlySelectedItem = getSelectedItem();
     res.render('partials/menus/inventory-menu.ejs', {inventory: fullInventory, selectedItem: currentlySelectedItem});
 });
@@ -20,7 +20,7 @@ playerRoutes.get('/inventory/use-item', (req, res) => {
 
 playerRoutes.get('/inventory/select-item', (req, res) => {
     const item = req.query.item;
-    const fullInventory = inventoryController();
+    const fullInventory = getInventoryItems();
     setSelectedItem(item);
     res.render('partials/menus/inventory-update.ejs', {inventory: fullInventory, selectedItem: item});
 });

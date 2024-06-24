@@ -9,5 +9,5 @@ export const playerModel = {
     context: "look",
     currentScene: "",
     usedItem: "",
-    selectedItem: "sword",
+    selectedItem: "",
 }

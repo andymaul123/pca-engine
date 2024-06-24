@@ -1,6 +1,7 @@
 import { dataStore } from '../../models/index.js';
 import { updateController } from './scenes.js';
 import { addItemsToInventory } from '../player/inventory.js';
+import { setPlayerContext } from '../player/common.js';
 import { updateAllContexts } from './common.js';
 import "../../types/index.js";
 
@@ -28,6 +29,8 @@ export function breakWindowController(sceneId) {
 
     updateAllContexts(dataStore, sceneId, "window", "show", false);
     updateAllContexts(dataStore, sceneId, "windowBroken", "show", true);
+
+    setPlayerContext("look");
 
     return dataStore.scenes[sceneId];
 }

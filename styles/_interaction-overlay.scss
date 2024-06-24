@@ -56,3 +56,6 @@
 #main-scene[data-context=talk] .overlay svg polygon {
     cursor: $cursor-talk;
 }
+#main-scene[data-context=item] .overlay svg polygon {
+    cursor: $cursor-item;
+}

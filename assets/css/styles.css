@@ -200,6 +200,10 @@ body {
   cursor: url("/image/cursors/talk.png"), auto;
 }
 
+#main-scene[data-context=item] .overlay svg polygon {
+  cursor: url("/image/cursors/item.png"), auto;
+}
+
 #inventory-menu {
   z-index: 52;
   position: absolute;
@@ -248,6 +252,10 @@ body {
   color: #08141e;
 }
 
+#inventory-menu .header button.use-item {
+  float: right;
+}
+
 #inventory-menu .visuals {
   position: absolute;
   top: 160px;
@@ -255,11 +263,6 @@ body {
   width: 560px;
   height: 560px;
   background-color: #08141e;
-  display: none;
-}
-
-#inventory-menu .visuals.revealed {
-  display: block;
 }
 
 #inventory-menu .visuals .item-portrait {
@@ -283,7 +286,7 @@ body {
   background-color: hsla(207, 58%, 7%, 0.9);
 }
 
-#inventory-menu .inner.show-description .item-description {
+#inventory-menu .visuals .item-description.revealed {
   display: block;
 }
 

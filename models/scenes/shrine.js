@@ -1,4 +1,4 @@
-import { roomIsDark, sceneTransition } from "./common.js";
+import { defaultLook, defaultMove, defaultTalk, defaultItem, roomIsDark, sceneTransition } from "./common.js";
 
 /** 
 * @type SceneModel 
@@ -10,7 +10,7 @@ export const shrineModel = {
         isCurrentlyDark: false,
         messagesConverted: false,
         visited: false,
-        context: null,
+        showSceneStartItems: false,
     },
     uniqueState: {
         candleOn: true,
@@ -36,71 +36,191 @@ export const shrineModel = {
         window: {
             coords: [153, 357, 183, 354, 210, 354, 237, 348, 264, 345, 282, 336, 282, 300, 282, 258, 279, 225, 267, 192, 258, 159, 243, 114, 228, 84, 204, 108, 192, 132, 180, 159, 159, 180, 153, 207, 138, 234, 144, 258, 144, 285, 144, 312],
             id: "window",
-            triggerScript: "scenes/messages?sceneId=shrine&messageId=window",
-            triggerTarget: "text-overlay",
-            swap: null,
-            show: true,
-            soundEffect: null,
-            showInDark: false,
-            context: "look",
+            contexts: {
+                look: {
+                    triggerScript: "scenes/messages?sceneId=shrine&messageId=window",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: false,
+                },
+                move: {
+                    triggerScript: "scenes/messages?sceneId=shrine&messageId=defaultMove",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: false,
+                },
+                talk: {
+                    triggerScript: "scenes/messages?sceneId=shrine&messageId=defaultTalk",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: false,
+                },
+                item: {
+                    default: {
+                        triggerScript: "scenes/messages?sceneId=shrine&messageId=defaultItem",
+                        triggerTarget: "text-overlay",
+                        swap: null,
+                        show: true,
+                        soundEffect: null,
+                        showInDark: true,
+                        linkedItemId: null,
+                    },
+                    sword: {
+                        triggerScript: "scenes/messages?sceneId=shrine&messageId=sword_window",
+                        triggerTarget: "text-overlay",
+                        swap: null,
+                        show: true,
+                        soundEffect: null,
+                        showInDark: true,
+                        linkedItemId: "sword",
+                    },
+                },
+            },
         },
         windowBroken: {
             coords: [153, 357, 183, 354, 210, 354, 237, 348, 264, 345, 282, 336, 282, 300, 282, 258, 279, 225, 267, 192, 258, 159, 243, 114, 228, 84, 204, 108, 192, 132, 180, 159, 159, 180, 153, 207, 138, 234, 144, 258, 144, 285, 144, 312],
             id: "windowBroken",
-            triggerScript: "scenes/messages?sceneId=shrine&messageId=brokenwindow",
-            triggerTarget: "text-overlay",
-            swap: null,
-            show: false,
-            soundEffect: null,
-            showInDark: false,
-            context: "look",
-        },
-        windowBrokenAfter: {
-            coords: [153, 357, 183, 354, 210, 354, 237, 348, 264, 345, 282, 336, 282, 300, 282, 258, 279, 225, 267, 192, 258, 159, 243, 114, 228, 84, 204, 108, 192, 132, 180, 159, 159, 180, 153, 207, 138, 234, 144, 258, 144, 285, 144, 312],
-            id: "windowBrokenAfter",
-            triggerScript: "scenes/init?sceneId=tunnel",
-            triggerTarget: "main-scene",
-            swap: sceneTransition,
-            show: false,
-            soundEffect: null,
-            showInDark: false,
-            context: "look",
+            contexts: {
+                look: {
+                    triggerScript: "scenes/messages?sceneId=shrine&messageId=brokenwindow",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: false,
+                    soundEffect: null,
+                    showInDark: false,
+                },
+                move: {
+                    triggerScript: "scenes/init?sceneId=tunnel",
+                    triggerTarget: "main-scene",
+                    swap: sceneTransition,
+                    show: false,
+                    soundEffect: null,
+                    showInDark: false,
+                },
+                talk: {
+                    triggerScript: "scenes/messages?sceneId=shrine&messageId=defaultTalk",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: false,
+                    soundEffect: null,
+                    showInDark: false,
+                },
+                item: {
+                    default: {
+                        triggerScript: "scenes/messages?sceneId=tunnel&messageId=defaultItem",
+                        triggerTarget: "text-overlay",
+                        swap: null,
+                        show: false,
+                        soundEffect: null,
+                        showInDark: true,
+                        linkedItemId: null,
+                    },
+                },
+            },
         },
         shrine: {
             coords: [737,531,765,541,779,542,788,540,809,534,863,521,860,429,864,428,865,425,865,421,868,417,864,410,860,403,858,379,840,360,834,353,829,350,828,348,828,345,830,342,828,338,827,334,824,330,819,326,814,323,808,322,804,321,796,326,796,331,797,341,787,352,783,357,775,357,769,368,765,376,766,380,761,388,765,395,764,403,759,405,749,406,748,411,752,413,760,416,761,421,762,462,749,462,746,464,748,466,748,472,744,477,745,497,737,498,732,502,737,510],
             id: "shrine",
-            triggerScript: "scenes/messages?sceneId=shrine&messageId=shrine",
-            triggerTarget: "text-overlay",
-            swap: null,
-            show: true,
-            soundEffect: null,
-            showInDark: false,
-            context: "look",
+            contexts: {
+                look: {
+                    triggerScript: "scenes/messages?sceneId=shrine&messageId=shrine",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: false,
+                },
+                move: {
+                    triggerScript: "scenes/messages?sceneId=shrine&messageId=defaultMove",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: false,
+                },
+                talk: {
+                    triggerScript: "scenes/messages?sceneId=shrine&messageId=defaultTalk",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: false,
+                },
+                item: {
+                    default: {
+                        triggerScript: "scenes/messages?sceneId=tunnel&messageId=defaultItem",
+                        triggerTarget: "text-overlay",
+                        swap: null,
+                        show: true,
+                        soundEffect: null,
+                        showInDark: true,
+                        linkedItemId: null,
+                    },
+                },
+            },
         },
-        sceneTransitionStairs_move:{
+        sceneTransitionStairs:{
             coords: [198, 702, 6, 708, 0, 3, 102, 6, 84, 63, 66, 111, 39, 183, 36, 225, 57, 276, 39, 300, 39, 354, 24, 399, 42, 429, 48, 480, 60, 531, 141, 624],
-            id: "sceneTransitionStairs_move",
-            triggerScript: "scenes/init?sceneId=stairs",
-            triggerTarget: "main-scene",
-            swap: sceneTransition,
-            show: true,
-            soundEffect: null,
-            showInDark: false,
-            context: "move",
-        },
-        sceneTransitionStairs_look:{
-            coords: [198, 702, 6, 708, 0, 3, 102, 6, 84, 63, 66, 111, 39, 183, 36, 225, 57, 276, 39, 300, 39, 354, 24, 399, 42, 429, 48, 480, 60, 531, 141, 624],
-            id: "sceneTransitionStairs_look",
-            triggerScript: "scenes/messages?sceneId=shrine&messageId=stairslook",
-            triggerTarget: "text-overlay",
-            swap: null,
-            show: true,
-            soundEffect: null,
-            showInDark: false,
-            context: "look",
+            id: "sceneTransitionStairs",
+            contexts: {
+                look: {
+                    triggerScript: "scenes/messages?sceneId=shrine&messageId=stairslook",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: false,
+                },
+                move: {
+                    triggerScript: "scenes/init?sceneId=stairs",
+                    triggerTarget: "main-scene",
+                    swap: sceneTransition,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: false,
+                },
+                talk: {
+                    triggerScript: "scenes/messages?sceneId=shrine&messageId=defaultTalk",
+                    triggerTarget: "text-overlay",
+                    swap: null,
+                    show: true,
+                    soundEffect: null,
+                    showInDark: false,
+                },
+                item: {
+                    default: {
+                        triggerScript: "scenes/messages?sceneId=tunnel&messageId=defaultItem",
+                        triggerTarget: "text-overlay",
+                        swap: null,
+                        show: true,
+                        soundEffect: null,
+                        showInDark: true,
+                        linkedItemId: null,
+                    },
+                },
+            },
         },
     },
     messages: {
+        window: {
+            nextMessage: null,
+            triggerScript: null,
+            actionData: null,
+            targetId: null,
+            textArray: [
+                {
+                    speed: 50,
+                    text: "The glass in the window looks brittle; you could probably break it with something.",
+                    classes: [],
+                },
+            ]
+        },
         shrine: {
             nextMessage: null,
             triggerScript: "scenes/decisions?sceneId=shrine&decisionId=takecandle",
@@ -116,7 +236,7 @@ export const shrineModel = {
             textString: null,
             soundEffect: null,
         },
-        window: {
+        sword_window: {
             nextMessage: null,
             triggerScript: "scenes/decisions?sceneId=shrine&decisionId=breakwindow",
             targetId: "decision-box",
@@ -133,8 +253,8 @@ export const shrineModel = {
         },
         brokenwindow: {
             nextMessage: null,
-            triggerScript: "scenes/decisions?sceneId=shrine&decisionId=traveltunnel",
-            targetId: "decision-box",
+            triggerScript: null,
+            targetId: null,
             swap: null,
             textArray: [
                 {
@@ -161,6 +281,10 @@ export const shrineModel = {
         },
         start: null,
         roomIsDark: roomIsDark,
+        defaultLook: defaultLook,
+        defaultMove: defaultMove,
+        defaultTalk: defaultTalk,
+        defaultItem: defaultItem,
     },
     decisions: {
         takecandle: {
@@ -227,7 +351,3 @@ export const shrineModel = {
         },
     },
 };
-
-
-
-

@@ -1,8 +1,8 @@
 <!-- Primary Scene -->
-<div id="main-scene" class="transition <%= commonState.isCurrentlyDark ? 'is-dark' : '' %>" data-context="<%= commonState.context %>">
-  <% if (commonState.showSceneStartItems == true) { %>
-    <div id="area-title" class="<%= commonState.visited ? '' : 'revealed'  %>"><%= areaTitle %></div>
-    <div id="start-up" hx-trigger="load throttle:0.5s" hx-get="/scenes/startmessage?sceneId=<%= id %>" hx-target="#text-overlay"></div>
+<div id="main-scene" class="transition <%= sceneData.commonState.isCurrentlyDark ? 'is-dark' : '' %>" data-context="<%= playerData.context %>">
+  <% if (sceneData.commonState.showSceneStartItems == true) { %>
+    <div id="area-title" class="<%= sceneData.commonState.visited ? '' : 'revealed'  %>"><%= sceneData.areaTitle %></div>
+    <div id="start-up" hx-trigger="load throttle:0.5s" hx-get="/scenes/startmessage?sceneId=<%= sceneData.id %>" hx-target="#text-overlay"></div>
   <% } %>
   <div id="text-overlay" hx-on="htmx:load: window.interactivity.typeWriter('message')"></div>
   <div id="npc-dialogue" hx-on="htmx:load: window.interactivity.typeWriter('dialogue')"></div>
@@ -15,19 +15,25 @@
           <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
         </filter>
       </defs>
-      <% for (let key in overlayNodes) {%>
-        <% if (overlayNodes[key].context == commonState.context) {%>
-          <%- include('./polygon', overlayNodes[key]); %>
-        <% }%>
+      <% for (let key in sceneData.overlayNodes) {%>
+        <% if (playerData.context == "item") { %>
+          <% if (sceneData.overlayNodes[key].contexts.item[playerData.usedItem]) { %>
+            <%- include('./polygon', {coords: sceneData.overlayNodes[key].coords, data: sceneData.overlayNodes[key].contexts.item[playerData.usedItem]}); %>
+          <% } else { %>
+            <%- include('./polygon', {coords: sceneData.overlayNodes[key].coords, data: sceneData.overlayNodes[key].contexts.item.default}); %>
+          <% } %>
+        <% } else { %>
+          <%- include('./polygon', {coords: sceneData.overlayNodes[key].coords, data: sceneData.overlayNodes[key].contexts[playerData.context]}); %>
+        <% } %>
       <% } %>
     </svg>
   </div>
   <div id="fragments">
-    <% if (fragments != null) { %>
-      <% for (let key in fragments) {%>
+    <% if (sceneData.fragments != null) { %>
+      <% for (let key in sceneData.fragments) {%>
         <img
-          src="/<%= fragments[key].path %>"
-          class="fragment-image <%= fragments[key].show ? 'revealed' : ''  %>"
+          src="/<%= sceneData.fragments[key].path %>"
+          class="fragment-image <%= sceneData.fragments[key].show ? 'revealed' : ''  %>"
           id="#fragment-<%= key %>"
         />
       <% } %>
@@ -35,17 +41,62 @@
   </div>
   <div id="basemat">
     <img
-      src="/<%= basemats.current %>"
+      src="/<%= sceneData.basemats.current %>"
       class="base-image"
-      id="#basemat-<%= id %>"
+      id="#basemat-<%= sceneData.id %>"
     />
   </div>
 </div>
 
-<% if (audioUpdate) { %>
+<% if (sceneData.audioUpdate) { %>
 <audio id="audio-player" loop 
   hx-swap-oob="true">
-  <source src="<%= audio %>" type="audio/mpeg">
+  <source src="<%= sceneData.audio %>" type="audio/mpeg">
 </audio>
 <% } %>
-  
+
+<div id="inventory-menu" hx-swap-oob="true"></div>
+
+<!-- Resets the context menu selection -->
+<% if (playerData.context == "item") { %>
+
+        <input 
+            type="radio" 
+            id="context-look" 
+            name="context" 
+            hx-get="/player/context/look" 
+            hx-trigger="triggerClick throttle:0.5s"
+            hx-on:click="window.interactivity.clickBus(event)"
+            data-context="look"
+            hx-target="#main-scene"
+            hx-swap="outerHTML"
+            hx-swap-oob="true"
+        />
+
+        <input 
+            type="radio" 
+            id="context-move" 
+            name="context" 
+            hx-get="/player/context/move" 
+            hx-trigger="triggerClick throttle:0.5s"
+            hx-on:click="window.interactivity.clickBus(event)"
+            data-context="move"
+            hx-target="#main-scene"
+            hx-swap="outerHTML"
+            hx-swap-oob="true"
+            />
+
+        <input 
+            type="radio" 
+            id="context-talk" 
+            name="context" 
+            hx-get="/player/context/talk" 
+            hx-trigger="triggerClick throttle:0.5s"
+            hx-on:click="window.interactivity.clickBus(event)"
+            data-context="talk"
+            hx-target="#main-scene"
+            hx-swap="outerHTML"
+            hx-swap-oob="true"
+            />
+
+<% } %>

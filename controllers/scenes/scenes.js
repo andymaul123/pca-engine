@@ -14,7 +14,6 @@ import "../../types/index.js";
 export function initializeController(sceneId) {
     transformText(dataStore, sceneId);
     roomDarkness(dataStore, sceneId);
-    dataStore.scenes[sceneId].commonState.context = getPlayerContext();
     // We want to show the start message once each time the player enters the scene
     if(getCurrentScene() != sceneId) {
         dataStore.scenes[sceneId].commonState.showSceneStartItems = true;
@@ -45,7 +44,6 @@ export function updateController(sceneId) {
  * @returns {SceneModel} 
  */
 export function contextualizeSceneRender(sceneId) {
-    dataStore.scenes[sceneId].commonState.context = getPlayerContext();
     setCurrentScene(sceneId);
     return dataStore.scenes[sceneId];
 }

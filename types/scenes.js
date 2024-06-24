@@ -50,14 +50,29 @@
 */
 /** 
 * @typedef Interactable 
-* @prop {string} id  
+* @prop {string} id
+* @prop {Array<number>} coords
+* @prop {Contexts} contexts
+*/
+/** 
+* @typedef Contexts 
+* @prop {ContextualData} look
+* @prop {ContextualData} move
+* @prop {ContextualData} talk
+* @prop {Object.<string, ContextualData} item
+*/
+/** 
+* @typedef ContextualData 
 * @prop {string | null} triggerScript
 * @prop {string | null} triggerTarget
 * @prop {string | null} swap
 * @prop {boolean} show
 * @prop {SoundEffect | null} soundEffect
 * @prop {boolean} showInDark
+* @prop {string | null} [linkedItemId]
 */
+
+
 
 /**
 * @typedef {Object.<string, Message | null>} Messages

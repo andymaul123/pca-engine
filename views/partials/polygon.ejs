@@ -1,11 +1,11 @@
 <polygon
 points="<%= coords.toString() %>"
 filter="url(#f1)"
-hx-get="/<%= triggerScript %>"
-hx-target="#<%= triggerTarget %>"
-hx-swap="<%= swap ? swap : 'innerHtml' %>"
-class="<%= show ? 'revealed' : '' %> <%= showInDark ? 'show-dark' : '' %>"
-data-sound="<%= soundEffect ? JSON.stringify(soundEffect) : 'null' %>"
+hx-get="/<%= data.triggerScript %>"
+hx-target="#<%= data.triggerTarget %>"
+hx-swap="<%= data.swap ? data.swap : 'innerHtml' %>"
+class="<%= data.show ? 'revealed' : '' %> <%= data.showInDark ? 'show-dark' : '' %>"
+data-sound="<%= data.soundEffect ? JSON.stringify(data.soundEffect) : 'null' %>"
 hx-trigger="triggerClick throttle:0.5s"
 hx-on:click="window.interactivity.clickBus(event)"
 />

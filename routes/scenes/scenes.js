@@ -7,19 +7,23 @@ import {
     contextualizeSceneRender,
  } from '../../controllers/scenes/scenes.js';
 
+ import { getPlayer } from '../../controllers/player/common.js';
+
  export const sceneRoutes = express.Router();
 
  // example /scenes/init?sceneId=shrine
  sceneRoutes.get('/init', (req, res) => {
     const sceneId = req.query.sceneId;
     const initialScene = initializeController(sceneId);
-    res.render('partials/scene.ejs', initialScene);
+    const playerData = getPlayer();
+    res.render('partials/scene.ejs', {sceneData: initialScene, playerData: playerData});
 });
 
 sceneRoutes.get('/context-render', (req, res) => {
     const sceneId = req.query.sceneId;
     const contextualizedScene = contextualizeSceneRender(sceneId);
-    res.render('partials/scene.ejs', contextualizedScene);
+    const playerData = getPlayer();
+    res.render('partials/scene.ejs', {sceneData: contextualizedScene, playerData: playerData});
 });
 
 sceneRoutes.get('/startmessage', (req, res) => {

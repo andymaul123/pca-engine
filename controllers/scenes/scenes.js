@@ -49,6 +49,19 @@ export function contextualizeSceneRender(sceneId) {
 }
 
 /**
+ * Sets up a scene after the game is loaded from disk
+ * @param {string} sceneId
+ * @returns {SceneModel} 
+ */
+export function loadSceneController(sceneId) {
+    // do other things?
+    updateBackgroundAudio(sceneId);
+    // TODO: when a scene is loaded, updateBackgroundAudio may set its audioUpdate value to true
+    // this is generally the right idea, but there's a bug when context is changed that audio repeats...
+    return dataStore.scenes[sceneId];
+}
+
+/**
  * Checks for start message, and if it exists, return a Message
  * @param {string} sceneId
  * @returns {Message | null} 

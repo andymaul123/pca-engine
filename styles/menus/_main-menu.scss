@@ -30,3 +30,11 @@
     width: 32px;
     cursor: $cursor-default;
 }
+
+#main-menu #save {
+    position: relative;
+    display: block;
+    width: 150px;
+    @include zlayers($z-menu, 3);
+    cursor: $cursor-default; 
+}

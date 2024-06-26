@@ -5,6 +5,7 @@ import {
     messageController,
     decisionController,
     contextualizeSceneRender,
+    loadSceneController,
  } from '../../controllers/scenes/scenes.js';
 
  import { getPlayer } from '../../controllers/player/common.js';
@@ -17,6 +18,13 @@ import {
     const initialScene = initializeController(sceneId);
     const playerData = getPlayer();
     res.render('partials/scene.ejs', {sceneData: initialScene, playerData: playerData});
+});
+
+sceneRoutes.get('/load', (req, res) => {
+    const sceneId = req.query.sceneId;
+    const loadedScene = loadSceneController(sceneId);
+    const playerData = getPlayer();
+    res.render('partials/scene.ejs', {sceneData: loadedScene, playerData: playerData});
 });
 
 sceneRoutes.get('/context-render', (req, res) => {

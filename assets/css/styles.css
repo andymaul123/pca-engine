@@ -373,6 +373,14 @@ body {
   cursor: url("/image/cursors/default.png"), auto;
 }
 
+#main-menu #save {
+  position: relative;
+  display: block;
+  width: 150px;
+  z-index: 53;
+  cursor: url("/image/cursors/default.png"), auto;
+}
+
 #menu-bar {
   width: 1280px;
   height: 25px;

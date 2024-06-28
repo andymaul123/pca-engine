@@ -31,7 +31,7 @@ export function loadData() {
 
 /**
  * Returns global state from dataStore
- * @returns {GlobalState} 
+ * @returns {GlobalStateModel} 
  */
 export function getGlobalState() {
     return dataStore.globalState;

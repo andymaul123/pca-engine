@@ -8,30 +8,34 @@ import {
     loadSceneController,
  } from '../../controllers/scenes/scenes.js';
 
- import { getPlayer } from '../../controllers/player/common.js';
+import { getPlayer } from '../../controllers/player/common.js';
+import { getGlobalState } from '../../controllers/global/index.js';
 
- export const sceneRoutes = express.Router();
+export const sceneRoutes = express.Router();
 
- // example /scenes/init?sceneId=shrine
- sceneRoutes.get('/init', (req, res) => {
+// example /scenes/init?sceneId=shrine
+sceneRoutes.get('/init', (req, res) => {
     const sceneId = req.query.sceneId;
     const initialScene = initializeController(sceneId);
     const playerData = getPlayer();
-    res.render('partials/scene.ejs', {sceneData: initialScene, playerData: playerData});
+    const globalState = getGlobalState();
+    res.render('partials/scene.ejs', {sceneData: initialScene, playerData: playerData, globalState: globalState});
 });
 
 sceneRoutes.get('/load', (req, res) => {
     const sceneId = req.query.sceneId;
     const loadedScene = loadSceneController(sceneId);
     const playerData = getPlayer();
-    res.render('partials/scene.ejs', {sceneData: loadedScene, playerData: playerData});
+    const globalState = getGlobalState();
+    res.render('partials/scene.ejs', {sceneData: loadedScene, playerData: playerData, globalState: globalState});
 });
 
 sceneRoutes.get('/context-render', (req, res) => {
     const sceneId = req.query.sceneId;
     const contextualizedScene = contextualizeSceneRender(sceneId);
     const playerData = getPlayer();
-    res.render('partials/scene.ejs', {sceneData: contextualizedScene, playerData: playerData});
+    const globalState = getGlobalState();
+    res.render('partials/scene.ejs', {sceneData: contextualizedScene, playerData: playerData, globalState: globalState});
 });
 
 sceneRoutes.get('/startmessage', (req, res) => {

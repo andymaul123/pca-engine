@@ -6,7 +6,8 @@ import { allSceneRoutes } from './scenes/index.js';
 import { playerRoutes } from './player/index.js';
 import { npcRoutes } from './npcs/index.js';
 import { getCurrentScene } from '../controllers/player/common.js';
-import { saveData, loadData } from '../controllers/global/serialize.js';
+import { getPlayer } from '../controllers/player/common.js';
+import { saveData, loadData } from '../controllers/global/index.js';
 
 export const allRoutes = express.Router();
 
@@ -32,7 +33,7 @@ allRoutes.get('/save', (req, res) => {
 allRoutes.get('/load', (req, res) => {
   loadData();
   const currentSceneId = getCurrentScene();
-  res.render('partials/scene-load.ejs', {sceneId: currentSceneId});
+  res.render('partials/scene-load.ejs', {sceneId: currentSceneId, player: getPlayer()});
 });
 
 allRoutes.get('/deleteme', (req, res) => {

@@ -4,11 +4,6 @@ import "./scenes.js";
 import "./npcs.js";
 
 /** 
-* @typedef GlobalState 
-* @prop {null | string} currentAudio
-*/
-
-/** 
 * @typedef DataStore 
 * @prop {PlayerModel} player  
 * @prop {SceneModels} scenes 
@@ -17,7 +12,11 @@ import "./npcs.js";
 * @prop {GlobalState} globalState 
 */
 
-
+/** 
+* @typedef GlobalState 
+* @prop {null | string} currentAudio
+* @prop {boolean} forceAudio
+*/
 
 
 

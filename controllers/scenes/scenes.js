@@ -1,6 +1,7 @@
 import { dataStore } from '../../models/index.js';
 import { transformText, roomDarkness, determineStartMessage } from './common.js';
-import { getPlayerContext, setCurrentScene, getCurrentScene } from '../player/common.js';
+import { setCurrentScene, getCurrentScene } from '../player/common.js';
+import { setForceAudio } from '../global/index.js';
 import "../../types/index.js";
 
 /**
@@ -12,6 +13,7 @@ import "../../types/index.js";
  * @returns {SceneModel} 
  */
 export function initializeController(sceneId) {
+    setForceAudio(false);
     transformText(dataStore, sceneId);
     roomDarkness(dataStore, sceneId);
     // We want to show the start message once each time the player enters the scene
@@ -44,6 +46,7 @@ export function updateController(sceneId) {
  * @returns {SceneModel} 
  */
 export function contextualizeSceneRender(sceneId) {
+    setForceAudio(false);
     setCurrentScene(sceneId);
     return dataStore.scenes[sceneId];
 }
@@ -54,10 +57,8 @@ export function contextualizeSceneRender(sceneId) {
  * @returns {SceneModel} 
  */
 export function loadSceneController(sceneId) {
-    // do other things?
-    updateBackgroundAudio(sceneId);
-    // TODO: when a scene is loaded, updateBackgroundAudio may set its audioUpdate value to true
-    // this is generally the right idea, but there's a bug when context is changed that audio repeats...
+    setForceAudio(true);
+    // updateBackgroundAudio(sceneId);
     return dataStore.scenes[sceneId];
 }
 

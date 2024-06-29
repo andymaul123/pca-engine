@@ -28,6 +28,7 @@ allRoutes.get('/start', (req, res) => {
 
 allRoutes.get('/save', (req, res) => {
   saveData();
+  res.render('partials/menus/menu-save-update.ejs');
 });
 
 allRoutes.get('/load', (req, res) => {

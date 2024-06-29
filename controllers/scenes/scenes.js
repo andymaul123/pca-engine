@@ -1,6 +1,7 @@
 import { dataStore } from '../../models/index.js';
 import { transformText, roomDarkness, determineStartMessage } from './common.js';
-import { getPlayerContext, setCurrentScene, getCurrentScene } from '../player/common.js';
+import { setCurrentScene, getCurrentScene } from '../player/common.js';
+import { setForceAudio } from '../global/index.js';
 import "../../types/index.js";
 
 /**
@@ -12,6 +13,7 @@ import "../../types/index.js";
  * @returns {SceneModel} 
  */
 export function initializeController(sceneId) {
+    setForceAudio(false);
     transformText(dataStore, sceneId);
     roomDarkness(dataStore, sceneId);
     // We want to show the start message once each time the player enters the scene
@@ -44,7 +46,19 @@ export function updateController(sceneId) {
  * @returns {SceneModel} 
  */
 export function contextualizeSceneRender(sceneId) {
+    setForceAudio(false);
     setCurrentScene(sceneId);
+    return dataStore.scenes[sceneId];
+}
+
+/**
+ * Sets up a scene after the game is loaded from disk
+ * @param {string} sceneId
+ * @returns {SceneModel} 
+ */
+export function loadSceneController(sceneId) {
+    setForceAudio(true);
+    // updateBackgroundAudio(sceneId);
     return dataStore.scenes[sceneId];
 }
 

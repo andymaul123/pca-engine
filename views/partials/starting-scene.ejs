@@ -1,9 +1,8 @@
 <%- include('../partials/menu-bar'); %>
 
-<!-- TODO: Make starting scene dynamic -->
 <div 
     id="main-scene" 
-    hx-get="/scenes/init?sceneId=shrine" 
+    hx-get="/scenes/init?sceneId=<%= sceneId %>" 
     hx-swap="outerHTML" 
     hx-select="#main-scene" 
     class="transition"

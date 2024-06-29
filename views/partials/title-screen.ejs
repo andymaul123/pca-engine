@@ -15,9 +15,22 @@
             hx-on:click="window.interactivity.clickBus(event)">
             New Game
         </p>
-        <p class="disabled">Load Game</p>
-        <p>Settings</p>
-        <p>Quit</p>
+        <% if(showLoadGame) { %>
+            <p
+            hx-get="/load" 
+            hx-swap="innerHTML" 
+            hx-target="#main-scene-wrapper"
+            class="transition"
+            hx-trigger="triggerClick throttle:0.5s"
+            hx-on:click="window.interactivity.clickBus(event)">
+            Load Game
+        </p>
+        <% } else { %>
+            <p class="disabled">Load Game</p>
+        <% } %>
+
+        <p class="disabled">Settings</p>
+        <p class="disabled">Quit</p>
     </div>
     <div id="basemat">
         <img

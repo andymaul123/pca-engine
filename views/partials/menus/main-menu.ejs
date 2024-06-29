@@ -8,6 +8,11 @@
         <p>Volume</p>
         <input type="range" id="volume-control" value="10">
         <label for="volume-control"><span id="volume-label-value">10</span>%</label>
+        <div id="save-success-container" class="save-success-container">
+            <p id="save-success-message" class="save-success-message">Game Saved!</p>
+        </div>
+        
+        <button id="save" hx-get="save" hx-target="#save-success-message" hx-swap="outerHTML">Save Game</button>
     </div>
 </div>
 

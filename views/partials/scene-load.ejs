@@ -1,0 +1,57 @@
+<%- include('../partials/menu-bar'); %>
+
+<div 
+    id="main-scene" 
+    hx-get="/scenes/load?sceneId=<%= sceneId %>" 
+    hx-swap="outerHTML" 
+    hx-select="#main-scene" 
+    class="transition"
+    hx-trigger="load">
+</div>
+
+<div id="title-screen-wrapper" hx-swap-oob="true"></div>
+
+<!-- Resets the context menu selection -->
+
+    <input 
+        type="radio" 
+        id="context-look" 
+        name="context" 
+        hx-get="/player/context/look" 
+        hx-trigger="triggerClick throttle:0.5s"
+        hx-on:click="window.interactivity.clickBus(event)"
+        data-context="look"
+        hx-target="#main-scene"
+        hx-swap="outerHTML"
+        hx-swap-oob="true"
+        <%= player.context == "look" ? "checked" : "" %>
+    />
+
+    <input 
+        type="radio" 
+        id="context-move" 
+        name="context" 
+        hx-get="/player/context/move" 
+        hx-trigger="triggerClick throttle:0.5s"
+        hx-on:click="window.interactivity.clickBus(event)"
+        data-context="move"
+        hx-target="#main-scene"
+        hx-swap="outerHTML"
+        hx-swap-oob="true"
+        <%= player.context == "move" ? "checked" : "" %>
+    />
+
+    <input 
+        type="radio" 
+        id="context-talk" 
+        name="context" 
+        hx-get="/player/context/talk" 
+        hx-trigger="triggerClick throttle:0.5s"
+        hx-on:click="window.interactivity.clickBus(event)"
+        data-context="talk"
+        hx-target="#main-scene"
+        hx-swap="outerHTML"
+        hx-swap-oob="true"
+        <%= player.context == "talk" ? "checked" : "" %>
+    />
+

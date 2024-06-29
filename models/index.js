@@ -16,5 +16,6 @@ export const dataStore = {
     npcs: npcModel,
     globalState: {
         currentAudio: null,
+        forceAudio: false,
     },
 }

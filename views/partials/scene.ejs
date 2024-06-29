@@ -48,7 +48,7 @@
   </div>
 </div>
 
-<% if (sceneData.audioUpdate) { %>
+<% if (sceneData.audioUpdate || globalState.forceAudio) { %>
 <audio id="audio-player" loop 
   hx-swap-oob="true">
   <source src="<%= sceneData.audio %>" type="audio/mpeg">

@@ -7,7 +7,7 @@ import { playerRoutes } from './player/index.js';
 import { npcRoutes } from './npcs/index.js';
 import { getCurrentScene } from '../controllers/player/common.js';
 import { getPlayer } from '../controllers/player/common.js';
-import { saveData, loadData } from '../controllers/global/index.js';
+import { saveData, loadData, loadDataExists } from '../controllers/global/index.js';
 
 export const allRoutes = express.Router();
 
@@ -19,7 +19,8 @@ allRoutes.use('/npcs', npcRoutes);
 allRoutes.use(express.static('assets'));
 
 allRoutes.get('/', (req, res) => {
-  res.render('index', {mainTitle: 'Main Title'});
+  const showLoadGame = loadDataExists();
+  res.render('index', {mainTitle: 'Main Title', showLoadGame: showLoadGame});
 });
 
 allRoutes.get('/start', (req, res) => {

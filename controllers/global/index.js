@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { dataStore } from "../../models/index.js";
 import "../../types/index.js";
 
@@ -27,6 +27,14 @@ export function loadData() {
     dataStore.scenes.stairs = loadData.scenes.stairs;
     dataStore.scenes.tunnel = loadData.scenes.tunnel;
     dataStore.globalState.forceAudio = true;
+}
+
+/**
+ * Checks to see if there's a save file to load
+ * @returns {boolean} 
+ */
+export function loadDataExists() {
+    return existsSync("./saves/save.txt");
 }
 
 /**

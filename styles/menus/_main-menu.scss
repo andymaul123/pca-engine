@@ -1,4 +1,5 @@
-@import '../palette.scss'; 
+@import '../palette.scss';
+@import '../buttons.scss'; 
 
 #main-menu .inner {
     position: absolute;
@@ -25,18 +26,14 @@
 }
 
 #main-menu .close button {
+    @include close-button($sunfall_pink1_hex, $sunfall_orange2_hex);
     @include zlayers($z-menu, 2);
-    height: 32px;
-    width: 32px;
-    cursor: $cursor-default;
 }
 
 #main-menu #save {
+    @include default-button($sunfall_pink1_hex, $sunfall_orange2_hex);
     position: relative;
-    display: block;
-    width: 150px;
     @include zlayers($z-menu, 3);
-    cursor: $cursor-default; 
 }
 
 #main-menu .save-success-container {

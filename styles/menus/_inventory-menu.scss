@@ -1,5 +1,6 @@
 @import '../palette.scss'; 
 @import '../variables.scss';
+@import '../buttons.scss'; 
 
 #inventory-menu {
     @include zlayers($z-menu, 2);
@@ -30,9 +31,7 @@
 
 #inventory-menu .close button {
     @include zlayers($z-menu, 2);
-    height: 32px;
-    width: 32px;
-    cursor: $cursor-default;
+    @include close-button($sunfall_pink1_hex, $sunfall_orange2_hex);
 }
 
 #inventory-menu .header {
@@ -50,6 +49,7 @@
 
 #inventory-menu .header button.use-item {
     float: right;
+    @include default-button($sunfall_pink1_hex, $sunfall_orange2_hex);
 }
 
 #inventory-menu .visuals {
@@ -88,13 +88,10 @@
 
 #inventory-menu .visuals .toggle-description {
     position: absolute;
-    top: 535px;
-    left: 140px;
-    width: 280px;
-    height: 25px;
-    color: $black_hex;
+    top: 524px;
+    left: 152px;
+    @include default-button($sunfall_pink1_hex, $sunfall_orange2_hex);
     @include zlayers($z-menu, 4);
-    cursor: $cursor-default;
 }
 
 #inventory-menu .visuals .item-description p {

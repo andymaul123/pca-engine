@@ -234,9 +234,30 @@ body {
 
 #inventory-menu .close button {
   z-index: 52;
-  height: 32px;
-  width: 32px;
   cursor: url("/image/cursors/default.png"), auto;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 500px;
+  padding: 0 15px;
+  border-width: 3px;
+  border-style: outset;
+  box-sizing: content-box;
+  border-color: #8c2964;
+  background-color: #8c2964;
+  color: #ffc37a;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+#inventory-menu .close button:hover:enabled {
+  filter: brightness(110%);
+}
+#inventory-menu .close button:active:enabled {
+  border-style: inset;
+}
+#inventory-menu .close button:disabled {
+  filter: contrast(0.2);
 }
 
 #inventory-menu .header {
@@ -254,6 +275,27 @@ body {
 
 #inventory-menu .header button.use-item {
   float: right;
+  cursor: url("/image/cursors/default.png"), auto;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 500px;
+  padding: 0 15px;
+  border-width: 3px;
+  border-style: outset;
+  box-sizing: content-box;
+  border-color: #8c2964;
+  background-color: #8c2964;
+  color: #ffc37a;
+}
+#inventory-menu .header button.use-item:hover:enabled {
+  filter: brightness(110%);
+}
+#inventory-menu .header button.use-item:active:enabled {
+  border-style: inset;
+}
+#inventory-menu .header button.use-item:disabled {
+  filter: contrast(0.2);
 }
 
 #inventory-menu .visuals {
@@ -292,13 +334,30 @@ body {
 
 #inventory-menu .visuals .toggle-description {
   position: absolute;
-  top: 535px;
-  left: 140px;
-  width: 280px;
-  height: 25px;
-  color: #08141e;
-  z-index: 54;
+  top: 524px;
+  left: 152px;
   cursor: url("/image/cursors/default.png"), auto;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 500px;
+  padding: 0 15px;
+  border-width: 3px;
+  border-style: outset;
+  box-sizing: content-box;
+  border-color: #8c2964;
+  background-color: #8c2964;
+  color: #ffc37a;
+  z-index: 54;
+}
+#inventory-menu .visuals .toggle-description:hover:enabled {
+  filter: brightness(110%);
+}
+#inventory-menu .visuals .toggle-description:active:enabled {
+  border-style: inset;
+}
+#inventory-menu .visuals .toggle-description:disabled {
+  filter: contrast(0.2);
 }
 
 #inventory-menu .visuals .item-description p {
@@ -367,18 +426,57 @@ body {
 }
 
 #main-menu .close button {
-  z-index: 52;
-  height: 32px;
-  width: 32px;
   cursor: url("/image/cursors/default.png"), auto;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 500px;
+  padding: 0 15px;
+  border-width: 3px;
+  border-style: outset;
+  box-sizing: content-box;
+  border-color: #8c2964;
+  background-color: #8c2964;
+  color: #ffc37a;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  z-index: 52;
+}
+#main-menu .close button:hover:enabled {
+  filter: brightness(110%);
+}
+#main-menu .close button:active:enabled {
+  border-style: inset;
+}
+#main-menu .close button:disabled {
+  filter: contrast(0.2);
 }
 
 #main-menu #save {
-  position: relative;
-  display: block;
-  width: 150px;
-  z-index: 53;
   cursor: url("/image/cursors/default.png"), auto;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 500px;
+  padding: 0 15px;
+  border-width: 3px;
+  border-style: outset;
+  box-sizing: content-box;
+  border-color: #8c2964;
+  background-color: #8c2964;
+  color: #ffc37a;
+  position: relative;
+  z-index: 53;
+}
+#main-menu #save:hover:enabled {
+  filter: brightness(110%);
+}
+#main-menu #save:active:enabled {
+  border-style: inset;
+}
+#main-menu #save:disabled {
+  filter: contrast(0.2);
 }
 
 #main-menu .save-success-container {
@@ -414,7 +512,7 @@ body {
 }
 #menu-bar {
   width: 1280px;
-  height: 25px;
+  height: auto;
   position: absolute;
   top: 0;
   left: 0;
@@ -425,12 +523,29 @@ body {
 }
 
 #menu-bar button {
-  display: block;
-  z-index: 51;
-  max-width: 200px;
-  margin-left: 25px;
-  padding: 0 10px;
   cursor: url("/image/cursors/default.png"), auto;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 500px;
+  padding: 0 15px;
+  border-width: 3px;
+  border-style: outset;
+  box-sizing: content-box;
+  border-color: #8c2964;
+  background-color: #8c2964;
+  color: #ffc37a;
+  z-index: 51;
+  margin-left: 25px;
+}
+#menu-bar button:hover:enabled {
+  filter: brightness(110%);
+}
+#menu-bar button:active:enabled {
+  border-style: inset;
+}
+#menu-bar button:disabled {
+  filter: contrast(0.2);
 }
 
 #context-menu {

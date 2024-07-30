@@ -7,7 +7,7 @@ import { playerRoutes } from './player/index.js';
 import { npcRoutes } from './npcs/index.js';
 import { getCurrentScene } from '../controllers/player/common.js';
 import { getPlayer } from '../controllers/player/common.js';
-import { saveData, loadData, loadDataExists } from '../controllers/global/index.js';
+import { saveData, loadData, loadDataExists, getIntro } from '../controllers/global/index.js';
 
 export const allRoutes = express.Router();
 
@@ -24,7 +24,12 @@ allRoutes.get('/', (req, res) => {
 });
 
 allRoutes.get('/start', (req, res) => {
-  res.render('partials/starting-scene.ejs', {sceneId: "shrine"});
+  res.render('partials/intro-screens/starting-scene.ejs', {sceneId: "shrine"});
+});
+
+allRoutes.get('/scroll-intro', (req, res) => {
+  const introScrollMessage = getIntro();
+  res.render('partials/intro-screens/scroll-intro.ejs', {introScrollMessage: introScrollMessage});
 });
 
 allRoutes.get('/save', (req, res) => {

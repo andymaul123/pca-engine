@@ -52,3 +52,11 @@ export function getGlobalState() {
 export function setForceAudio(value) {
     dataStore.globalState.forceAudio = value;
 }
+
+/**
+ * Returns introScrollMessage
+ * @returns {string} 
+ */
+export function getIntro() {
+    return dataStore.intro.introScrollMessage;
+}

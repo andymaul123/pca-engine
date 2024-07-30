@@ -5,14 +5,19 @@
     overflow: hidden;
 }
 
+#title-screen-content {
+    position: relative;
+    @include zlayers($z-base, 1);
+}
+
 
 .game-logo-image {
     position: absolute;
     top: 0;
     left: 0;
     image-rendering: pixelated;
-    @include zlayers($z-base, 1);
     @include innerDimensions();
+    @include zlayers($z-base, 2);
 }
 
 #title-screen-options {
@@ -24,7 +29,7 @@
     justify-content: end;
     align-items: center;
     @include innerDimensions();
-    @include zlayers($z-base, 2);
+    @include zlayers($z-base, 3);
 }
 
 #title-screen-options p {

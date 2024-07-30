@@ -85,7 +85,7 @@ body {
 
 .transition.htmx-swapping {
   opacity: 0;
-  transition: opacity 1s ease-out;
+  transition: opacity 1s ease-in-out;
 }
 
 #decision-box .wrapper {
@@ -857,14 +857,19 @@ body {
   overflow: hidden;
 }
 
+#title-screen-content {
+  position: relative;
+  z-index: 11;
+}
+
 .game-logo-image {
   position: absolute;
   top: 0;
   left: 0;
   image-rendering: pixelated;
-  z-index: 11;
   width: 1280px;
   height: 720px;
+  z-index: 12;
 }
 
 #title-screen-options {
@@ -877,7 +882,7 @@ body {
   align-items: center;
   width: 1280px;
   height: 720px;
-  z-index: 12;
+  z-index: 13;
 }
 
 #title-screen-options p {
@@ -896,6 +901,56 @@ body {
 
 #title-screen-options p.disabled:hover {
   color: #c23e6e;
+}
+
+#scroll-intro-bg {
+  position: relative;
+  background-color: hsla(300, 51%, 8%, 0.9);
+  width: 1280px;
+  height: 720px;
+  z-index: 11;
+  animation-duration: 1s;
+  animation-name: fade-in;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+}
+
+#scrolling-text {
+  padding: 0 15%;
+  position: relative;
+}
+
+#scrolling-text p {
+  position: absolute;
+  top: 720px;
+  left: 192px;
+  font-size: 64px;
+  text-align: justify;
+  width: 896px;
+  animation-duration: 10s;
+  animation-name: scroll-text;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes scroll-text {
+  0% {
+    top: 720px;
+  }
+  100% {
+    top: 0px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

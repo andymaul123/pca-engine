@@ -1,5 +1,3 @@
-@import 'palette.scss'; 
-
 @font-face {
     font-family: 'm5x7';
     src: url('../fonts/m5x7.ttf');
@@ -12,7 +10,7 @@
 
 body {
     font-family: 'm5x7', sans-serif;
-    color: $lightOrange_hex;
+    color: $sunfall_orange1_hex;
 }
 
 h1 {
@@ -22,11 +20,11 @@ h1 {
 
 button, label {
     font-size: 32px;
-    color: $black_hex;
+    color: $sunfall_black_hex;
     font-family: 'm5x7';
 }
 
 p {
     font-size: 32px;
-    color: $lightOrange_hex;
+    color: $sunfall_orange1_hex;
 }

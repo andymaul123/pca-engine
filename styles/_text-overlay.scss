@@ -13,12 +13,12 @@
     display: none;
 }
 #text-overlay .text-box {
-    background-color: $transparent_black_bg;
+    background-color: $sunfall_transparent_black_bg;
     width: 100%;
     max-height: 106px;
     position: absolute;
     bottom: 0;
-    border: 1px solid $tan_hex;
+    border: 1px solid $sunfall_pink3_hex;
     box-sizing: border-box;
 }
 
@@ -35,7 +35,7 @@
 }
 
 #text-overlay .text-message .character.callout {
-    color: $purple_hex;
+    color: $sunfall_gold1_hex;
 }
 
 #text-overlay .blinking-arrow {
@@ -44,7 +44,7 @@
     top: 680px;
     left: 1240px;
     @include zlayers($z-menu, 2);
-    color: $tan_hex;
+    color: $sunfall_pink3_hex;
     font-size: 48px;
     display: none;
 }

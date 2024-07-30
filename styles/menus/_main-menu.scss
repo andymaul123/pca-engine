@@ -1,12 +1,9 @@
-@import '../palette.scss';
-@import '../buttons.scss'; 
-
 #main-menu .inner {
     position: absolute;
     top: 0;
     left: 0;
     @include innerDimensions();
-    background-color: $brown_hex;
+    background-color: $sunfall_pink3_hex;
     @include zlayers($z-menu, 2);
     display: none;
     cursor: $cursor-default;
@@ -19,7 +16,7 @@
     cursor: $cursor-default;
 }
 #main-menu * {
-    color: $black_hex;
+    color: $sunfall_black_hex;
 }
 #main-menu .inner.open {
     display: block;

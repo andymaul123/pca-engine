@@ -1,0 +1,37 @@
+@mixin base-button {
+    cursor: $cursor-default;
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 500px;
+    padding: 0 15px;
+    border-width: 3px;
+    border-style: outset;
+    box-sizing: content-box;
+    &:hover:enabled {
+        filter: brightness(110%);
+    }
+    &:active:enabled {
+        border-style: inset;
+    }
+    &:disabled {
+        filter: contrast(0.2);
+    }
+}
+
+@mixin default-button($bgcolor:white, $color:black, ) {
+    @include base-button;
+    border-color: $bgcolor;
+    background-color: $bgcolor;
+    color: $color;
+}
+
+@mixin close-button($bgcolor:white, $color:black, ) {
+    @include base-button;
+    border-color: $bgcolor;
+    background-color: $bgcolor;
+    color: $color;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+}

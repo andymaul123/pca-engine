@@ -1,6 +1,3 @@
-@import '../palette.scss'; 
-@import '../variables.scss';
-
 #inventory-menu {
     @include zlayers($z-menu, 2);
     position: absolute;
@@ -30,9 +27,7 @@
 
 #inventory-menu .close button {
     @include zlayers($z-menu, 2);
-    height: 32px;
-    width: 32px;
-    cursor: $cursor-default;
+    @include close-button($sunfall_pink1_hex, $sunfall_orange2_hex);
 }
 
 #inventory-menu .header {
@@ -40,16 +35,17 @@
     top: 0;
     width: 1280px;
     height: 160px;
-    background-color: $tan_hex;
+    background-color: $sunfall_pink3_hex;
 }
 
 #inventory-menu .header h1 {
     margin-left: 25px;
-    color: $black_hex;
+    color: $sunfall_black_hex;
 }
 
 #inventory-menu .header button.use-item {
     float: right;
+    @include default-button($sunfall_pink1_hex, $sunfall_orange2_hex);
 }
 
 #inventory-menu .visuals {
@@ -58,7 +54,7 @@
     left: 0;
     width: 560px;
     height: 560px;
-    background-color: $black_hex;
+    background-color: $sunfall_black_hex;
 }
 
 #inventory-menu .visuals .item-portrait {
@@ -88,17 +84,14 @@
 
 #inventory-menu .visuals .toggle-description {
     position: absolute;
-    top: 535px;
-    left: 140px;
-    width: 280px;
-    height: 25px;
-    color: $black_hex;
+    top: 524px;
+    left: 152px;
+    @include default-button($sunfall_pink1_hex, $sunfall_orange2_hex);
     @include zlayers($z-menu, 4);
-    cursor: $cursor-default;
 }
 
 #inventory-menu .visuals .item-description p {
-    color: $lightOrange_hex;
+    color: $sunfall_orange2_hex;
     padding: 25px;
 }
 
@@ -108,7 +101,7 @@
     left: 560px;
     width: 720px;
     height: 560px;
-    background-color: $lightOrange_hex;
+    background-color: $sunfall_orange2_hex;
     display: flex;
     flex-direction: column;
 }
@@ -118,18 +111,18 @@
 }
 
 #inventory-menu .list .item-row.selected {
-    background-color: $darkBlue-hex;
+    background-color: $sunfall_purple1_hex;
 }
 
 #inventory-menu .list .item-row.selected p {
-    color: $lightOrange-hex;
+    color: $sunfall_orange2_hex;
 }
 
 #inventory-menu .list .item-row:hover {
-    background-color: $tan_hex;
+    background-color: $sunfall_pink3_hex;
 }
 
 #inventory-menu .list .item-row p {
-    color: $black_hex;
+    color: $sunfall_black_hex;
     padding: 10px 25px;
 }

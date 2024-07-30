@@ -14,7 +14,7 @@ body {
     width: 100%;
     height: 100%;
     position: relative;
-    background-color: $black_hex;
+    background-color: $sunfall_black_hex;
     user-select: none;
 }
 
@@ -33,7 +33,7 @@ body {
 
 #outer-container {
     @include outerDimensions();
-    background-color: $brown_hex;
+    background-color: $sunfall_pink3_hex;
     display: flex;
     flex-direction: column;
     justify-content: center;

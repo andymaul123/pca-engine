@@ -1,8 +1,6 @@
-@import '../palette.scss'; 
-
 #menu-bar {
     width: 1280px;
-    height: 25px;
+    height: auto;
     position: absolute;
     top: 0;
     left: 0;
@@ -13,10 +11,7 @@
 }
 
 #menu-bar button {
-    display: block;
+    @include default-button($sunfall_pink1_hex, $sunfall_orange2_hex);
     @include zlayers($z-menu, 1);
-    max-width: 200px;
     margin-left: 25px;
-    padding: 0 10px;
-    cursor: $cursor-default;
 }

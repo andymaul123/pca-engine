@@ -33,7 +33,7 @@
     top: 0;
     @include innerDimensions();
     display: none;
-    background-color: $transparent_black_bg;
+    background-color: $sunfall_transparent_black_bg;
     @include zlayers($z-base, 2);
 }
 
@@ -44,9 +44,9 @@
 #area-title {
     font-size: 96px;
     font-family: 'm5x7', sans-serif;
-    color: $lightOrange_hex;
+    color: $sunfall_orange1_hex;
     text-align: center;
-    text-shadow: 5px 5px $black_hex;
+    text-shadow: 5px 5px $sunfall_black_hex;
     @include zlayers($z-area-title, 0);
     position: absolute;
     right: 0;

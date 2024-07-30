@@ -11,10 +11,10 @@
     left: 0;
     @include innerDimensions();
     display: none;
-    background: $transparent_black_bg;
+    background: $sunfall_transparent_black_bg;
 }
 #npc-dialogue .text-box {
-    background-color: $transparent_black_bg;
+    background-color: $sunfall_transparent_black_bg;
     width: 768px;
     max-height: 106px;
     position: absolute;
@@ -37,7 +37,7 @@
 }
 
 #npc-dialogue .text-message .character.callout {
-    color: $purple_hex;
+    color: $sunfall_gold1_hex;
 }
 
 #npc-dialogue .blinking-arrow {
@@ -79,7 +79,7 @@
     left: 0;
     bottom: 0;
     @include zlayers($z-menu, 2);
-    border: 1px solid $lightOrange_hex;
+    border: 1px solid $sunfall_orange1_hex;
   }
 
   #npc-name {

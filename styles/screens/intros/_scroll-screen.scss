@@ -6,15 +6,16 @@
     animation-iteration-count: 1;
     animation-name: fade-in;
     background-color: $sunfall_transparent_black_bg;
+    pointer-events: none;
     position: relative;
 }
 
-#scrolling-text {
+#scrolling-text-wrapper {
     position: relative;
     
 }
 
-#scrolling-text p {
+#scrolling-text {
     @include fontSize(4);
     animation-delay: 1s;
     animation-direction: normal;
@@ -24,6 +25,8 @@
     animation-name: scroll-text;
     animation-timing-function: linear;
     left: 192px;
+    line-height: 0.8;
+    pointer-events: none;
     position: absolute;
     text-align: justify;
     top: 720px;
@@ -31,19 +34,55 @@
 }
 
 @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+  0% {
+    opacity: 0;
   }
+  100% {
+    opacity: 1;
+  }
+}
 
 @keyframes scroll-text {
-    0% {
-      top: 720px;
-    }
-    100% {
-      top: 0px;
-    }
+  0% {
+    top: 720px;
   }
+  100% {
+    top: 0px;
+  }
+}
+
+@keyframes blinking-text {
+  0% {
+    color: $sunfall_orange1_hex;
+  }
+  100% {
+    color: $sunfall_gold2_hex;
+  }
+}
+
+#scroll-intro-start {
+  @include innerDimensions();
+  @include zlayers($z-base, 2);
+  display: none;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+#scroll-intro-start.enabled {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: end;
+}
+#scroll-intro-start p {
+  @include fontSize(5);
+  animation-delay: 0;
+  animation-direction: normal;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: blinking-text;
+  animation-timing-function: linear;
+  padding: 10px;
+}

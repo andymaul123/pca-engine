@@ -912,14 +912,15 @@ body {
   animation-iteration-count: 1;
   animation-name: fade-in;
   background-color: hsla(300, 51%, 8%, 0.9);
+  pointer-events: none;
+  position: relative;
+}
+
+#scrolling-text-wrapper {
   position: relative;
 }
 
 #scrolling-text {
-  position: relative;
-}
-
-#scrolling-text p {
   font-size: 64px;
   animation-delay: 1s;
   animation-direction: normal;
@@ -929,6 +930,8 @@ body {
   animation-name: scroll-text;
   animation-timing-function: linear;
   left: 192px;
+  line-height: 0.8;
+  pointer-events: none;
   position: absolute;
   text-align: justify;
   top: 720px;
@@ -950,6 +953,43 @@ body {
   100% {
     top: 0px;
   }
+}
+@keyframes blinking-text {
+  0% {
+    color: #ed9a6d;
+  }
+  100% {
+    color: #feffcf;
+  }
+}
+#scroll-intro-start {
+  width: 1280px;
+  height: 720px;
+  z-index: 12;
+  display: none;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+#scroll-intro-start.enabled {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: end;
+}
+
+#scroll-intro-start p {
+  font-size: 80px;
+  animation-delay: 0;
+  animation-direction: normal;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: blinking-text;
+  animation-timing-function: linear;
+  padding: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */

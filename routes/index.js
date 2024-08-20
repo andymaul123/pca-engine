@@ -32,6 +32,10 @@ allRoutes.get('/scroll-intro', (req, res) => {
   res.render('partials/intro-screens/scroll-intro.ejs', {introScrollMessage: introScrollMessage});
 });
 
+allRoutes.get('/scroll-intro-start', (req, res) => {
+  res.render('partials/intro-screens/scroll-intro-start.ejs', {});
+});
+
 allRoutes.get('/save', (req, res) => {
   saveData();
   res.render('partials/menus/menu-save-update.ejs');

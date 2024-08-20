@@ -20,5 +20,13 @@ export const interactivity = {
     updateContext: function(context) {
         document.querySelector("#main-scene").setAttribute('data-context', context);
     },
+    stopCSSAnimation: function(elementId) {
+        try {
+            document.querySelector(`#${elementId}`).getAnimations().forEach((animation) => animation.finish());
+        } catch(e) {
+            console.log(e);
+        }
+        
+    },
     currentVolume: 0.1,
 };

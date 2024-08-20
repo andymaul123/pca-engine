@@ -1,35 +1,35 @@
 #title-screen {
-    position: relative;
     @include innerDimensions();
     cursor: $cursor-default;
     overflow: hidden;
+    position: relative;
 }
 
 #title-screen-content {
-    position: relative;
     @include zlayers($z-base, 1);
+    position: relative;
 }
 
 
 .game-logo-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    image-rendering: pixelated;
     @include innerDimensions();
     @include zlayers($z-base, 2);
+    image-rendering: pixelated;
+    left: 0;
+    position: absolute;
+    top: 0;
 }
 
 #title-screen-options {
-    position: absolute;
-    top: 0;
-    left: 0;
+    @include innerDimensions();
+    @include zlayers($z-base, 3);
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: end;
-    align-items: center;
-    @include innerDimensions();
-    @include zlayers($z-base, 3);
+    left: 0;
+    position: absolute;
+    top: 0;
 }
 
 #title-screen-options p {

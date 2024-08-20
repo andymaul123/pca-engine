@@ -1,19 +1,19 @@
 #main-menu .inner {
+    @include innerDimensions();
+    @include zlayers($z-menu, 2);
+    background-color: $sunfall_pink3_hex;
+    cursor: $cursor-default;
+    display: none;
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
-    @include innerDimensions();
-    background-color: $sunfall_pink3_hex;
-    @include zlayers($z-menu, 2);
-    display: none;
-    cursor: $cursor-default;
 }
 #main-menu .inner button {
+    @include zlayers($z-menu, 3);
+    cursor: $cursor-default;
     position: absolute;
     right: 0;
     top: 0;
-    @include zlayers($z-menu, 3);
-    cursor: $cursor-default;
 }
 #main-menu * {
     color: $sunfall_black_hex;
@@ -29,21 +29,21 @@
 
 #main-menu #save {
     @include default-button($sunfall_pink1_hex, $sunfall_orange2_hex);
-    position: relative;
     @include zlayers($z-menu, 3);
+    position: relative;
 }
 
 #main-menu .save-success-container {
     display: block;
-    width: 200px;
     height: 50px;
+    width: 200px;
 }
 
 #main-menu .save-success-message {
-    display: none;
-    opacity: 0;
     @include zlayers($z-menu, 3);
     animation: gameSavedSuccess 3s 1;
+    display: none;
+    opacity: 0;
 }
 
 #main-menu .save-success-message.revealed {

@@ -1,29 +1,29 @@
 *,
 html {
+    border: 0;
     margin: 0;
     padding: 0;
-    border: 0;
 }
 
 html {
-    width: 100%;
     height: 100%;
+    width: 100%;
 }
 
 body {
-    width: 100%;
+    background-color: $sunfall_black_hex;
     height: 100%;
     position: relative;
-    background-color: $sunfall_black_hex;
     user-select: none;
+    width: 100%;
 }
 
 .flex-centered {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 100%;
+    justify-content: center;
     width: 100%;
 }
 
@@ -33,19 +33,19 @@ body {
 
 #outer-container {
     @include outerDimensions();
+    align-items: center;
     background-color: $sunfall_pink3_hex;
+    background-image: url('/image/borders-wip.jpg');
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-image: url('/image/borders-wip.jpg');
 }
 
 #main, #main-scene {
-    position: relative;
     @include innerDimensions();
     cursor: $cursor-default;
     overflow: hidden;
+    position: relative;
 }
 
 .transition.htmx-swapping {

@@ -1,81 +1,81 @@
 #inventory-menu {
+    @include innerDimensions();
     @include zlayers($z-menu, 2);
+    cursor: $cursor-default;
+    left: 0;
+    pointer-events: none;
     position: absolute;
     top: 0;
-    left: 0;
-    @include innerDimensions();
-    pointer-events: none;
-    cursor: $cursor-default;
 }
 
 #inventory-menu .inner {
     @include zlayers($z-menu, 1);
-    width: 100%;
     height: 100%;
     pointer-events: all;
+    width: 100%;
 }
 
 #inventory-menu .close {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    justify-content: flex-end;
     position: absolute;
     top: 0;
     width: 1280px;
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
 }
 
 #inventory-menu .close button {
-    @include zlayers($z-menu, 2);
     @include close-button($sunfall_pink1_hex, $sunfall_orange2_hex);
+    @include zlayers($z-menu, 2);
 }
 
 #inventory-menu .header {
+    background-color: $sunfall_pink3_hex;
+    height: 160px;
     position: absolute;
     top: 0;
     width: 1280px;
-    height: 160px;
-    background-color: $sunfall_pink3_hex;
 }
 
 #inventory-menu .header h1 {
-    margin-left: 25px;
     color: $sunfall_black_hex;
+    margin-left: 25px;
 }
 
 #inventory-menu .header button.use-item {
-    float: right;
     @include default-button($sunfall_pink1_hex, $sunfall_orange2_hex);
+    float: right;
 }
 
 #inventory-menu .visuals {
+    background-color: $sunfall_black_hex;
+    height: 560px;
+    left: 0;
     position: absolute;
     top: 160px;
-    left: 0;
     width: 560px;
-    height: 560px;
-    background-color: $sunfall_black_hex;
 }
 
 #inventory-menu .visuals .item-portrait {
+    @include zlayers($z-menu, 2);
+    display: block;
+    height: 560px;
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
     width: 560px;
-    height: 560px;
-    display: block;
-    @include zlayers($z-menu, 2);
 }
 
 #inventory-menu .visuals .item-description {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 560px;
-    height: 560px;
-    display: none;
     @include zlayers($z-menu, 3);
     background-color: hsla(207, 58%, 7%, 0.9);
+    display: none;
+    height: 560px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 560px;
 }
 
 #inventory-menu .visuals .item-description.revealed {
@@ -83,11 +83,11 @@
 }
 
 #inventory-menu .visuals .toggle-description {
-    position: absolute;
-    top: 524px;
-    left: 152px;
     @include default-button($sunfall_pink1_hex, $sunfall_orange2_hex);
     @include zlayers($z-menu, 4);
+    left: 152px;
+    position: absolute;
+    top: 524px;
 }
 
 #inventory-menu .visuals .item-description p {
@@ -96,14 +96,14 @@
 }
 
 #inventory-menu .list {
-    position: absolute;
-    top: 160px;
-    left: 560px;
-    width: 720px;
-    height: 560px;
     background-color: $sunfall_orange2_hex;
     display: flex;
     flex-direction: column;
+    height: 560px;
+    left: 560px;
+    position: absolute;
+    top: 160px;
+    width: 720px;
 }
 
 #inventory-menu .list .item-row {

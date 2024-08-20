@@ -5,23 +5,23 @@
     pointer-events: none;
 }
 #npc-dialogue .wrapper {
+    @include innerDimensions();
     @include zlayers($z-menu, 1);
+    background: $sunfall_transparent_black_bg;
+    display: none;
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
-    @include innerDimensions();
-    display: none;
-    background: $sunfall_transparent_black_bg;
 }
 #npc-dialogue .text-box {
     background-color: $sunfall_transparent_black_bg;
-    width: 768px;
+    border: 1px solid $tan_hex;
+    bottom: 0;
+    box-sizing: border-box;
+    left: 512px;
     max-height: 106px;
     position: absolute;
-    left: 512px;
-    bottom: 0;
-    border: 1px solid $tan_hex;
-    box-sizing: border-box;
+    width: 768px;
 }
 
 #npc-dialogue .text-message {
@@ -41,14 +41,14 @@
 }
 
 #npc-dialogue .blinking-arrow {
+    @include zlayers($z-menu, 2);
     animation: blinky 1s infinite;
+    color: $tan_hex;
+    display: none;
+    font-size: 48px;
+    left: 1240px;
     position: absolute;
     top: 680px;
-    left: 1240px;
-    @include zlayers($z-menu, 2);
-    color: $tan_hex;
-    font-size: 48px;
-    display: none;
 }
 #npc-dialogue .blinking-arrow.revealed {
     display: block;
@@ -67,28 +67,28 @@
   }
 
   #npc-dialogue img.portrait-image {
+    height: 512px;
     image-rendering: pixelated;
     width: 512px;
-    height: 512px;
   }
 
   #npc-portrait {
-    width: 512px;
-    height: 512px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
     @include zlayers($z-menu, 2);
     border: 1px solid $sunfall_orange1_hex;
+    bottom: 0;
+    height: 512px;
+    left: 0;
+    position: absolute;
+    width: 512px;
   }
 
   #npc-name {
-    width: 768px;
-    max-height: 106px;
-    position: absolute;
-    left: 512px;
-    bottom: 78px;
     @include zlayers($z-menu, 2);
+    bottom: 78px;
     font-size: 48px;
+    left: 512px;
+    max-height: 106px;
     padding: 0 0 0 24px;
+    position: absolute;
+    width: 768px;
   }

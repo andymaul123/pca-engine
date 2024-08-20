@@ -1,12 +1,12 @@
 #scroll-intro-bg {
-    position: relative;
-    background-color: $sunfall_transparent_black_bg;
     @include innerDimensions();
     @include zlayers($z-base, 1);
-    animation-duration: 1s;
-    animation-name: fade-in;
-    animation-iteration-count: 1;
     animation-direction: normal;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-name: fade-in;
+    background-color: $sunfall_transparent_black_bg;
+    position: relative;
 }
 
 #scrolling-text {
@@ -15,19 +15,19 @@
 }
 
 #scrolling-text p {
-    position: absolute;
-    top: 720px;
-    left: 192px;
     @include fontSize(4);
-    text-align: justify;
-    width: 896px;
-    animation-duration: 10s;
-    animation-name: scroll-text;
-    animation-iteration-count: 1;
-    animation-direction: normal;
     animation-delay: 1s;
-    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-duration: 10s;
     animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-name: scroll-text;
+    animation-timing-function: linear;
+    left: 192px;
+    position: absolute;
+    text-align: justify;
+    top: 720px;
+    width: 896px;
 }
 
 @keyframes fade-in {

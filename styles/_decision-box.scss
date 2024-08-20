@@ -1,19 +1,19 @@
 #decision-box .wrapper {
     @include innerDimensions();
+    @include zlayers($z-menu);
+    align-items:center;
+    display: flex;
+    justify-content:center;
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
-    justify-content:center;
-    align-items:center;
-    @include zlayers($z-menu);
-    display: flex;
 }
 #decision-box .container {
-    position: relative;
     background-color: $sunfall_transparent_black_bg;
-    width: 640px;
     border: 1px $sunfall_orange1_hex solid;
     padding: 1em;
+    position: relative;
+    width: 640px;
 }
 
 #decision-box .wrapper .container .choices {
@@ -22,23 +22,23 @@
 }
 
 #decision-box .wrapper .container .title {
-    font-size: 64px;
     color: $sunfall_orange1_hex;
     font-family: 'm5x7', sans-serif;
+    font-size: 64px;
     margin-bottom: 1em;
 }
 
 #decision-box .wrapper .container .choices .decision-button {
-    font-size: 36px;
-    color: $sunfall_orange1_hex;
-    font-family: 'm5x7', sans-serif;
     background-color: $sunfall_transparent_black_bg;
     border: 1px $sunfall_orange1_hex solid;
+    color: $sunfall_orange1_hex;
+    font-family: 'm5x7', sans-serif;
+    font-size: 36px;
     margin-bottom: 1em;
 
 }
 
 #decision-box .wrapper .container .choices .decision-button:hover {
-    cursor: $cursor-default;
     background-color: $sunfall_transparent_black_bg;
+    cursor: $cursor-default;
 }

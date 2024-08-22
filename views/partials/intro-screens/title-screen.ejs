@@ -1,6 +1,6 @@
 <div id="title-screen">
     <div id="scroll-intro-start"></div>
-    <div id="title-screen-content" class="transition">
+    <div id="title-screen-content">
         <div id="game-logo">
             <img
                 src="/image/game-logo.gif"
@@ -10,7 +10,7 @@
         <div id="title-screen-options">
             <p
                 hx-get="/scroll-intro" 
-                hx-swap="outerHTML swap:1s" 
+                hx-swap="outerHTML" 
                 hx-target="#title-screen-content"
                 hx-trigger="triggerClick throttle:0.5s"
                 hx-on:click="window.interactivity.clickBus(event)">

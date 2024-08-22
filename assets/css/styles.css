@@ -83,11 +83,6 @@ body {
   position: relative;
 }
 
-.transition.htmx-swapping {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
 #transition-animation-wrapper {
   width: 1280px;
   height: 720px;

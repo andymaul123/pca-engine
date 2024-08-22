@@ -41,6 +41,7 @@ export const tunnelModel = {
                     show: true,
                     soundEffect: null,
                     showInDark: true,
+                    isSceneTransition: true,
                 },
                 talk: {
                     triggerScript: "scenes/messages?sceneId=tunnel&messageId=defaultTalk",

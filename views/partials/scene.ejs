@@ -1,5 +1,5 @@
 <!-- Primary Scene -->
-<div id="main-scene" class="transition <%= sceneData.commonState.isCurrentlyDark ? 'is-dark' : '' %>" data-context="<%= playerData.context %>">
+<div id="main-scene" class=" <%= sceneData.commonState.isCurrentlyDark ? 'is-dark' : '' %>" data-context="<%= playerData.context %>">
   <% if (sceneData.commonState.showSceneStartItems == true) { %>
     <div id="area-title" class="<%= sceneData.commonState.visited ? '' : 'revealed'  %>"><%= sceneData.areaTitle %></div>
     <div id="start-up" hx-trigger="load throttle:0.5s" hx-get="/scenes/startmessage?sceneId=<%= sceneData.id %>" hx-target="#text-overlay"></div>

@@ -48,18 +48,13 @@ body {
     position: relative;
 }
 
-.transition.htmx-swapping {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
 #transition-animation-wrapper {
     @include innerDimensions();
-    background-color: $sunfall_black_hex;
-    position: absolute;
-    opacity: 0;
     @include zlayers($z-transition, 0);
+    background-color: $sunfall_black_hex;
+    opacity: 0;
     pointer-events: none;
+    position: absolute;
 }
 #transition-animation-wrapper.animation-playing {
     animation-direction: normal;

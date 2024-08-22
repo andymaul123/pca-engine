@@ -45,6 +45,7 @@ export const stairsModel = {
                     show: true,
                     soundEffect: null,
                     showInDark: true,
+                    isSceneTransition: true,
                 },
                 talk: {
                     triggerScript: "scenes/messages?sceneId=stairs&messageId=defaultTalk",

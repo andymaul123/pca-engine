@@ -46,6 +46,7 @@ $z-interaction: 20;
 $z-darkness: 30;
 $z-area-title: 40;
 $z-menu: 50;
+$z-transition: 60;
 
 @mixin zlayers($layer, $add: 0) {
     z-index: $layer + $add;

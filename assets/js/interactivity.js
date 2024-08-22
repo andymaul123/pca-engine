@@ -20,6 +20,12 @@ export const interactivity = {
     updateContext: function(context) {
         document.querySelector("#main-scene").setAttribute('data-context', context);
     },
+    startCSSAnimation: function(elementId) {
+        document.querySelector(`#${elementId}`).classList.add('animation-playing');
+        setTimeout(function() {
+            document.querySelector(`#${elementId}`).classList.remove('animation-playing');
+        }, "2000");
+    },
     stopCSSAnimation: function(elementId) {
         try {
             document.querySelector(`#${elementId}`).getAnimations().forEach((animation) => animation.finish());

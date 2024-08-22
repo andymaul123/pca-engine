@@ -88,6 +88,37 @@ body {
   transition: opacity 1s ease-in-out;
 }
 
+#transition-animation-wrapper {
+  width: 1280px;
+  height: 720px;
+  background-color: #1f0a1f;
+  position: absolute;
+  opacity: 0;
+  z-index: 60;
+  pointer-events: none;
+}
+
+#transition-animation-wrapper.animation-playing {
+  animation-direction: normal;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-name: fadeInFadeOut;
+  animation-timing-function: linear;
+  pointer-events: all;
+}
+
+@keyframes fadeInFadeOut {
+  0% {
+    opacity: 0;
+  }
+  40%, 50%, 60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 #decision-box .wrapper {
   width: 1280px;
   height: 720px;

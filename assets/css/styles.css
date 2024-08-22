@@ -156,7 +156,7 @@ body {
 }
 
 #decision-box .wrapper .container .choices .decision-button:hover {
-  background-color: hsla(300, 51%, 8%, 0.9);
+  background-color: #4d1059;
   cursor: url("/image/cursors/default.png"), auto;
 }
 

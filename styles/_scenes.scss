@@ -1,26 +1,26 @@
 .base-image {
+    @include innerDimensions();
+    @include zlayers($z-base);
+    image-rendering: pixelated;
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
-    image-rendering: pixelated;
-    @include zlayers($z-base);
-    @include innerDimensions();
 }
 
 #fragments {
-    position: absolute;
-    left: 0;
-    top: 0;
     @include innerDimensions();
     @include zlayers($z-base, 1);
+    left: 0;
+    position: absolute;
+    top: 0;
 }
 
 .fragment-image {
-    position: absolute;
-    left: 0;
-    top: 0;
     @include innerDimensions();
     display: none;   
+    left: 0;
+    position: absolute;
+    top: 0;
 }
 
 .fragment-image.revealed {
@@ -28,13 +28,13 @@
 }
 
 #is-dark {
-    position: absolute;
-    left: 0;
-    top: 0;
     @include innerDimensions();
-    display: none;
-    background-color: $sunfall_transparent_black_bg;
     @include zlayers($z-base, 2);
+    background-color: $sunfall_transparent_black_bg;
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 0;
 }
 
 #main-scene.is-dark #is-dark {
@@ -42,21 +42,21 @@
 }
 
 #area-title {
-    font-size: 96px;
-    font-family: 'm5x7', sans-serif;
-    color: $sunfall_orange1_hex;
-    text-align: center;
-    text-shadow: 5px 5px $sunfall_black_hex;
     @include zlayers($z-area-title, 0);
-    position: absolute;
-    right: 0;
-    left: 0;
-    margin-right: auto;
-    margin-left: auto;
-    pointer-events: none;
     animation: areaTitleMovement 3s 1;
     bottom: 100%;
+    color: $sunfall_orange1_hex;
     display: none;
+    font-family: 'm5x7', sans-serif;
+    font-size: 96px;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-shadow: 5px 5px $sunfall_black_hex;
 }
 #area-title.revealed {
     display: block;

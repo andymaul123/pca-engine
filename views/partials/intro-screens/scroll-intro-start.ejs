@@ -1,0 +1,15 @@
+<!--
+A hidden box that pops up after the player clicks once on the scroll-intro screen.
+It overlays the other content so that an additional click will direct to the /start scene in the main-wrapper
+-->
+
+<div id="scroll-intro-start"
+    hx-get="/start" 
+    hx-swap="innerHTML swap:1s" 
+    hx-target="#main-scene-wrapper"
+    hx-trigger="triggerClick throttle:0.5s"
+    hx-on:click="window.interactivity.clickBus(event)"
+    data-playanimation="transition-animation-wrapper"
+    class="enabled">
+    <div><p>Begin Adventure</p></div>
+</div>

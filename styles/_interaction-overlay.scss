@@ -1,28 +1,28 @@
 .overlay svg {
+    @include innerDimensions();
+    @include zlayers($z-interaction);
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
-    @include zlayers($z-interaction);
-    @include innerDimensions();
 }
 .overlay svg polygon {
+    @include innerDimensions();
+    display: none;
     fill: transparent;
     opacity: 0;
-    display: none;
-    @include innerDimensions();
 }
 .overlay svg polygon.revealed {
     display: inline;
 }
 .overlay svg polygon:hover {
-    transition: opacity 0.2s ease-out;
     fill: hsla(10, 100%, 100%, 0.2);
     opacity: 1;
+    transition: opacity 0.2s ease-out;
 }
 
 #main-scene.is-dark .overlay svg polygon {
-    pointer-events: none;
     opacity: 0;
+    pointer-events: none;
 }
 
 #main-scene.is-dark .overlay svg polygon:hover {
@@ -35,9 +35,9 @@
 
 }
 #main-scene.is-dark .overlay svg polygon.show-dark:hover {
-    transition: opacity 0.2s ease-out;
     fill: hsla(10, 100%, 100%, 0.2);
     opacity: 1;
+    transition: opacity 0.2s ease-out;
 }
 
 #fragments img.fragment-image {

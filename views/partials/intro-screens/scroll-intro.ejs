@@ -1,0 +1,19 @@
+<!--
+Replaces #title-screen-content with a scrolling intro text message. Clicking this while the 
+animation is playing will call stopanimation to end it. A click will replace the empty #scroll-intro-start
+element with contents from the scroll-intro-start partial, overlaying this content.
+-->
+
+<div id="title-screen-content"
+    hx-get="/scroll-intro-start" 
+    hx-swap="outerHTML" 
+    hx-target="#scroll-intro-start"
+    hx-trigger="triggerClick throttle:0.5s"
+    hx-on:click="window.interactivity.clickBus(event)"
+    data-stopanimation="scrolling-text">
+    <div id="scroll-intro-bg">
+        <div id="scrolling-text-wrapper">
+            <p id="scrolling-text"><%= introScrollMessage %></p>
+        </div>
+    </div>
+</div>

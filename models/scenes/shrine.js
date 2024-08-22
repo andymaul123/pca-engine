@@ -102,6 +102,7 @@ export const shrineModel = {
                     show: false,
                     soundEffect: null,
                     showInDark: false,
+                    isSceneTransition: true,
                 },
                 talk: {
                     triggerScript: "scenes/messages?sceneId=shrine&messageId=defaultTalk",
@@ -184,6 +185,7 @@ export const shrineModel = {
                     show: true,
                     soundEffect: null,
                     showInDark: false,
+                    isSceneTransition: true,
                 },
                 talk: {
                     triggerScript: "scenes/messages?sceneId=shrine&messageId=defaultTalk",

@@ -5,21 +5,21 @@
     pointer-events: none;
 }
 #text-overlay .wrapper {
+    @include innerDimensions();
     @include zlayers($z-menu, 1);
+    display: none;
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
-    @include innerDimensions();
-    display: none;
 }
 #text-overlay .text-box {
     background-color: $sunfall_transparent_black_bg;
-    width: 100%;
+    border: 1px solid $sunfall_pink3_hex;
+    bottom: 0;
+    box-sizing: border-box;
     max-height: 106px;
     position: absolute;
-    bottom: 0;
-    border: 1px solid $sunfall_pink3_hex;
-    box-sizing: border-box;
+    width: 100%;
 }
 
 #text-overlay .text-message {
@@ -39,14 +39,14 @@
 }
 
 #text-overlay .blinking-arrow {
+    @include zlayers($z-menu, 2);
     animation: blinky 1s infinite;
+    color: $sunfall_pink3_hex;
+    display: none;
+    font-size: 48px;
+    left: 1240px;
     position: absolute;
     top: 680px;
-    left: 1240px;
-    @include zlayers($z-menu, 2);
-    color: $sunfall_pink3_hex;
-    font-size: 48px;
-    display: none;
 }
 #text-overlay .blinking-arrow.revealed {
     display: block;

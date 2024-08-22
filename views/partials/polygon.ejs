@@ -8,4 +8,5 @@ class="<%= data.show ? 'revealed' : '' %> <%= data.showInDark ? 'show-dark' : ''
 data-sound="<%= data.soundEffect ? JSON.stringify(data.soundEffect) : 'null' %>"
 hx-trigger="triggerClick throttle:0.5s"
 hx-on:click="window.interactivity.clickBus(event)"
+data-playanimation="<%= locals.data.isSceneTransition && data.isSceneTransition ? 'transition-animation-wrapper' : null %>"
 />

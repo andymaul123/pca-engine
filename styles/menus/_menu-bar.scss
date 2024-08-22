@@ -1,13 +1,13 @@
 #menu-bar {
-    width: 1280px;
-    height: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
     @include zlayers($z-menu);
     display: flex;
     flex-direction: row;
+    height: auto;
     justify-content: flex-end;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1280px;
 }
 
 #menu-bar button {

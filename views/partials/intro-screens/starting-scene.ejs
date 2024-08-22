@@ -1,11 +1,10 @@
-<%- include('../partials/menu-bar'); %>
+<%- include('../../partials/menu-bar'); %>
 
 <div 
     id="main-scene" 
     hx-get="/scenes/init?sceneId=<%= sceneId %>" 
     hx-swap="outerHTML" 
-    hx-select="#main-scene" 
-    class="transition"
+    hx-select="#main-scene"
     hx-trigger="load">
 </div>
 

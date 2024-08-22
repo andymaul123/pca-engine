@@ -1,12 +1,12 @@
 #context-menu {
+    @include zlayers($z-menu);
+    background-color: $sunfall_orange1_hex;
+    display: none;
+    height: auto;
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
     width: 100px;
-    height: auto;
-    display: none;
-    background-color: $sunfall_orange1_hex;
-    @include zlayers($z-menu);
 }
 
 #context-menu form {
@@ -19,14 +19,14 @@
 }
 
 #context-menu form label {
-    display: block;
     @include zlayers($z-menu, 1);
-    padding: 0 10px;
-    cursor: $cursor-default;
     background-color: $sunfall_black_hex;
-    border: 1px solid $sunfall_gold1_hex;
     border-bottom-width: 0px;
+    border: 1px solid $sunfall_gold1_hex;
     color: $sunfall_gold1_hex;
+    cursor: $cursor-default;
+    display: block;
+    padding: 0 10px;
     text-align: center;
 }
 

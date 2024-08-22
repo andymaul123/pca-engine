@@ -43,11 +43,12 @@
 <body>
     <div class="flex-centered">
         <div id="outer-container">
+            <div id="transition-animation-wrapper"></div>
             <div id="main">
                 <%- include('./partials/menus/main-menu'); %>
                 <div id="inventory-menu"></div>
                 <div id="title-screen-wrapper">
-                    <%- include('./partials/title-screen.ejs', {showLoadGame: showLoadGame}); %>
+                    <%- include('./partials/intro-screens/title-screen.ejs', {showLoadGame: showLoadGame}); %>
                 </div>
                 <div id="main-scene-wrapper"></div>
                 <%- include('./partials/menus/context-menu.ejs'); %>

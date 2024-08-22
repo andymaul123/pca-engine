@@ -1,0 +1,43 @@
+<div id="title-screen">
+    <div id="scroll-intro-start"></div>
+    <div id="title-screen-content">
+        <div id="game-logo">
+            <img
+                src="/image/game-logo.gif"
+                class="game-logo-image"
+                id="#game-logo-image"/>
+        </div>
+        <div id="title-screen-options">
+            <p
+                hx-get="/scroll-intro" 
+                hx-swap="outerHTML" 
+                hx-target="#title-screen-content"
+                hx-trigger="triggerClick throttle:0.5s"
+                hx-on:click="window.interactivity.clickBus(event)">
+                New Game
+            </p>
+            <% if(showLoadGame) { %>
+                <p
+                hx-get="/load" 
+                hx-swap="innerHTML" 
+                hx-target="#main-scene-wrapper"
+                hx-trigger="triggerClick throttle:0.5s"
+                hx-on:click="window.interactivity.clickBus(event)">
+                Load Game
+            </p>
+            <% } else { %>
+                <p class="disabled">Load Game</p>
+            <% } %>
+    
+            <p class="disabled">Settings</p>
+            <p class="disabled">Quit</p>
+        </div>
+    </div>
+
+    <div id="basemat">
+        <img
+            src="/image/title-screen-bg.gif"
+            class="base-image"
+            id="#basemat-title-screen"/>
+      </div>
+</div>

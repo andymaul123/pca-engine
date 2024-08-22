@@ -1,29 +1,29 @@
 *,
 html {
+    border: 0;
     margin: 0;
     padding: 0;
-    border: 0;
 }
 
 html {
-    width: 100%;
     height: 100%;
+    width: 100%;
 }
 
 body {
-    width: 100%;
+    background-color: $sunfall_black_hex;
     height: 100%;
     position: relative;
-    background-color: $sunfall_black_hex;
     user-select: none;
+    width: 100%;
 }
 
 .flex-centered {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 100%;
+    justify-content: center;
     width: 100%;
 }
 
@@ -33,22 +33,49 @@ body {
 
 #outer-container {
     @include outerDimensions();
+    align-items: center;
     background-color: $sunfall_pink3_hex;
+    background-image: url('/image/borders-wip.jpg');
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-image: url('/image/borders-wip.jpg');
 }
 
 #main, #main-scene {
-    position: relative;
     @include innerDimensions();
     cursor: $cursor-default;
     overflow: hidden;
+    position: relative;
 }
 
-.transition.htmx-swapping {
+#transition-animation-wrapper {
+    @include innerDimensions();
+    @include zlayers($z-transition, 0);
+    background-color: $sunfall_black_hex;
     opacity: 0;
-    transition: opacity 1s ease-out;
+    pointer-events: none;
+    position: absolute;
 }
+#transition-animation-wrapper.animation-playing {
+    animation-direction: normal;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-name: fadeInFadeOut;
+    animation-timing-function: linear;
+    pointer-events: all;
+}
+
+@keyframes fadeInFadeOut {
+    0% {
+        opacity: 0;
+    }
+    40%,
+    50%,
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+  }

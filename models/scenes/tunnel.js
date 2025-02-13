@@ -18,7 +18,7 @@ export const tunnelModel = {
     audio: "/audio/Kingdom-in-Despair.mp3",
     audioUpdate: false,
     basemats: {
-        current: "image/tunnel-nyx.png",
+        current: "image/tunnel-sunfall.png",
     },
     fragments: null,
     overlayNodes: {

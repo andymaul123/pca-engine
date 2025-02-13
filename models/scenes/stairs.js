@@ -17,7 +17,7 @@ export const stairsModel = {
     audio: "/audio/Dragon-Mystery_Looping.mp3",
     audioUpdate: false,
     basemats: {
-        current: "image/stairs-nyx.png",
+        current: "image/stairs-sunfall.png",
     },
     fragments: {
         lady: {

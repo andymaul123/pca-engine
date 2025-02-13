@@ -36,10 +36,16 @@
     @include fontSize(3);
     color: $sunfall_gold1_hex;
     text-shadow:
-    3px 3px 0 $sunfall_purple1_hex,
-    -3px 3px 0 $sunfall_purple1_hex,
-    -3px -3px 0 $sunfall_purple1_hex,
-    3px -3px 0 $sunfall_purple1_hex;
+    0px 3px 0 $sunfall_purple1_hex, //top
+    3px 0px 0 $sunfall_purple1_hex, //right
+    3px 3px 0 $sunfall_purple1_hex, //top right
+    0px -3px 0 $sunfall_purple1_hex, //bottom
+    -3px 0px 0 $sunfall_purple1_hex, //left
+    -3px -3px 0 $sunfall_purple1_hex, //bottom left
+}
+
+#title-screen-options p:last-child {
+    margin-bottom: 10px;
 }
 
 #title-screen-options p.disabled {

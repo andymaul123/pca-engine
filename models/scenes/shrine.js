@@ -20,7 +20,7 @@ export const shrineModel = {
     audio: "/audio/Kingdom-in-Despair.mp3",
     audioUpdate: false,
     basemats: {
-        current: "image/shrine-no-candle-nyx.png",
+        current: "image/scenes/shrine/shrine_bg_candle-removed.png",
     },
     fragments: {
         window: {
@@ -28,7 +28,7 @@ export const shrineModel = {
             show: false,
         },
         candle: {
-            path: "image/shrine-candlelit-fragment-nyx.gif",
+            path: "image/scenes/shrine/shrine_bg-animation_candle-lit.gif",
             show: true,
         }
     },

@@ -8,9 +8,9 @@ import "../../types/index.js";
 export const npcModel = {
     lady: {
         id: "lady",
-        name: "Lady of the Fountain",
-        portrait: "image/test_portrait_1.png",
-        silhouette: "image/stairs-npc1-nyx.png",
+        name: "Sorceress",
+        portrait: "image/scenes/stairs/npc_portrait.png",
+        silhouette: "image/scenes/stairs/npc_world.png",
         messagesConverted: false,
         messages: {
             intro: {

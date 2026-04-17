@@ -27,3 +27,6 @@ Leonid Deburger, https://deburger.itch.io/fantasy-rpg-cursors-copper
 ## Color Palette
 SolitaryCatK1ng, https://lospec.com/palette-list/sunfall-12
 - Sunfall-12
+
+## CRT Effect
+Billgonzo123, https://github.com/Billgonzo123/CRT-Filter

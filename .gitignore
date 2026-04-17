@@ -131,3 +131,6 @@ dist
 
 # scss
 .sass-cache
+
+# Mac OS
+.DS_Store
